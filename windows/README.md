@@ -1,6 +1,6 @@
-﻿# STANK PYTHON VIRTUAL ENVIRONMENT MANAGER (Beta)
+# SPVEM - STANK PYTHON VIRTUAL ENVIRONMENT MANAGER (Windows)
 
-A verbose, beginner-friendly Python virtual environment manager for Windows.
+A verbose, beginner-friendly Python virtual environment manager for Windows 10/11.
 
 **Status: Beta** - Please report issues
 
@@ -13,14 +13,15 @@ A verbose, beginner-friendly Python virtual environment manager for Windows.
 Python environment management is a mess for beginners:
 
 1. **Too many tools** - venv, virtualenv, conda, pyenv, poetry, pipenv, pdm, hatch, uv. Which one? Nobody agrees.
-
+  
 2. **Silent failures** - Commands succeed with exit code 0 but nothing works. Hours wasted.
-
+  
 3. **No explanations** - Tutorials say "run this command" but never explain *why*. Users copy-paste without understanding.
-
+  
 4. **Package chaos** - "I need pandas for data science" turns into researching 50 packages and their compatibility.
-
+  
 5. **Reproducibility theater** - requirements.txt files that don't actually reproduce environments.
+  
 
 ### The Solution
 
@@ -35,7 +36,7 @@ One script that:
 ### Design Philosophy
 
 | Principle | Implementation |
-|-----------|----------------|
+| --- | --- |
 | Transparency | Every command shown with WHY explanation |
 | Safety | Never auto-delete; explicit opt-in for destructive actions |
 | Education | Verbose output teaches environment management |
@@ -66,10 +67,12 @@ Download from: https://www.python.org/downloads/release/python-3119/
 **IMPORTANT - Installer Options:**
 
 On the first screen:
+
 - `[ ] Add python.exe to PATH` - **LEAVE UNCHECKED** (prevents conflicts)
 - `[x] Install py launcher for all users` - **CHECK THIS**
 
 Click "Customize installation", then on Advanced Options:
+
 - `[ ] Add Python to environment variables` - **LEAVE UNCHECKED**
 
 This installs Python 3.11 safely alongside any existing Python versions. Your system defaults are NOT changed.
@@ -79,6 +82,7 @@ This installs Python 3.11 safely alongside any existing Python versions. Your sy
 ### Step 2: Download Files
 
 Download all 5 files to the **same folder**:
+
 - `stank-venv-manager.bat` (launcher)
 - `stank-venv-manager.ps1` (main script)
 - `stank-venv-packages.json` (package definitions)
@@ -98,6 +102,7 @@ That's it! The .bat file handles PowerShell execution policy automatically.
 ### Verify Installation
 
 Open Command Prompt and run:
+
 ```
 py --list
 py -3.11 --version
@@ -110,10 +115,10 @@ You should see Python 3.11.x listed.
 ## Files
 
 | File | Purpose |
-|------|---------|
+| --- | --- |
 | `stank-venv-manager.bat` | **START HERE** - Double-click to launch |
-| `stank-venv-manager.ps1` | Main PowerShell script (~1,780 lines) |
-| `stank-venv-packages.json` | Package configurations (editable) |
+| `stank-venv-manager.ps1` | Main PowerShell script (1,793 lines) |
+| `stank-venv-packages.json` | Package configurations (416 packages, 29 sets) |
 | `stank-venv-manager-readme.html` | Visual documentation (open in browser) |
 | `README.md` | This documentation |
 
@@ -124,7 +129,7 @@ You should see Python 3.11.x listed.
 Pre-configured for real job titles:
 
 | Role | Packages | Install Time | Disk |
-|------|----------|--------------|------|
+| --- | --- | --- | --- |
 | Data Scientist | 158 | 50-80 min | 5 GB |
 | Data Analyst | 111 | 25-40 min | 1.5 GB |
 | Data Engineer | 199 | 45-70 min | 3 GB |
@@ -203,8 +208,8 @@ Pre-configured for real job titles:
 ## Requirements
 
 | Requirement | Details |
-|-------------|---------|
-| OS | Windows 10/11 |
+| --- | --- |
+| OS  | Windows 10/11 |
 | Python | **3.11 only** from python.org (NOT 3.12+, NOT Microsoft Store) |
 | Disk | 500 MB - 12 GB |
 
@@ -233,7 +238,7 @@ This tool **requires Python 3.11** - not 3.12, not 3.13, not 3.10. Here's why:
 Some packages require external software to be installed separately:
 
 | Package | Requires | Install |
-|---------|----------|---------|
+| --- | --- | --- |
 | pytesseract | Tesseract-OCR | https://github.com/UB-Mannheim/tesseract/wiki |
 | tabula-py | Java Runtime 8+ | https://adoptium.net/ (set JAVA_HOME) |
 | pyshark | Wireshark/tshark | https://www.wireshark.org/download.html |
@@ -244,7 +249,7 @@ Some packages require external software to be installed separately:
 ### Windows-Specific Limitations
 
 | Package | Limitation | Workaround |
-|---------|------------|------------|
+| --- | --- | --- |
 | **TensorFlow GPU** | CPU only on native Windows | Use WSL2 for GPU, or use PyTorch instead |
 | **LightGBM GPU** | No Windows GPU wheels | CPU only, or use Linux/WSL2 |
 | **Ansible** | Cannot run as control node | Use WSL2 or Docker |
@@ -256,6 +261,7 @@ Some packages require external software to be installed separately:
 ### Prerequisites for Some Packages
 
 **Visual C++ Redistributable** - Required for XGBoost, LightGBM, faiss-cpu:
+
 - Download: https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 ---
@@ -303,15 +309,18 @@ Your work in `JupyterProjects` is separate from environments - back it up before
 ## Troubleshooting
 
 **"Running scripts is disabled"**
+
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 **"Python not found"**
+
 - Reinstall from python.org with "Add to PATH"
 - Restart terminal
 
 **Package failed**
+
 - Check internet
 - Install Visual C++ Build Tools
 - Check system requirements section
