@@ -1,7 +1,5 @@
 # SPVEM - STANK PYTHON VIRTUAL ENVIRONMENT MANAGER
 
-Reduce the pain of setting up your Python environment so you have one less excuse not to code.
-
 A verbose, beginner-friendly Python virtual environment manager with pre-configured package bundles for data science, machine learning, web development, security, and more.
 
 **Status: Beta** - Please report issues
@@ -24,7 +22,7 @@ Setting up Python environments is confusing for beginners: too many tools (venv,
 ## Platform Versions
 
 | Platform | Version | Status | Python | Link |
-|----------|---------|--------|--------|------|
+| --- | --- | --- | --- | --- |
 | **Windows 10/11** | 0.1 | Beta | 3.11 (strict) | [windows/](windows/) |
 | **macOS** | 0.1 | Beta | 3.11+ (Homebrew) | [macos/](macos/) |
 
@@ -39,7 +37,7 @@ Setting up Python environments is confusing for beginners: too many tools (venv,
 - Bash script for Terminal
 - Supports Apple Silicon (M1/M2/M3) and Intel
 - Native GPU acceleration (PyTorch MPS, TensorFlow Metal, MLX)
-- 31 package sets, 315 packages, 9 job roles
+- 31 package sets, 329 packages, 9 job roles
 
 ---
 
@@ -52,14 +50,16 @@ Setting up Python environments is confusing for beginners: too many tools (venv,
 Download from [python.org/downloads/release/python-3119](https://python.org/downloads/release/python-3119)
 
 > **IMPORTANT - Installer Options:**
+> 
 > - `[ ] Add python.exe to PATH` - **LEAVE UNCHECKED**
 > - `[x] Install py launcher for all users` - **CHECK THIS**
->
+> 
 > This installs Python 3.11 safely alongside existing versions.
 
 **Step 2: Download Files**
 
 Place all 5 files in the same folder:
+
 - `stank-venv-manager.bat` - launcher
 - `stank-venv-manager.ps1` - main script
 - `stank-venv-packages.json` - package definitions
@@ -71,6 +71,7 @@ Place all 5 files in the same folder:
 Double-click: `stank-venv-manager.bat`
 
 **Verify Installation**
+
 ```
 py --list
 py -3.11 --version
@@ -83,20 +84,25 @@ py -3.11 --version
 **Step 1: Install Python 3.11**
 
 Install via Homebrew (recommended):
+
 ```bash
 brew install python@3.11
 ```
 
 > **Don't have Homebrew?** Install it first:
+> 
 > ```bash
 > /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 > ```
 
 > **IMPORTANT - After Installation:**
+> 
 > - Add to your shell profile (~/.zshrc or ~/.bash_profile):
+>   
 >   ```bash
 >   export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH"
 >   ```
+>   
 > - Then restart Terminal or run: `source ~/.zshrc`
 
 **Step 2: Install jq (Required)**
@@ -108,10 +114,12 @@ brew install jq
 **Step 3: Download Files**
 
 Place all files in the same folder:
+
 - `stank-venv-manager.sh` - main script
 - `stank-venv-packages-macos.json` - package definitions
-- `stank-venv-glossary.json` - package descriptions (optional)
-- `README.md` - documentation
+- `stank-venv-glossary.json` - package descriptions
+- `stank-venv-manager-readme-macos.html` - visual documentation
+- `README.md` - text documentation
 
 **Step 4: Run**
 
@@ -125,6 +133,7 @@ xattr -d com.apple.quarantine stank-venv-manager.sh
 ```
 
 **Verify Installation**
+
 ```bash
 python3.11 --version
 which python3.11
@@ -135,16 +144,17 @@ which python3.11
 ## Features
 
 - **9 Job Roles**: Data Scientist, ML Engineer, Backend Developer, Security Analyst, DevOps Engineer, Data Analyst, Data Engineer, Document Automation Specialist, Full Stack Developer
-
+  
 - **Pre-configured Package Sets**: JupyterLab, data science, machine learning, deep learning, NLP, web scraping, API development, database tools, cloud SDKs, and more
-
+  
 - **Session Resume**: Press Enter to continue where you left off
-
+  
 - **JupyterLab Integration**: Automatic browser launch with project directories
-
+  
 - **Safe by Design**: Scripts contain zero delete operations - deletion commands shown in help menu for reference only
-
+  
 - **Manifest Tracking**: Each environment records what was installed and when
+  
 
 ---
 
@@ -157,7 +167,7 @@ After running, your system will have:
     my-env/
         bin/ or Scripts/     # Python executables
         stank-manifest.json  # Installation history
-        
+
 ~/JupyterProjects/           # Your work (separate from envs)
     my-env/
         notebooks/
@@ -171,10 +181,10 @@ After running, your system will have:
 ## Requirements
 
 | Requirement | Windows | macOS |
-|-------------|---------|-------|
-| OS | Windows 10/11 | macOS 13+ (Ventura, Sonoma, Sequoia) |
+| --- | --- | --- |
+| OS  | Windows 10/11 | macOS 13+ (Ventura, Sonoma, Sequoia) |
 | Python | 3.11 from python.org | 3.11+ via Homebrew |
-| Other | - | jq, Xcode CLI Tools |
+| Other | -   | jq, Xcode CLI Tools |
 | Disk | 500 MB - 12 GB | 500 MB - 12 GB |
 | Internet | Required | Required |
 
@@ -183,22 +193,23 @@ After running, your system will have:
 ## Repository Structure
 
 ```
-spvem/
-    README.md                 # This file
-    LICENSE                   # GPL v3.0
-    
+SPVEM-StankPythonVirtualEnvironmentManager/
+    README.md                          # This file
+    LICENSE                            # GPL v3.0
+
     windows/
-        stank-venv-manager.bat        # Entry point - double-click
-        stank-venv-manager.ps1        # Main script
-        stank-venv-packages.json      # Package definitions
-        stank-venv-manager-readme.html # Visual documentation
         README.md                      # Windows-specific docs
-        
+        stank-venv-manager.bat         # Entry point - double-click
+        stank-venv-manager.ps1         # Main script (1,793 lines)
+        stank-venv-packages.json       # Package definitions (416 packages)
+        stank-venv-manager-readme.html # Visual HTML documentation
+
     macos/
-        stank-venv-manager.sh         # Main script - run in Terminal
-        stank-venv-packages-macos.json # Package definitions
-        stank-venv-glossary.json      # Package descriptions
         README.md                      # macOS-specific docs
+        stank-venv-manager.sh          # Main script (2,017 lines)
+        stank-venv-packages-macos.json # Package definitions (329 packages)
+        stank-venv-glossary.json       # Package descriptions
+        stank-venv-manager-readme-macos.html # Visual HTML documentation
 ```
 
 ---
@@ -238,6 +249,7 @@ See [LICENSE](LICENSE) or <https://www.gnu.org/licenses/gpl-3.0.html>
 ## Author
 
 Created by Nick Stankiewicz
+
 - Version: 0.1 (Beta)
 - Created: 2026.01.04
 - Updated: 2026.01.04
