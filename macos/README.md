@@ -97,7 +97,8 @@ xattr -d com.apple.quarantine stank-venv-manager.command stank-venv-manager.sh; 
 
 | File | Purpose |
 | --- | --- |
-| `stank-venv-manager.sh` | Main bash script (2,017 lines) |
+| `stank-venv-manager.command` | **START HERE** - Double-click in Finder |
+| `stank-venv-manager.sh` | Main bash script (2,016 lines) |
 | `stank-venv-packages-macos.json` | Package configurations (329 packages, 31 sets) |
 | `stank-venv-glossary.json` | Package descriptions (315 entries) |
 | `stank-venv-manager-readme-macos.html` | Visual documentation (open in browser) |
