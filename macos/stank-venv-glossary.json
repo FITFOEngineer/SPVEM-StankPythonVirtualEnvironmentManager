@@ -1,0 +1,1900 @@
+{
+    "meta": {
+        "version": "0.1",
+        "updated": "2026.01.04",
+        "description": "Package glossary with descriptions for Stank Python Virtual Environment Manager",
+        "total_packages": 315
+    },
+    "packages": {
+        "accelerate": {
+            "name": "Accelerate",
+            "description": "Hugging Face distributed training. Single code runs on CPU, single GPU, multi-GPU, TPU. Mixed precision, gradient accumulation, and DeepSpeed/FSDP integration. Minimal code changes.",
+            "category": "deep_learning",
+            "url": "https://github.com/huggingface/accelerate"
+        },
+        "aiofiles": {
+            "name": "aiofiles",
+            "description": "Async file I/O. Read/write files without blocking. asyncio-native file operations.",
+            "category": "async",
+            "url": "https://github.com/Tinche/aiofiles"
+        },
+        "aiohttp": {
+            "name": "aiohttp",
+            "description": "Async HTTP client and server. High-performance web applications, WebSockets, streaming. Client sessions with connection pooling.",
+            "category": "async",
+            "url": "https://docs.aiohttp.org/"
+        },
+        "aiomultiprocess": {
+            "name": "aiomultiprocess",
+            "description": "Async multiprocessing. Combine asyncio with multiple processes. Parallel async tasks.",
+            "category": "multithreading",
+            "url": "https://github.com/omnilib/aiomultiprocess"
+        },
+        "albumentations": {
+            "name": "Albumentations",
+            "description": "Image augmentation library. 70+ transforms for deep learning. Fast (OpenCV-based), flexible composition. Bounding box and keypoint support.",
+            "category": "image_processing",
+            "url": "https://albumentations.ai/"
+        },
+        "alive-progress": {
+            "name": "alive-progress",
+            "description": "Animated progress bars. Spinners, throughput, ETA, and themes. Eye-catching progress indicators.",
+            "category": "cli_tools",
+            "url": "https://github.com/rsalmei/alive-progress"
+        },
+        "anthropic": {
+            "name": "Anthropic",
+            "description": "Official Claude AI SDK. Chat completions with Claude 3, streaming, function calling, vision (image understanding), and prompt caching. Async client available.",
+            "category": "llm_ai",
+            "url": "https://github.com/anthropics/anthropic-sdk-python"
+        },
+        "apache-log-parser": {
+            "name": "apache-log-parser",
+            "description": "Parse Apache/Nginx logs. Extract IP, timestamp, request, status. Combined and common formats.",
+            "category": "log_parsing",
+            "url": "https://github.com/rory/apache-log-parser"
+        },
+        "apscheduler": {
+            "name": "APScheduler",
+            "description": "Advanced scheduler. Cron-like triggers, persistent job stores, multiple executors. Production-grade.",
+            "category": "automation",
+            "url": "https://apscheduler.readthedocs.io/"
+        },
+        "autograd": {
+            "name": "Autograd",
+            "description": "Automatic differentiation. Compute gradients of NumPy code. Foundation for ML research.",
+            "category": "math_scientific",
+            "url": "https://github.com/HIPS/autograd"
+        },
+        "av": {
+            "name": "PyAV",
+            "description": "FFmpeg Python bindings. Low-level access to audio/video frames. Encoding, decoding, and transcoding.",
+            "category": "multimedia",
+            "url": "https://pyav.org/"
+        },
+        "azure-identity": {
+            "name": "Azure Identity",
+            "description": "Azure authentication. Managed identity, service principal, and interactive login. DefaultAzureCredential.",
+            "category": "cloud_sdks",
+            "url": "https://docs.microsoft.com/azure/developer/python/"
+        },
+        "azure-mgmt-resource": {
+            "name": "Azure Management",
+            "description": "Azure Resource Management. Create, update, and delete resources. Template deployments.",
+            "category": "cloud_sdks",
+            "url": "https://docs.microsoft.com/azure/developer/python/"
+        },
+        "azure-storage-blob": {
+            "name": "Azure Blob Storage",
+            "description": "Azure Blob Storage client. Upload, download, and manage blobs. SAS tokens, tiers, and snapshots.",
+            "category": "cloud_sdks",
+            "url": "https://docs.microsoft.com/azure/storage/blobs/"
+        },
+        "bcrypt": {
+            "name": "bcrypt",
+            "description": "Password hashing with bcrypt. Automatic salt generation, configurable work factor. Resistant to GPU attacks. Standard for password storage.",
+            "category": "cybersecurity",
+            "url": "https://github.com/pyca/bcrypt"
+        },
+        "beautifulsoup4": {
+            "name": "Beautiful Soup",
+            "description": "HTML/XML parsing for web scraping. Navigate, search, and modify parse trees. Works with html.parser, lxml, or html5lib. Handles malformed HTML gracefully.",
+            "category": "web_scraping",
+            "url": "https://www.crummy.com/software/BeautifulSoup/"
+        },
+        "boto3": {
+            "name": "Boto3",
+            "description": "AWS SDK for Python. S3, EC2, Lambda, DynamoDB, and 200+ services. High-level Resource and low-level Client APIs.",
+            "category": "cloud_sdks",
+            "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/"
+        },
+        "botocore": {
+            "name": "Botocore",
+            "description": "Low-level AWS interface. Request signing, endpoint resolution, and retries. boto3 foundation.",
+            "category": "cloud_sdks",
+            "url": "https://botocore.amazonaws.com/"
+        },
+        "camelot-py": {
+            "name": "Camelot",
+            "description": "PDF table extraction. Lattice (bordered) and stream (borderless) table detection. Returns pandas DataFrames.",
+            "category": "pdf_tools",
+            "url": "https://camelot-py.readthedocs.io/"
+        },
+        "cassandra-driver": {
+            "name": "Cassandra Driver",
+            "description": "Apache Cassandra driver. CQL queries, prepared statements, connection pooling. Handles cluster topology and load balancing.",
+            "category": "databases",
+            "url": "https://docs.datastax.com/en/developer/python-driver/"
+        },
+        "catboost": {
+            "name": "CatBoost",
+            "description": "Gradient boosting by Yandex. Native categorical feature handling without encoding, ordered boosting to reduce overfitting, and fast GPU training. Excellent out-of-the-box performance.",
+            "category": "data_science",
+            "url": "https://catboost.ai/"
+        },
+        "cbor2": {
+            "name": "CBOR2",
+            "description": "CBOR codec. Concise Binary Object Representation. IoT and web-friendly binary format.",
+            "category": "data_formats",
+            "url": "https://github.com/agronholm/cbor2"
+        },
+        "ccxt": {
+            "name": "CCXT",
+            "description": "Crypto exchange library. 100+ exchanges, unified API. Trade, fetch OHLCV, and manage orders.",
+            "category": "finance",
+            "url": "https://ccxt.com/"
+        },
+        "chardet": {
+            "name": "chardet",
+            "description": "Character encoding detection. Detect encoding of text files. Handle unknown encodings gracefully.",
+            "category": "data_formats",
+            "url": "https://github.com/chardet/chardet"
+        },
+        "chevron": {
+            "name": "Chevron",
+            "description": "Mustache templating. Logic-less templates, partials, and lambdas. Fast Python implementation.",
+            "category": "template_engines",
+            "url": "https://github.com/noahmorrison/chevron"
+        },
+        "chromadb": {
+            "name": "ChromaDB",
+            "description": "AI-native embedding database. Store and query vectors with metadata filtering. In-memory or persistent. Simple Python API. Perfect for RAG applications.",
+            "category": "llm_ai",
+            "url": "https://www.trychroma.com/"
+        },
+        "click": {
+            "name": "Click",
+            "description": "CLI creation toolkit. Decorators for commands, options, arguments. Automatic help, input validation, and shell completion.",
+            "category": "cli_tools",
+            "url": "https://click.palletsprojects.com/"
+        },
+        "clickhouse-driver": {
+            "name": "ClickHouse Driver",
+            "description": "ClickHouse native driver. Columnar data insertion, query execution, and compression. Faster than HTTP interface.",
+            "category": "databases",
+            "url": "https://clickhouse-driver.readthedocs.io/"
+        },
+        "cloudscraper": {
+            "name": "Cloudscraper",
+            "description": "Bypass anti-bot protection. Handles Cloudflare, DDoS-Guard, and similar challenges. Mimics browser TLS fingerprints. Drop-in requests replacement.",
+            "category": "web_scraping",
+            "url": "https://github.com/VeNoMouS/cloudscraper"
+        },
+        "cohere": {
+            "name": "Cohere",
+            "description": "Cohere AI API client. Generate, embed, classify, and rerank text. Enterprise-ready language models with semantic search capabilities.",
+            "category": "llm_ai",
+            "url": "https://cohere.ai/"
+        },
+        "colorama": {
+            "name": "Colorama",
+            "description": "Cross-platform colored terminal text. ANSI escape sequences on Windows. Simple API for colored output.",
+            "category": "cli_tools",
+            "url": "https://github.com/tartley/colorama"
+        },
+        "concurrent-log-handler": {
+            "name": "concurrent-log-handler",
+            "description": "Thread-safe log rotation. Multiple processes can write to the same log file safely.",
+            "category": "logging_monitoring",
+            "url": "https://github.com/Preston-Landers/concurrent-log-handler"
+        },
+        "contextily": {
+            "name": "contextily",
+            "description": "Basemaps for plots. Add OpenStreetMap, Stamen, or other tiles to matplotlib/geopandas plots.",
+            "category": "geospatial",
+            "url": "https://contextily.readthedocs.io/"
+        },
+        "coverage": {
+            "name": "Coverage.py",
+            "description": "Code coverage measurement. Line and branch coverage, HTML reports, and CI integration.",
+            "category": "testing",
+            "url": "https://coverage.readthedocs.io/"
+        },
+        "cryptography": {
+            "name": "Cryptography",
+            "description": "Cryptographic recipes and primitives. Fernet symmetric encryption, RSA/EC asymmetric, hashing, key derivation, X.509 certificates. High-level and low-level APIs.",
+            "category": "cybersecurity",
+            "url": "https://cryptography.io/"
+        },
+        "cvxpy": {
+            "name": "CVXPY",
+            "description": "Convex optimization. Model and solve convex problems. Multiple solver backends (ECOS, SCS, OSQP).",
+            "category": "math_scientific",
+            "url": "https://www.cvxpy.org/"
+        },
+        "cython": {
+            "name": "Cython",
+            "description": "C-extensions for Python. Static typing for C-level speed. Compile Python to C.",
+            "category": "performance",
+            "url": "https://cython.org/"
+        },
+        "dask": {
+            "name": "Dask",
+            "description": "Parallel computing for larger-than-memory data. Scales pandas DataFrames, NumPy arrays, and scikit-learn to clusters. Lazy evaluation with task graphs. Drop-in replacement for many pandas operations.",
+            "category": "data_science",
+            "url": "https://dask.org/"
+        },
+        "dataset": {
+            "name": "dataset",
+            "description": "Simple database abstraction. Automatic table creation, upserts, and queries. SQLite, PostgreSQL, MySQL. Perfect for prototyping.",
+            "category": "databases",
+            "url": "https://dataset.readthedocs.io/"
+        },
+        "datasets": {
+            "name": "Datasets",
+            "description": "Hugging Face datasets library. 1000+ NLP/CV datasets with streaming and memory-mapping. Arrow-backed for speed. Built-in train/test splits, shuffling, and preprocessing.",
+            "category": "deep_learning",
+            "url": "https://huggingface.co/docs/datasets/"
+        },
+        "dicttoxml": {
+            "name": "dicttoxml",
+            "description": "Dict to XML conversion. Generate XML from Python data structures. Customizable output.",
+            "category": "data_formats",
+            "url": "https://github.com/quandyfactory/dicttoxml"
+        },
+        "django": {
+            "name": "Django",
+            "description": "Full-stack web framework. ORM, admin, auth, forms, and REST framework. Batteries included.",
+            "category": "web_frameworks",
+            "url": "https://www.djangoproject.com/"
+        },
+        "dnspython": {
+            "name": "dnspython",
+            "description": "Full-featured DNS toolkit. Queries, zone transfers, dynamic updates, DNSSEC validation. Build DNS clients and servers.",
+            "category": "network_analysis",
+            "url": "https://www.dnspython.org/"
+        },
+        "docx2pdf": {
+            "name": "docx2pdf",
+            "description": "Convert DOCX to PDF. Uses MS Word on Windows, LibreOffice elsewhere. Batch conversion support.",
+            "category": "document_creation",
+            "url": "https://github.com/AlJohri/docx2pdf"
+        },
+        "docxtpl": {
+            "name": "docxtpl",
+            "description": "Word templates with Jinja2. Mail merge, loops, conditionals, and rich text formatting. Generate reports from templates.",
+            "category": "document_creation",
+            "url": "https://docxtpl.readthedocs.io/"
+        },
+        "dpkt": {
+            "name": "dpkt",
+            "description": "Fast packet parsing. Create and decode network packets. Supports Ethernet, IP, TCP, UDP, DNS, HTTP, and more. Lightweight alternative to scapy.",
+            "category": "network_analysis",
+            "url": "https://dpkt.readthedocs.io/"
+        },
+        "duckdb": {
+            "name": "DuckDB",
+            "description": "In-process OLAP database. SQL analytics on DataFrames and Parquet files. Zero dependencies, zero configuration. Excellent for data exploration.",
+            "category": "databases",
+            "url": "https://duckdb.org/"
+        },
+        "easyocr": {
+            "name": "EasyOCR",
+            "description": "Ready-to-use OCR. Deep learning-based, 80+ languages, no training needed. GPU accelerated. Simple API.",
+            "category": "image_processing",
+            "url": "https://github.com/JaidedAI/EasyOCR"
+        },
+        "einops": {
+            "name": "einops",
+            "description": "Elegant tensor operations. Einstein notation for rearrange, reduce, repeat. Framework-agnostic (NumPy, PyTorch, TensorFlow, JAX). Makes complex reshaping operations readable.",
+            "category": "deep_learning",
+            "url": "https://einops.rocks/"
+        },
+        "elasticsearch": {
+            "name": "Elasticsearch",
+            "description": "Official Elasticsearch client. Full-text search, aggregations, and analytics. Index management, bulk operations, and async support.",
+            "category": "databases",
+            "url": "https://elasticsearch-py.readthedocs.io/"
+        },
+        "email-validator": {
+            "name": "email-validator",
+            "description": "Email validation. Syntax, DNS, and deliverability checks. Normalize addresses.",
+            "category": "email_processing",
+            "url": "https://github.com/JoshData/python-email-validator"
+        },
+        "emoji": {
+            "name": "emoji",
+            "description": "Emoji support. Names, codes, and Unicode conversion. Emojize and demojize text.",
+            "category": "text_processing",
+            "url": "https://github.com/carpedm20/emoji"
+        },
+        "extract-msg": {
+            "name": "extract-msg",
+            "description": "Outlook .msg extraction. Get body, attachments, headers from MSG files.",
+            "category": "email_processing",
+            "url": "https://github.com/TeamMsgExtractor/msg-extractor"
+        },
+        "extruct": {
+            "name": "extruct",
+            "description": "Extract structured data from HTML. JSON-LD, Microdata, RDFa, OpenGraph, Twitter Cards. Schema.org vocabulary support.",
+            "category": "web_scraping",
+            "url": "https://github.com/scrapinghub/extruct"
+        },
+        "fabric": {
+            "name": "Fabric",
+            "description": "Remote execution via SSH. Deploy code, manage servers, run commands. Uses paramiko and invoke.",
+            "category": "automation",
+            "url": "https://www.fabfile.org/"
+        },
+        "factory-boy": {
+            "name": "Factory Boy",
+            "description": "Test fixtures made easy. Factory definitions for ORM models. Sequences, lazy attributes, and traits.",
+            "category": "testing",
+            "url": "https://factoryboy.readthedocs.io/"
+        },
+        "faiss-cpu": {
+            "name": "FAISS",
+            "description": "Facebook's similarity search. Efficient nearest neighbor search for millions/billions of vectors. Multiple index types (IVF, HNSW, PQ). CPU-optimized version.",
+            "category": "llm_ai",
+            "url": "https://faiss.ai/"
+        },
+        "fake-useragent": {
+            "name": "fake-useragent",
+            "description": "Random user agent strings. Realistic browser user agents for rotation. Updated database of Chrome, Firefox, Safari, Edge agents.",
+            "category": "web_scraping",
+            "url": "https://github.com/fake-useragent/fake-useragent"
+        },
+        "faker": {
+            "name": "Faker",
+            "description": "Fake data generation. Names, addresses, text, dates, and more. Localized for many countries.",
+            "category": "testing",
+            "url": "https://faker.readthedocs.io/"
+        },
+        "fastapi": {
+            "name": "FastAPI",
+            "description": "Modern API framework. Automatic OpenAPI/Swagger docs, type validation with Pydantic, async support. One of the fastest Python frameworks.",
+            "category": "api_integration",
+            "url": "https://fastapi.tiangolo.com/"
+        },
+        "fastavro": {
+            "name": "fastavro",
+            "description": "Fast Avro implementation. 10x faster than official library. Read/write Avro files efficiently.",
+            "category": "data_formats",
+            "url": "https://fastavro.readthedocs.io/"
+        },
+        "feedparser": {
+            "name": "feedparser",
+            "description": "Universal feed parser. RSS 0.9x, 1.0, 2.0, Atom, and CDF support. Handles encoding, relative links, and malformed feeds. Date normalization.",
+            "category": "web_scraping",
+            "url": "https://feedparser.readthedocs.io/"
+        },
+        "ffmpeg-python": {
+            "name": "ffmpeg-python",
+            "description": "FFmpeg Python bindings. Video/audio conversion, editing, streaming. Build processing pipelines with fluent API.",
+            "category": "multimedia",
+            "url": "https://github.com/kkroening/ffmpeg-python"
+        },
+        "fiona": {
+            "name": "Fiona",
+            "description": "Geospatial vector I/O. Read/write shapefiles, GeoJSON, KML. GDAL/OGR wrapper.",
+            "category": "geospatial",
+            "url": "https://fiona.readthedocs.io/"
+        },
+        "fire": {
+            "name": "Fire",
+            "description": "Auto-generate CLIs. Turn any Python object into a CLI. Functions, classes, modules, and objects.",
+            "category": "cli_tools",
+            "url": "https://github.com/google/python-fire"
+        },
+        "flair": {
+            "name": "Flair",
+            "description": "State-of-the-art NLP. Stacked embeddings, named entity recognition, sequence labeling. Research-grade accuracy.",
+            "category": "nlp",
+            "url": "https://flairnlp.github.io/"
+        },
+        "flanker": {
+            "name": "Flanker",
+            "description": "Email parsing. Address validation and MIME message parsing. Mailgun open-source.",
+            "category": "email_processing",
+            "url": "https://github.com/mailgun/flanker"
+        },
+        "flask": {
+            "name": "Flask",
+            "description": "Micro web framework. Routing, templates, sessions, and extensions. Simple and flexible.",
+            "category": "web_frameworks",
+            "url": "https://flask.palletsprojects.com/"
+        },
+        "flatbuffers": {
+            "name": "FlatBuffers",
+            "description": "FlatBuffers serialization. Access data without parsing. Game development and mobile apps.",
+            "category": "data_formats",
+            "url": "https://google.github.io/flatbuffers/"
+        },
+        "flax": {
+            "name": "Flax",
+            "description": "Neural network library for JAX. Functional design with explicit state handling. Modules, optimizers, and training utilities. Used by Google Brain and DeepMind for research.",
+            "category": "deep_learning",
+            "url": "https://flax.readthedocs.io/"
+        },
+        "folium": {
+            "name": "Folium",
+            "description": "Interactive maps. Leaflet.js maps in Python. Markers, popups, choropleths, and heatmaps.",
+            "category": "geospatial",
+            "url": "https://python-visualization.github.io/folium/"
+        },
+        "fpdf2": {
+            "name": "FPDF2",
+            "description": "Simple PDF generation. No dependencies, pure Python. Text, images, tables, and links. Lightweight alternative to ReportLab.",
+            "category": "pdf_tools",
+            "url": "https://pyfpdf.github.io/fpdf2/"
+        },
+        "fredapi": {
+            "name": "FRED API",
+            "description": "FRED economic data. Access Federal Reserve data series. Requires free API key.",
+            "category": "finance",
+            "url": "https://github.com/mortada/fredapi"
+        },
+        "ftfy": {
+            "name": "ftfy",
+            "description": "Fix text encoding. Repair mojibake, normalize Unicode, and clean up encoding errors.",
+            "category": "text_processing",
+            "url": "https://ftfy.readthedocs.io/"
+        },
+        "gekko": {
+            "name": "GEKKO",
+            "description": "Dynamic optimization. Solve differential equations, model predictive control, and machine learning.",
+            "category": "math_scientific",
+            "url": "https://gekko.readthedocs.io/"
+        },
+        "gensim": {
+            "name": "Gensim",
+            "description": "Topic modeling and embeddings. Word2Vec, Doc2Vec, FastText, LDA, LSI. Memory-efficient streaming. Similarity queries.",
+            "category": "nlp",
+            "url": "https://radimrehurek.com/gensim/"
+        },
+        "geoip2": {
+            "name": "GeoIP2",
+            "description": "MaxMind GeoIP2 database reader. IP geolocation with city, country, ASN, and ISP data. Requires MaxMind database subscription.",
+            "category": "network_analysis",
+            "url": "https://geoip2.readthedocs.io/"
+        },
+        "geopandas": {
+            "name": "GeoPandas",
+            "description": "Pandas for geospatial data. Read shapefiles/GeoJSON, spatial joins, and geometry operations.",
+            "category": "geospatial",
+            "url": "https://geopandas.org/"
+        },
+        "geopy": {
+            "name": "GeoPy",
+            "description": "Geocoding library. Convert addresses to coordinates and reverse. Multiple geocoding services.",
+            "category": "geospatial",
+            "url": "https://geopy.readthedocs.io/"
+        },
+        "google-api-python-client": {
+            "name": "Google API Client",
+            "description": "Google APIs client. Drive, Sheets, Gmail, Calendar, YouTube, and more. OAuth 2.0 authentication.",
+            "category": "cloud_sdks",
+            "url": "https://github.com/googleapis/google-api-python-client"
+        },
+        "google-cloud-bigquery": {
+            "name": "Google BigQuery",
+            "description": "BigQuery client. Run SQL queries on petabytes. Load data, manage tables, and export results.",
+            "category": "cloud_sdks",
+            "url": "https://cloud.google.com/bigquery/docs/reference/libraries"
+        },
+        "google-cloud-storage": {
+            "name": "Google Cloud Storage",
+            "description": "Google Cloud Storage client. Upload, download, and manage blobs. Signed URLs, resumable uploads.",
+            "category": "cloud_sdks",
+            "url": "https://cloud.google.com/storage/docs/reference/libraries"
+        },
+        "goose3": {
+            "name": "Goose3",
+            "description": "Article extraction library. Pull main content, top image, and metadata. Content formatting and image extraction. Used by Pinterest.",
+            "category": "web_scraping",
+            "url": "https://goose3.readthedocs.io/"
+        },
+        "guidance": {
+            "name": "Guidance",
+            "description": "Microsoft's LLM control library. Templating with guaranteed structure, regex constraints, and interleaved generation. Works with many LLM providers.",
+            "category": "llm_ai",
+            "url": "https://github.com/guidance-ai/guidance"
+        },
+        "hashid": {
+            "name": "hashid",
+            "description": "Hash type identification. Detect MD5, SHA, bcrypt, and 200+ hash formats. Useful for CTFs and password cracking preparation.",
+            "category": "cybersecurity",
+            "url": "https://github.com/psypanda/hashID"
+        },
+        "httpretty": {
+            "name": "HTTPretty",
+            "description": "HTTP mocking at socket level. Mock any HTTP client library. Record and playback requests.",
+            "category": "testing",
+            "url": "https://httpretty.readthedocs.io/"
+        },
+        "httpx": {
+            "name": "HTTPX",
+            "description": "Modern HTTP client. Async support, HTTP/1.1 and HTTP/2, connection pooling. requests-compatible API with additional features. Type-annotated.",
+            "category": "api_integration",
+            "url": "https://www.python-httpx.org/"
+        },
+        "huggingface-hub": {
+            "name": "Hugging Face Hub",
+            "description": "Hugging Face Hub client. Download/upload models, datasets, and Spaces. Version control with Git LFS. Inference API and model cards.",
+            "category": "llm_ai",
+            "url": "https://huggingface.co/docs/huggingface_hub/"
+        },
+        "hyperopt": {
+            "name": "Hyperopt",
+            "description": "Hyperparameter optimization with Bayesian methods. Tree Parzen Estimators (TPE), random search, and adaptive algorithms. Integrates with scikit-learn, XGBoost, and deep learning frameworks.",
+            "category": "data_science",
+            "url": "http://hyperopt.github.io/hyperopt/"
+        },
+        "hypothesis": {
+            "name": "Hypothesis",
+            "description": "Property-based testing. Generate test cases automatically. Find edge cases you never imagined.",
+            "category": "testing",
+            "url": "https://hypothesis.readthedocs.io/"
+        },
+        "imageio": {
+            "name": "imageio",
+            "description": "Image and video I/O. Read/write many formats including GIF, TIFF, and video. Simple interface, plugin architecture.",
+            "category": "image_processing",
+            "url": "https://imageio.readthedocs.io/"
+        },
+        "imapclient": {
+            "name": "IMAPClient",
+            "description": "IMAP email client. Read, search, and manage email. High-level interface to imaplib.",
+            "category": "email_processing",
+            "url": "https://imapclient.readthedocs.io/"
+        },
+        "imbalanced-learn": {
+            "name": "imbalanced-learn",
+            "description": "Handle imbalanced classification datasets. Over-sampling (SMOTE, ADASYN), under-sampling, and combination methods. Compatible with scikit-learn pipelines. Essential for fraud detection, medical diagnosis.",
+            "category": "data_science",
+            "url": "https://imbalanced-learn.org/"
+        },
+        "impacket": {
+            "name": "Impacket",
+            "description": "Network protocol implementations. SMB, MSRPC, NTLM, Kerberos, LDAP for Windows environments. Used in penetration testing tools like secretsdump, psexec.",
+            "category": "cybersecurity",
+            "url": "https://github.com/fortra/impacket"
+        },
+        "influxdb-client": {
+            "name": "InfluxDB Client",
+            "description": "InfluxDB v2 client. Time series data writing and Flux queries. Batch writing, data point builders, and query result parsing.",
+            "category": "databases",
+            "url": "https://influxdb-client.readthedocs.io/"
+        },
+        "instructor": {
+            "name": "Instructor",
+            "description": "Structured LLM outputs. Pydantic model validation for GPT/Claude responses. Retry logic, streaming, and partial responses. Make LLMs return exactly what you need.",
+            "category": "llm_ai",
+            "url": "https://python.useinstructor.com/"
+        },
+        "invoke": {
+            "name": "Invoke",
+            "description": "Task execution tool. Pythonic make/rake replacement. Shell command helpers and task dependencies.",
+            "category": "automation",
+            "url": "https://www.pyinvoke.org/"
+        },
+        "ipaddress": {
+            "name": "ipaddress",
+            "description": "IP address manipulation (stdlib). IPv4/IPv6 networks, addresses, and interfaces. CIDR notation, subnetting, and containment checks.",
+            "category": "network_analysis",
+            "url": "https://docs.python.org/3/library/ipaddress.html"
+        },
+        "ipykernel": {
+            "name": "IPython Kernel",
+            "description": "IPython kernel. Execute Python in Jupyter notebooks. Enables code cells and magic commands.",
+            "category": "jupyter",
+            "url": "https://ipython.readthedocs.io/"
+        },
+        "ipywidgets": {
+            "name": "ipywidgets",
+            "description": "Interactive widgets. Sliders, dropdowns, buttons in notebooks. Build interactive dashboards.",
+            "category": "jupyter",
+            "url": "https://ipywidgets.readthedocs.io/"
+        },
+        "jax": {
+            "name": "JAX",
+            "description": "Google's numerical computing library. Composable transformations: grad, jit, vmap, pmap. XLA compilation for GPU/TPU. NumPy-compatible API. Preferred for ML research and scientific computing.",
+            "category": "deep_learning",
+            "url": "https://jax.readthedocs.io/"
+        },
+        "jaxlib": {
+            "name": "jaxlib",
+            "description": "XLA compilation backend for JAX. Provides JIT compilation to GPU/TPU. Required dependency for JAX. Contains CUDA/ROCm kernels and XLA optimizations.",
+            "category": "deep_learning",
+            "url": "https://jax.readthedocs.io/"
+        },
+        "jinja2": {
+            "name": "Jinja2",
+            "description": "Template engine. Inheritance, macros, and sandboxed execution. Used by Flask, Ansible, and many others.",
+            "category": "template_engines",
+            "url": "https://jinja.palletsprojects.com/"
+        },
+        "joblib": {
+            "name": "joblib",
+            "description": "Lightweight pipelining in Python. Transparent disk-caching of results, parallel processing helpers, and efficient serialization of NumPy arrays. Used internally by scikit-learn.",
+            "category": "data_science",
+            "url": "https://joblib.readthedocs.io/"
+        },
+        "jupyterlab": {
+            "name": "JupyterLab",
+            "description": "Next-gen notebook IDE. Extensions, file browser, terminals, and multiple views. Modern Jupyter interface.",
+            "category": "jupyter",
+            "url": "https://jupyterlab.readthedocs.io/"
+        },
+        "jupyterlab-widgets": {
+            "name": "JupyterLab Widgets",
+            "description": "JupyterLab widget support. Display ipywidgets in JupyterLab.",
+            "category": "jupyter",
+            "url": "https://ipywidgets.readthedocs.io/"
+        },
+        "keras": {
+            "name": "Keras",
+            "description": "High-level neural networks API. Sequential and Functional APIs for building models. Focus on user experience and fast experimentation. Now integrated into TensorFlow as tf.keras.",
+            "category": "deep_learning",
+            "url": "https://keras.io/"
+        },
+        "keras-tuner": {
+            "name": "Keras Tuner",
+            "description": "Hyperparameter tuning for Keras. Random search, Hyperband, and Bayesian optimization. Define search spaces with hp objects. Integrates with TensorBoard for visualization.",
+            "category": "deep_learning",
+            "url": "https://keras.io/keras_tuner/"
+        },
+        "langchain": {
+            "name": "LangChain",
+            "description": "Framework for LLM applications. Chains, agents, memory, and retrieval-augmented generation (RAG). Integrations with 50+ LLMs, vector stores, and tools. Build complex AI workflows.",
+            "category": "llm_ai",
+            "url": "https://langchain.com/"
+        },
+        "langchain-community": {
+            "name": "LangChain Community",
+            "description": "Community integrations for LangChain. Additional vector stores, LLM providers, document loaders, and tools. Extends core LangChain functionality.",
+            "category": "llm_ai",
+            "url": "https://langchain.com/"
+        },
+        "langchain-openai": {
+            "name": "LangChain OpenAI",
+            "description": "OpenAI integration for LangChain. ChatOpenAI, OpenAIEmbeddings, and function calling support. Drop-in replacements with LangChain abstractions.",
+            "category": "llm_ai",
+            "url": "https://langchain.com/"
+        },
+        "language-tool-python": {
+            "name": "language-tool-python",
+            "description": "Grammar and spell checker. LanguageTool integration for 25+ languages. Rule-based error detection.",
+            "category": "nlp",
+            "url": "https://github.com/jxmorris12/language_tool_python"
+        },
+        "librosa": {
+            "name": "librosa",
+            "description": "Audio analysis toolkit. Load audio, extract features (MFCC, chroma), beat tracking, spectrograms. Music information retrieval.",
+            "category": "multimedia",
+            "url": "https://librosa.org/"
+        },
+        "lightgbm": {
+            "name": "LightGBM",
+            "description": "Microsoft's gradient boosting framework. Histogram-based algorithms for speed, leaf-wise tree growth, and native categorical feature support. Lower memory usage than XGBoost. GPU and distributed training.",
+            "category": "data_science",
+            "url": "https://lightgbm.readthedocs.io/"
+        },
+        "llama-index": {
+            "name": "LlamaIndex",
+            "description": "Data framework for LLM apps. Index documents, build knowledge graphs, and create retrieval pipelines. Query engines, chat engines, and agent frameworks.",
+            "category": "llm_ai",
+            "url": "https://www.llamaindex.ai/"
+        },
+        "loguru": {
+            "name": "Loguru",
+            "description": "Logging made simple. One import, automatic formatting, rotation, and retention. Exception catching.",
+            "category": "logging_monitoring",
+            "url": "https://loguru.readthedocs.io/"
+        },
+        "lxml": {
+            "name": "lxml",
+            "description": "High-performance XML/HTML processing. XPath and XSLT support, C-backed speed, and memory efficiency. Parse huge documents. Foundation for many scraping tools.",
+            "category": "web_scraping",
+            "url": "https://lxml.de/"
+        },
+        "mac-vendor-lookup": {
+            "name": "mac-vendor-lookup",
+            "description": "MAC address vendor lookup. Query IEEE OUI database for hardware manufacturer. Offline and online lookup options.",
+            "category": "network_analysis",
+            "url": "https://github.com/bauerj/mac_vendor_lookup"
+        },
+        "mailparser": {
+            "name": "mailparser",
+            "description": "Email message parsing. Parse emails from files or strings into structured data.",
+            "category": "email_processing",
+            "url": "https://github.com/SpamScope/mail-parser"
+        },
+        "mako": {
+            "name": "Mako",
+            "description": "Fast template library. Python syntax in templates, caching, and Unicode support. Pylons/Pyramid default.",
+            "category": "template_engines",
+            "url": "https://www.makotemplates.org/"
+        },
+        "markdown": {
+            "name": "Markdown",
+            "description": "Markdown to HTML converter. Reference implementation with extensions for tables, fenced code, and footnotes.",
+            "category": "document_creation",
+            "url": "https://python-markdown.github.io/"
+        },
+        "markdown2": {
+            "name": "markdown2",
+            "description": "Fast Markdown processor. Extras: tables, fenced-code, footnotes, cuddled-lists. Active development.",
+            "category": "document_creation",
+            "url": "https://github.com/trentm/python-markdown2"
+        },
+        "marshmallow": {
+            "name": "Marshmallow",
+            "description": "Object serialization and validation. Convert complex objects to/from JSON. Schema definitions, field validation, nested objects.",
+            "category": "api_integration",
+            "url": "https://marshmallow.readthedocs.io/"
+        },
+        "matplotlib": {
+            "name": "Matplotlib",
+            "description": "Comprehensive 2D/3D plotting library. Line plots, scatter, bar charts, histograms, heatmaps, subplots, and publication-quality figures. Highly customizable with LaTeX support. Backend for seaborn and pandas plotting.",
+            "category": "data_science",
+            "url": "https://matplotlib.org/"
+        },
+        "maxminddb": {
+            "name": "maxminddb",
+            "description": "MaxMind DB format reader. Read GeoIP2 and GeoLite2 databases. Pure Python and C extension versions.",
+            "category": "network_analysis",
+            "url": "https://github.com/maxmind/MaxMind-DB-Reader-python"
+        },
+        "mechanicalsoup": {
+            "name": "MechanicalSoup",
+            "description": "Stateful web browsing. Maintain sessions, fill forms, follow links. BeautifulSoup integration for parsing. Simulates browser without full rendering.",
+            "category": "web_scraping",
+            "url": "https://mechanicalsoup.readthedocs.io/"
+        },
+        "mlflow": {
+            "name": "MLflow",
+            "description": "MLOps lifecycle platform. Experiment tracking, model registry, and deployment. Compare runs, log artifacts, and serve models via REST API. Works with any ML library.",
+            "category": "deep_learning",
+            "url": "https://mlflow.org/"
+        },
+        "mlx": {
+            "name": "MLX",
+            "description": "Apple's ML framework for Apple Silicon. Unified memory (no CPU/GPU copies), lazy evaluation, and NumPy-like API. Optimized for M1/M2/M3 chips. Fast local inference.",
+            "category": "apple_mlx",
+            "url": "https://ml-explore.github.io/mlx/"
+        },
+        "mlx-lm": {
+            "name": "MLX-LM",
+            "description": "Language models for MLX. Load and run LLMs (Llama, Mistral, Phi) on Apple Silicon. Quantization support, LoRA fine-tuning, and text generation utilities.",
+            "category": "apple_mlx",
+            "url": "https://github.com/ml-explore/mlx-examples"
+        },
+        "moviepy": {
+            "name": "MoviePy",
+            "description": "Video editing library. Cut, concatenate, add effects, titles, and audio. Export to various formats. Compositing support.",
+            "category": "multimedia",
+            "url": "https://zulko.github.io/moviepy/"
+        },
+        "mplfinance": {
+            "name": "mplfinance",
+            "description": "Financial charts. Candlestick, OHLC, renko, and point-and-figure charts. matplotlib-based.",
+            "category": "finance",
+            "url": "https://github.com/matplotlib/mplfinance"
+        },
+        "mpmath": {
+            "name": "mpmath",
+            "description": "Arbitrary-precision math. 1000+ digit precision, special functions, and numerical methods.",
+            "category": "math_scientific",
+            "url": "https://mpmath.org/"
+        },
+        "msgpack": {
+            "name": "msgpack",
+            "description": "MessagePack serialization. Binary format, smaller than JSON, faster to parse. Cross-language compatibility.",
+            "category": "data_formats",
+            "url": "https://msgpack.org/"
+        },
+        "nbconvert": {
+            "name": "nbconvert",
+            "description": "Notebook conversion. Export to HTML, PDF, slides, Markdown, and more.",
+            "category": "jupyter",
+            "url": "https://nbconvert.readthedocs.io/"
+        },
+        "nbformat": {
+            "name": "nbformat",
+            "description": "Notebook format library. Read, write, and validate .ipynb files.",
+            "category": "jupyter",
+            "url": "https://nbformat.readthedocs.io/"
+        },
+        "neo4j": {
+            "name": "Neo4j",
+            "description": "Neo4j graph database driver. Cypher queries, transactions, and result streaming. Build knowledge graphs and recommendation systems.",
+            "category": "databases",
+            "url": "https://neo4j.com/docs/python-manual/"
+        },
+        "netaddr": {
+            "name": "netaddr",
+            "description": "Network address manipulation. IPv4, IPv6, and MAC address handling. CIDR calculations, IP ranges, and set operations.",
+            "category": "network_analysis",
+            "url": "https://netaddr.readthedocs.io/"
+        },
+        "netifaces": {
+            "name": "netifaces",
+            "description": "Network interface information. Get IP addresses, netmasks, MAC addresses, and gateways. Cross-platform interface enumeration.",
+            "category": "network_analysis",
+            "url": "https://github.com/al45tair/netifaces"
+        },
+        "networkx": {
+            "name": "NetworkX",
+            "description": "Graph and network analysis library. Create, manipulate, and study complex networks. Algorithms for shortest paths, centrality, community detection. Visualization with matplotlib integration.",
+            "category": "data_science",
+            "url": "https://networkx.org/"
+        },
+        "newspaper3k": {
+            "name": "newspaper3k",
+            "description": "Article extraction from news sites. Main content, authors, publish dates, images, and keywords. NLP-based extraction. Multi-language support.",
+            "category": "web_scraping",
+            "url": "https://newspaper.readthedocs.io/"
+        },
+        "nltk": {
+            "name": "NLTK",
+            "description": "Natural Language Toolkit. Corpora, tokenizers, stemmers, taggers, parsers. Educational and research focus.",
+            "category": "nlp",
+            "url": "https://www.nltk.org/"
+        },
+        "notebook": {
+            "name": "Jupyter Notebook",
+            "description": "Classic Jupyter interface. Interactive computing with code, text, and visualizations.",
+            "category": "jupyter",
+            "url": "https://jupyter-notebook.readthedocs.io/"
+        },
+        "nox": {
+            "name": "Nox",
+            "description": "Flexible test automation. Python-based configuration (not INI). Sessions for different test types.",
+            "category": "testing",
+            "url": "https://nox.thea.codes/"
+        },
+        "numba": {
+            "name": "Numba",
+            "description": "JIT compiler for NumPy. LLVM-based, GPU support, parallel loops. Near-C performance.",
+            "category": "performance",
+            "url": "https://numba.pydata.org/"
+        },
+        "numpy": {
+            "name": "NumPy",
+            "description": "Fundamental package for numerical computing. Provides N-dimensional arrays, linear algebra, Fourier transforms, random number generation, and C/Fortran integration. Foundation for pandas, scikit-learn, and most scientific Python.",
+            "category": "data_science",
+            "url": "https://numpy.org/"
+        },
+        "odfpy": {
+            "name": "odfpy",
+            "description": "OpenDocument format library. Read/write LibreOffice/OpenOffice ODS, ODT, ODP files.",
+            "category": "office_docs",
+            "url": "https://github.com/eea/odfpy"
+        },
+        "oletools": {
+            "name": "oletools",
+            "description": "Microsoft Office malware analysis. Extract VBA macros, detect suspicious patterns, analyze OLE files. Essential for malware triage.",
+            "category": "cybersecurity",
+            "url": "https://github.com/decalage2/oletools"
+        },
+        "onnx": {
+            "name": "ONNX",
+            "description": "Open Neural Network Exchange format. Standardized model representation for interoperability. Convert between PyTorch, TensorFlow, and other frameworks. Edge deployment ready.",
+            "category": "deep_learning",
+            "url": "https://onnx.ai/"
+        },
+        "onnxruntime": {
+            "name": "ONNX Runtime",
+            "description": "High-performance ONNX inference. Hardware acceleration for CPU, GPU, and specialized accelerators. Quantization and graph optimizations. Production-ready serving.",
+            "category": "deep_learning",
+            "url": "https://onnxruntime.ai/"
+        },
+        "openai": {
+            "name": "OpenAI",
+            "description": "Official OpenAI Python client. GPT-4/3.5 chat completions, DALL-E image generation, Whisper transcription, embeddings, and fine-tuning. Async support and streaming responses.",
+            "category": "llm_ai",
+            "url": "https://platform.openai.com/"
+        },
+        "opencv-python": {
+            "name": "OpenCV",
+            "description": "Computer vision library. Image/video processing, object detection, face recognition, optical flow. Industry standard for CV.",
+            "category": "image_processing",
+            "url": "https://opencv.org/"
+        },
+        "openpyxl": {
+            "name": "openpyxl",
+            "description": "Excel 2010+ read/write. Formulas, charts, images, pivot tables, and conditional formatting. Most comprehensive Excel library.",
+            "category": "office_docs",
+            "url": "https://openpyxl.readthedocs.io/"
+        },
+        "opentelemetry-api": {
+            "name": "OpenTelemetry API",
+            "description": "OpenTelemetry API. Distributed tracing and metrics. Vendor-neutral observability.",
+            "category": "logging_monitoring",
+            "url": "https://opentelemetry.io/"
+        },
+        "opentelemetry-sdk": {
+            "name": "OpenTelemetry SDK",
+            "description": "OpenTelemetry SDK. Implement tracing and metrics. Export to various backends.",
+            "category": "logging_monitoring",
+            "url": "https://opentelemetry.io/"
+        },
+        "optax": {
+            "name": "Optax",
+            "description": "Gradient processing for JAX. Composable gradient transformations, optimizers (Adam, SGD, AdaGrad), and learning rate schedules. Combine transforms with optax.chain().",
+            "category": "deep_learning",
+            "url": "https://optax.readthedocs.io/"
+        },
+        "optuna": {
+            "name": "Optuna",
+            "description": "Next-gen hyperparameter optimization. Efficient sampling (TPE, CMA-ES), pruning unpromising trials, and visualization dashboard. Define-by-run API. Supports distributed optimization.",
+            "category": "data_science",
+            "url": "https://optuna.org/"
+        },
+        "orjson": {
+            "name": "orjson",
+            "description": "Fast JSON library in Rust. 3-10x faster than standard json. Numpy/dataclass support. Memory efficient.",
+            "category": "data_formats",
+            "url": "https://github.com/ijl/orjson"
+        },
+        "pandas": {
+            "name": "Pandas",
+            "description": "Essential data analysis library. DataFrame and Series structures for loading CSV/Excel/SQL, cleaning messy data, groupby aggregations, time series, and merging datasets. The workhorse of data science workflows.",
+            "category": "data_science",
+            "url": "https://pandas.pydata.org/"
+        },
+        "pandas-datareader": {
+            "name": "pandas-datareader",
+            "description": "Remote data for pandas. FRED, World Bank, Yahoo, IEX, and more data sources.",
+            "category": "finance",
+            "url": "https://pandas-datareader.readthedocs.io/"
+        },
+        "paramiko": {
+            "name": "Paramiko",
+            "description": "SSH2 protocol library. Remote command execution, SFTP file transfers, and key management. Build SSH clients and servers. Fabric dependency.",
+            "category": "network_analysis",
+            "url": "https://www.paramiko.org/"
+        },
+        "parse": {
+            "name": "parse",
+            "description": "Reverse of format(). Parse strings using format-string patterns. Simple alternative to regex for structured text.",
+            "category": "text_processing",
+            "url": "https://github.com/r1chardj0n3s/parse"
+        },
+        "parsel": {
+            "name": "Parsel",
+            "description": "Scrapy's selector library. XPath and CSS selectors for data extraction. Regex support, nested selectors. Works standalone outside Scrapy.",
+            "category": "web_scraping",
+            "url": "https://parsel.readthedocs.io/"
+        },
+        "passlib": {
+            "name": "Passlib",
+            "description": "Password hashing framework. 30+ schemes (bcrypt, argon2, pbkdf2, sha256_crypt). Hash verification, migration, and policy enforcement.",
+            "category": "cybersecurity",
+            "url": "https://passlib.readthedocs.io/"
+        },
+        "patool": {
+            "name": "patool",
+            "description": "Archive manager. 50+ formats via system tools. Uniform interface for all archive types.",
+            "category": "archive_handling",
+            "url": "https://github.com/wummel/patool"
+        },
+        "pattern": {
+            "name": "Pattern",
+            "description": "Web mining and NLP. Text processing, sentiment, web scraping, and machine learning. All-in-one toolkit.",
+            "category": "nlp",
+            "url": "https://github.com/clips/pattern"
+        },
+        "pcapy-ng": {
+            "name": "pcapy-ng",
+            "description": "Libpcap Python interface. Capture packets on network interfaces. BPF filter support. Used with dpkt or manual parsing.",
+            "category": "network_analysis",
+            "url": "https://github.com/stamparm/pcapy-ng"
+        },
+        "pdf2image": {
+            "name": "pdf2image",
+            "description": "Convert PDF to images. Uses poppler for rendering. Extract pages as PIL Images for OCR or processing.",
+            "category": "pdf_tools",
+            "url": "https://github.com/Belval/pdf2image"
+        },
+        "pdfminer.six": {
+            "name": "pdfminer.six",
+            "description": "PDF text extraction. Layout analysis, character-level positioning, and CJK language support. Focus on text extraction accuracy.",
+            "category": "pdf_tools",
+            "url": "https://pdfminersix.readthedocs.io/"
+        },
+        "pdfplumber": {
+            "name": "pdfplumber",
+            "description": "PDF data extraction. Extract text with precise positioning, tables with cell detection, and metadata. Built on pdfminer.",
+            "category": "pdf_tools",
+            "url": "https://github.com/jsvine/pdfplumber"
+        },
+        "pdfrw": {
+            "name": "pdfrw",
+            "description": "PDF read/write library. Form filling, watermarking, and concatenation. Preserves original PDF structure.",
+            "category": "pdf_tools",
+            "url": "https://github.com/pmaupin/pdfrw"
+        },
+        "peewee": {
+            "name": "Peewee",
+            "description": "Simple, expressive ORM. Model definitions, queries, migrations, and connection pooling. Supports SQLite, MySQL, PostgreSQL.",
+            "category": "databases",
+            "url": "http://docs.peewee-orm.com/"
+        },
+        "pefile": {
+            "name": "pefile",
+            "description": "PE file analysis. Parse Windows executables, DLLs, and drivers. Extract sections, imports, exports, resources. Malware analysis and reverse engineering.",
+            "category": "cybersecurity",
+            "url": "https://github.com/erocarrera/pefile"
+        },
+        "peft": {
+            "name": "PEFT",
+            "description": "Parameter-Efficient Fine-Tuning. LoRA, QLoRA, prefix tuning, and prompt tuning for large models. Fine-tune billion-parameter models on consumer GPUs.",
+            "category": "llm_ai",
+            "url": "https://huggingface.co/docs/peft/"
+        },
+        "pikepdf": {
+            "name": "pikepdf",
+            "description": "PDF manipulation based on qpdf. Repair damaged PDFs, linearize for web, and handle encryption. Modern Pythonic API.",
+            "category": "pdf_tools",
+            "url": "https://pikepdf.readthedocs.io/"
+        },
+        "pillow": {
+            "name": "Pillow",
+            "description": "Python Imaging Library. Open, manipulate, save images. Resize, crop, filter, draw. Supports 30+ formats. Foundation for image work.",
+            "category": "image_processing",
+            "url": "https://pillow.readthedocs.io/"
+        },
+        "pinecone-client": {
+            "name": "Pinecone",
+            "description": "Managed vector database client. Serverless similarity search at scale. Metadata filtering, namespaces, and hybrid search. Production-ready with high availability.",
+            "category": "llm_ai",
+            "url": "https://www.pinecone.io/"
+        },
+        "pingouin": {
+            "name": "Pingouin",
+            "description": "Statistical analysis made easy. ANOVAs, t-tests, correlations, effect sizes, power analysis, and Bayesian statistics. Pandas-friendly with beautiful output tables.",
+            "category": "data_science",
+            "url": "https://pingouin-stats.org/"
+        },
+        "playwright": {
+            "name": "Playwright",
+            "description": "Microsoft's browser automation. Chromium, Firefox, WebKit support. Auto-wait, network interception, and tracing. Faster and more reliable than Selenium. Async API.",
+            "category": "automation_rpa",
+            "url": "https://playwright.dev/python/"
+        },
+        "plotly": {
+            "name": "Plotly",
+            "description": "Interactive graphing library. Hover tooltips, zoom, pan, and web-ready charts. Supports 40+ chart types including 3D, maps, financial, and scientific. Export to HTML or use in Dash dashboards.",
+            "category": "data_science",
+            "url": "https://plotly.com/python/"
+        },
+        "polars": {
+            "name": "Polars",
+            "description": "Lightning-fast DataFrame library in Rust. Lazy evaluation, query optimization, and parallel execution. 10-100x faster than pandas for many operations. Modern API with method chaining.",
+            "category": "data_science",
+            "url": "https://pola.rs/"
+        },
+        "prettytable": {
+            "name": "PrettyTable",
+            "description": "ASCII table display. Alignment, sorting, and borders. Simple table creation from data.",
+            "category": "cli_tools",
+            "url": "https://github.com/jazzband/prettytable"
+        },
+        "prometheus-client": {
+            "name": "Prometheus Client",
+            "description": "Prometheus metrics. Counters, gauges, histograms, summaries. Expose /metrics endpoint.",
+            "category": "logging_monitoring",
+            "url": "https://prometheus.io/"
+        },
+        "prompt-toolkit": {
+            "name": "prompt-toolkit",
+            "description": "Build interactive CLIs. Full-screen apps, syntax highlighting, auto-completion. Powers IPython and pgcli.",
+            "category": "cli_tools",
+            "url": "https://python-prompt-toolkit.readthedocs.io/"
+        },
+        "protobuf": {
+            "name": "Protocol Buffers",
+            "description": "Protocol Buffers. Efficient binary serialization with schemas. Language-neutral, platform-neutral.",
+            "category": "data_formats",
+            "url": "https://protobuf.dev/"
+        },
+        "psycopg2-binary": {
+            "name": "psycopg2",
+            "description": "PostgreSQL adapter. Full DB-API 2.0 compliance, server-side cursors, COPY support, async connections. Most popular PostgreSQL driver.",
+            "category": "databases",
+            "url": "https://www.psycopg.org/"
+        },
+        "pulp": {
+            "name": "PuLP",
+            "description": "Linear programming. Model optimization problems, multiple solvers. Operations research.",
+            "category": "math_scientific",
+            "url": "https://coin-or.github.io/pulp/"
+        },
+        "py7zr": {
+            "name": "py7zr",
+            "description": "7-Zip library. LZMA/LZMA2 compression, encryption, and multi-volume archives.",
+            "category": "archive_handling",
+            "url": "https://py7zr.readthedocs.io/"
+        },
+        "pyarrow": {
+            "name": "PyArrow",
+            "description": "Apache Arrow implementation. Columnar memory format, zero-copy reads, and Parquet support. pandas integration.",
+            "category": "data_formats",
+            "url": "https://arrow.apache.org/docs/python/"
+        },
+        "pyaudio": {
+            "name": "PyAudio",
+            "description": "PortAudio bindings. Record and play audio streams. Real-time audio processing. Cross-platform.",
+            "category": "multimedia",
+            "url": "https://people.csail.mit.edu/hubert/pyaudio/"
+        },
+        "pyautogui": {
+            "name": "PyAutoGUI",
+            "description": "GUI automation. Control mouse and keyboard, take screenshots, locate images on screen. Cross-platform.",
+            "category": "automation_rpa",
+            "url": "https://pyautogui.readthedocs.io/"
+        },
+        "pycryptodome": {
+            "name": "PyCryptodome",
+            "description": "Self-contained crypto library. AES, RSA, ECC, SHA, HMAC, and more. No external dependencies. PyCrypto drop-in replacement with active maintenance.",
+            "category": "cybersecurity",
+            "url": "https://pycryptodome.readthedocs.io/"
+        },
+        "pydantic": {
+            "name": "Pydantic",
+            "description": "Data validation with type hints. Parse and validate JSON, environment variables, settings. Automatic JSON Schema generation. FastAPI core dependency.",
+            "category": "api_integration",
+            "url": "https://pydantic.dev/"
+        },
+        "pydub": {
+            "name": "pydub",
+            "description": "Audio manipulation simplified. Slice, concatenate, export, apply effects. Works with many formats via ffmpeg.",
+            "category": "multimedia",
+            "url": "https://github.com/jiaaro/pydub"
+        },
+        "pyexcel": {
+            "name": "pyexcel",
+            "description": "Unified spreadsheet API. Single interface for xlsx, xls, ods, csv. Plugin architecture for format support.",
+            "category": "office_docs",
+            "url": "https://pyexcel.readthedocs.io/"
+        },
+        "pyexcel-ods": {
+            "name": "pyexcel-ods",
+            "description": "ODS format plugin for pyexcel. OpenDocument Spreadsheet read/write support.",
+            "category": "office_docs",
+            "url": "https://pyexcel.readthedocs.io/"
+        },
+        "pyexcel-xlsx": {
+            "name": "pyexcel-xlsx",
+            "description": "XLSX format plugin for pyexcel. Excel 2010+ read/write support.",
+            "category": "office_docs",
+            "url": "https://pyexcel.readthedocs.io/"
+        },
+        "pyfolio": {
+            "name": "pyfolio",
+            "description": "Portfolio analytics. Tearsheet reports, risk metrics, and performance attribution. Zipline companion.",
+            "category": "finance",
+            "url": "https://quantopian.github.io/pyfolio/"
+        },
+        "pymongo": {
+            "name": "PyMongo",
+            "description": "Official MongoDB driver. CRUD operations, aggregation pipeline, GridFS for files, change streams. Async version available (motor).",
+            "category": "databases",
+            "url": "https://pymongo.readthedocs.io/"
+        },
+        "pymupdf": {
+            "name": "PyMuPDF",
+            "description": "High-performance PDF library. Based on MuPDF. Text extraction, rendering, annotations, form filling. Handles damaged PDFs.",
+            "category": "pdf_tools",
+            "url": "https://pymupdf.readthedocs.io/"
+        },
+        "pymysql": {
+            "name": "PyMySQL",
+            "description": "Pure Python MySQL client. DB-API 2.0 compatible, SSL support, and prepared statements. No C dependencies for easy installation.",
+            "category": "databases",
+            "url": "https://pymysql.readthedocs.io/"
+        },
+        "pynput": {
+            "name": "pynput",
+            "description": "Input device control. Monitor and control mouse and keyboard. Global hotkeys and input recording.",
+            "category": "automation_rpa",
+            "url": "https://pynput.readthedocs.io/"
+        },
+        "pyomo": {
+            "name": "Pyomo",
+            "description": "Optimization modeling. Linear, nonlinear, and mixed-integer programming. Extensive solver support.",
+            "category": "math_scientific",
+            "url": "https://www.pyomo.org/"
+        },
+        "pyopenssl": {
+            "name": "pyOpenSSL",
+            "description": "OpenSSL wrapper for Python. SSL/TLS connections, certificate handling, and crypto operations. Lower-level than cryptography library.",
+            "category": "cybersecurity",
+            "url": "https://www.pyopenssl.org/"
+        },
+        "pyparsing": {
+            "name": "pyparsing",
+            "description": "Text parsing library. Create grammars without regex. Named results, recursive patterns, and parse actions.",
+            "category": "text_processing",
+            "url": "https://pyparsing-docs.readthedocs.io/"
+        },
+        "pypdf": {
+            "name": "pypdf",
+            "description": "PDF manipulation toolkit. Merge, split, crop, rotate, encrypt/decrypt, and extract text. Pure Python, no dependencies.",
+            "category": "pdf_tools",
+            "url": "https://pypdf.readthedocs.io/"
+        },
+        "pyproj": {
+            "name": "pyproj",
+            "description": "Coordinate transformations. PROJ library wrapper. CRS definitions and conversions.",
+            "category": "geospatial",
+            "url": "https://pyproj4.github.io/pyproj/"
+        },
+        "pyshark": {
+            "name": "PyShark",
+            "description": "Wireshark/tshark wrapper. Packet capture and analysis with display filters. Access all Wireshark dissectors. Live capture and pcap file reading.",
+            "category": "network_analysis",
+            "url": "https://github.com/KimiNewt/pyshark"
+        },
+        "pystache": {
+            "name": "Pystache",
+            "description": "Mustache template engine. Simple, logic-less templates. Cross-language template format.",
+            "category": "template_engines",
+            "url": "https://github.com/defunkt/pystache"
+        },
+        "pytesseract": {
+            "name": "pytesseract",
+            "description": "Tesseract OCR wrapper. Extract text from images in 100+ languages. Requires Tesseract-OCR installation.",
+            "category": "image_processing",
+            "url": "https://github.com/madmaze/pytesseract"
+        },
+        "pytest": {
+            "name": "pytest",
+            "description": "Testing framework. Fixtures, parametrization, plugins, and powerful assertions. Industry standard for Python testing.",
+            "category": "testing",
+            "url": "https://pytest.org/"
+        },
+        "pytest-asyncio": {
+            "name": "pytest-asyncio",
+            "description": "Async testing for pytest. Test asyncio code with async fixtures and markers.",
+            "category": "testing",
+            "url": "https://pytest-asyncio.readthedocs.io/"
+        },
+        "pytest-cov": {
+            "name": "pytest-cov",
+            "description": "Coverage plugin for pytest. Terminal and HTML reports, branch coverage, and fail-under thresholds.",
+            "category": "testing",
+            "url": "https://pytest-cov.readthedocs.io/"
+        },
+        "pytest-mock": {
+            "name": "pytest-mock",
+            "description": "Mock plugin for pytest. mocker fixture with patch, spy, and stub. Cleaner than unittest.mock.",
+            "category": "testing",
+            "url": "https://pytest-mock.readthedocs.io/"
+        },
+        "pytextrank": {
+            "name": "pytextrank",
+            "description": "TextRank for Python. Keyword and phrase extraction, sentence ranking. Knowledge graph integration.",
+            "category": "nlp",
+            "url": "https://derwen.ai/docs/ptr/"
+        },
+        "python-barcode": {
+            "name": "python-barcode",
+            "description": "Barcode generation. Code128, EAN-13, EAN-8, UPC-A, ISBN-13. Output as images or SVG.",
+            "category": "document_creation",
+            "url": "https://python-barcode.readthedocs.io/"
+        },
+        "python-dateutil": {
+            "name": "python-dateutil",
+            "description": "Powerful date/time extensions. Flexible parsing of date strings, relative deltas (next Friday, last month), recurring rules (rrule), and timezone handling. Essential pandas dependency.",
+            "category": "data_science",
+            "url": "https://dateutil.readthedocs.io/"
+        },
+        "python-docx": {
+            "name": "python-docx",
+            "description": "Word document library. Create/modify paragraphs, tables, images, headers, footers, and styles. Does not require MS Office.",
+            "category": "office_docs",
+            "url": "https://python-docx.readthedocs.io/"
+        },
+        "python-jose": {
+            "name": "python-jose",
+            "description": "JWT implementation. Create and verify JSON Web Tokens. JWS, JWE, and JWK support. Multiple signing algorithms.",
+            "category": "api_integration",
+            "url": "https://python-jose.readthedocs.io/"
+        },
+        "python-json-logger": {
+            "name": "python-json-logger",
+            "description": "JSON log formatter. Add custom fields, integrate with log aggregators. ELK stack ready.",
+            "category": "logging_monitoring",
+            "url": "https://github.com/madzak/python-json-logger"
+        },
+        "python-magic": {
+            "name": "python-magic",
+            "description": "File type detection via libmagic. Identify files by content, not extension. Same as Unix file command. MIME type detection.",
+            "category": "data_formats",
+            "url": "https://github.com/ahupp/python-magic"
+        },
+        "python-multipart": {
+            "name": "python-multipart",
+            "description": "Multipart form parser. Handle file uploads in ASGI/WSGI apps. Streaming parser for large files. FastAPI dependency.",
+            "category": "api_integration",
+            "url": "https://github.com/andrew-d/python-multipart"
+        },
+        "python-nmap": {
+            "name": "python-nmap",
+            "description": "Nmap scanner wrapper. Port scanning, service detection, and OS fingerprinting. Parse Nmap XML output. Automate network reconnaissance.",
+            "category": "cybersecurity",
+            "url": "https://xael.org/pages/python-nmap-en.html"
+        },
+        "python-pptx": {
+            "name": "python-pptx",
+            "description": "PowerPoint manipulation. Create/modify slides, shapes, charts, and tables. Add images, apply layouts, and format text.",
+            "category": "office_docs",
+            "url": "https://python-pptx.readthedocs.io/"
+        },
+        "python-whois": {
+            "name": "python-whois",
+            "description": "WHOIS domain lookup. Query registrar info, creation/expiry dates, nameservers. Supports many TLDs and registrars.",
+            "category": "network_analysis",
+            "url": "https://github.com/richardpenman/whois"
+        },
+        "pythonjsonlogger": {
+            "name": "pythonjsonlogger",
+            "description": "JSON formatter for logging. Alternative implementation with similar features.",
+            "category": "logging_monitoring",
+            "url": "https://github.com/madzak/python-json-logger"
+        },
+        "pytorch-lightning": {
+            "name": "PyTorch Lightning",
+            "description": "High-level PyTorch wrapper. Removes boilerplate while keeping flexibility. Built-in logging, checkpointing, multi-GPU, and mixed precision. Organize code into LightningModules.",
+            "category": "deep_learning",
+            "url": "https://lightning.ai/"
+        },
+        "pyyaml": {
+            "name": "PyYAML",
+            "description": "YAML parser and emitter. Full YAML 1.1 support, custom tags, and safe loading. Configuration files.",
+            "category": "data_formats",
+            "url": "https://pyyaml.org/"
+        },
+        "pyzbar": {
+            "name": "pyzbar",
+            "description": "Barcode and QR code reader. Decode from images using zbar library. Returns decoded data and bounding boxes.",
+            "category": "image_processing",
+            "url": "https://github.com/NaturalHistoryMuseum/pyzbar"
+        },
+        "qrcode": {
+            "name": "qrcode",
+            "description": "QR code generator. Create QR codes as images or SVG. Customizable colors, error correction, and embedded logos.",
+            "category": "document_creation",
+            "url": "https://github.com/lincolnloop/python-qrcode"
+        },
+        "quantlib": {
+            "name": "QuantLib",
+            "description": "Quantitative finance. Derivatives pricing, yield curves, and risk management. Comprehensive library.",
+            "category": "finance",
+            "url": "https://www.quantlib.org/"
+        },
+        "questionary": {
+            "name": "questionary",
+            "description": "Interactive prompts. Select, checkbox, confirm, text input with validation. Build interactive CLIs.",
+            "category": "cli_tools",
+            "url": "https://questionary.readthedocs.io/"
+        },
+        "rake-nltk": {
+            "name": "rake-nltk",
+            "description": "Keyword extraction. Rapid Automatic Keyword Extraction using word co-occurrence. Fast, unsupervised.",
+            "category": "nlp",
+            "url": "https://github.com/csurfer/rake-nltk"
+        },
+        "rarfile": {
+            "name": "rarfile",
+            "description": "RAR archive reader. Read RAR files. Extraction requires unrar command.",
+            "category": "archive_handling",
+            "url": "https://rarfile.readthedocs.io/"
+        },
+        "rasterio": {
+            "name": "Rasterio",
+            "description": "Geospatial raster I/O. Read/write GeoTIFF, satellite imagery. GDAL-based.",
+            "category": "geospatial",
+            "url": "https://rasterio.readthedocs.io/"
+        },
+        "ray": {
+            "name": "Ray",
+            "description": "Distributed computing. Scale Python from laptop to cluster. Actors, tasks, and ML libraries.",
+            "category": "multithreading",
+            "url": "https://ray.io/"
+        },
+        "redis": {
+            "name": "redis-py",
+            "description": "Redis Python client. Key-value operations, pub/sub, streams, Lua scripting, clustering. Connection pooling and pipelines for performance.",
+            "category": "databases",
+            "url": "https://redis-py.readthedocs.io/"
+        },
+        "redmail": {
+            "name": "Red Mail",
+            "description": "Advanced email library. Templates, scheduling, attachments, and HTML. Stateful email sending.",
+            "category": "email_processing",
+            "url": "https://red-mail.readthedocs.io/"
+        },
+        "reportlab": {
+            "name": "ReportLab",
+            "description": "PDF generation toolkit. Create complex documents with text, graphics, charts, and tables. Used by Django and many others.",
+            "category": "pdf_tools",
+            "url": "https://www.reportlab.com/"
+        },
+        "requests": {
+            "name": "Requests",
+            "description": "HTTP for humans. Simple API for GET/POST, sessions, authentication, file uploads, and timeouts. Connection pooling, automatic retries. Most popular HTTP library.",
+            "category": "api_integration",
+            "url": "https://requests.readthedocs.io/"
+        },
+        "requests-html": {
+            "name": "requests-html",
+            "description": "HTML parsing with requests. CSS selectors, XPath, and JavaScript rendering via Chromium. Session handling and async support. Convenient for simple scraping.",
+            "category": "web_scraping",
+            "url": "https://requests-html.kennethreitz.org/"
+        },
+        "responses": {
+            "name": "responses",
+            "description": "Mock HTTP requests. Decorate tests to mock requests library calls. Body, status, and headers.",
+            "category": "testing",
+            "url": "https://github.com/getsentry/responses"
+        },
+        "rich": {
+            "name": "Rich",
+            "description": "Beautiful terminal output. Tables, syntax highlighting, progress bars, markdown, and panels. Make CLI apps gorgeous.",
+            "category": "cli_tools",
+            "url": "https://rich.readthedocs.io/"
+        },
+        "rst2pdf": {
+            "name": "rst2pdf",
+            "description": "reStructuredText to PDF. Page layouts, styles, code highlighting. Used for documentation.",
+            "category": "document_creation",
+            "url": "https://rst2pdf.org/"
+        },
+        "scapy": {
+            "name": "Scapy",
+            "description": "Packet manipulation powerhouse. Craft, send, sniff, and decode packets for 100+ protocols. Network scanning, traceroute, and attack tools. Essential for network security.",
+            "category": "cybersecurity",
+            "url": "https://scapy.net/"
+        },
+        "schedule": {
+            "name": "schedule",
+            "description": "Human-friendly scheduling. \"every().monday.at(10:30).do(job)\". In-process job scheduling.",
+            "category": "automation",
+            "url": "https://schedule.readthedocs.io/"
+        },
+        "scikit-image": {
+            "name": "scikit-image",
+            "description": "Image processing algorithms. Segmentation, geometric transforms, feature detection, morphology. NumPy-based, scikit-learn style API.",
+            "category": "image_processing",
+            "url": "https://scikit-image.org/"
+        },
+        "scikit-learn": {
+            "name": "scikit-learn",
+            "description": "Machine learning library with consistent API. Classification (SVM, Random Forest), regression, clustering (K-means), dimensionality reduction (PCA), model selection, and preprocessing. Industry standard for traditional ML.",
+            "category": "data_science",
+            "url": "https://scikit-learn.org/"
+        },
+        "scipy": {
+            "name": "SciPy",
+            "description": "Scientific computing library built on NumPy. Modules for optimization, integration, interpolation, signal processing, linear algebra, statistics, and sparse matrices. Essential for engineering and research.",
+            "category": "math_scientific",
+            "url": "https://scipy.org/"
+        },
+        "scrapy": {
+            "name": "Scrapy",
+            "description": "Web scraping framework. Spiders, selectors (CSS/XPath), pipelines, and middleware. Built-in handling for cookies, sessions, and robots.txt. Export to JSON/CSV/XML.",
+            "category": "web_scraping",
+            "url": "https://scrapy.org/"
+        },
+        "seaborn": {
+            "name": "Seaborn",
+            "description": "Statistical visualization built on matplotlib. Beautiful default themes, color palettes, and high-level functions for heatmaps, violin plots, pair plots, and regression visualizations. Makes complex plots simple.",
+            "category": "data_science",
+            "url": "https://seaborn.pydata.org/"
+        },
+        "selenium": {
+            "name": "Selenium",
+            "description": "Browser automation with WebDriver. Control Chrome, Firefox, Safari, Edge. Handle JavaScript-rendered content, fill forms, and take screenshots. Testing and scraping.",
+            "category": "automation_rpa",
+            "url": "https://selenium.dev/"
+        },
+        "sentence-transformers": {
+            "name": "Sentence Transformers",
+            "description": "Sentence embeddings using transformers. Semantic search, clustering, and similarity. Pre-trained models for 100+ languages. Fine-tuning with triplet/contrastive loss.",
+            "category": "llm_ai",
+            "url": "https://sbert.net/"
+        },
+        "sentry-sdk": {
+            "name": "Sentry SDK",
+            "description": "Error tracking and monitoring. Automatic exception capture, performance monitoring, and release tracking.",
+            "category": "logging_monitoring",
+            "url": "https://sentry.io/"
+        },
+        "shapely": {
+            "name": "Shapely",
+            "description": "Geometric operations. Points, lines, polygons, intersections, buffers, and unions. GEOS wrapper.",
+            "category": "geospatial",
+            "url": "https://shapely.readthedocs.io/"
+        },
+        "shodan": {
+            "name": "Shodan",
+            "description": "Shodan API client. Search Internet-connected devices, find vulnerabilities, monitor networks. Query cameras, servers, IoT devices worldwide.",
+            "category": "cybersecurity",
+            "url": "https://shodan.io/"
+        },
+        "soundfile": {
+            "name": "SoundFile",
+            "description": "Audio file I/O. Read/write WAV, FLAC, OGG via libsndfile. NumPy array interface.",
+            "category": "multimedia",
+            "url": "https://pysoundfile.readthedocs.io/"
+        },
+        "spacy": {
+            "name": "spaCy",
+            "description": "Industrial NLP library. Named entities, POS tagging, dependency parsing, word vectors. 70+ language models. Fast and accurate.",
+            "category": "nlp",
+            "url": "https://spacy.io/"
+        },
+        "speech-recognition": {
+            "name": "SpeechRecognition",
+            "description": "Speech-to-text library. Support for Google, Sphinx, Wit.ai, Azure, and more. Microphone and file input.",
+            "category": "multimedia",
+            "url": "https://github.com/Uberi/speech_recognition"
+        },
+        "sqlalchemy": {
+            "name": "SQLAlchemy",
+            "description": "Python's SQL toolkit. ORM with Unit of Work pattern, Core for raw SQL, and migration support via Alembic. Supports PostgreSQL, MySQL, SQLite, Oracle, and more.",
+            "category": "databases",
+            "url": "https://www.sqlalchemy.org/"
+        },
+        "sqlite-utils": {
+            "name": "sqlite-utils",
+            "description": "SQLite power tools. Create tables from data, full-text search, CSV import/export. CLI and Python library.",
+            "category": "databases",
+            "url": "https://sqlite-utils.datasette.io/"
+        },
+        "sslyze": {
+            "name": "SSLyze",
+            "description": "SSL/TLS scanner. Test server configurations, identify vulnerabilities (Heartbleed, ROBOT), and verify certificate chains. Security auditing.",
+            "category": "cybersecurity",
+            "url": "https://nabla-c0d3.github.io/sslyze/"
+        },
+        "starlette": {
+            "name": "Starlette",
+            "description": "Lightweight ASGI framework. Routing, middleware, WebSocket, background tasks. Foundation for FastAPI. Production-ready performance.",
+            "category": "api_integration",
+            "url": "https://www.starlette.io/"
+        },
+        "statsd": {
+            "name": "statsd",
+            "description": "StatsD metrics client. Send counters, timers, gauges to Graphite, DataDog, and others.",
+            "category": "logging_monitoring",
+            "url": "https://statsd.readthedocs.io/"
+        },
+        "statsmodels": {
+            "name": "statsmodels",
+            "description": "Statistical modeling and econometrics. Linear/logistic regression with detailed summaries, time series (ARIMA, VAR), hypothesis testing, and diagnostic plots. R-style formula interface available.",
+            "category": "data_science",
+            "url": "https://www.statsmodels.org/"
+        },
+        "structlog": {
+            "name": "structlog",
+            "description": "Structured logging. Context binding, processors, and formatters. JSON output for log aggregation.",
+            "category": "logging_monitoring",
+            "url": "https://www.structlog.org/"
+        },
+        "sumy": {
+            "name": "Sumy",
+            "description": "Automatic text summarization. LSA, TextRank, LexRank, KL-Sum algorithms. Extract key sentences.",
+            "category": "nlp",
+            "url": "https://github.com/miso-belica/sumy"
+        },
+        "sympy": {
+            "name": "SymPy",
+            "description": "Symbolic mathematics. Algebra, calculus, equations, matrices, and plotting. Computer algebra system.",
+            "category": "math_scientific",
+            "url": "https://www.sympy.org/"
+        },
+        "ta": {
+            "name": "TA",
+            "description": "Technical analysis. 40+ indicators: RSI, MACD, Bollinger Bands, moving averages. pandas integration.",
+            "category": "finance",
+            "url": "https://github.com/bukosabino/ta"
+        },
+        "tabula-py": {
+            "name": "tabula-py",
+            "description": "PDF table extraction via tabula-java. Extract tables as DataFrames. Handles multi-page tables. Requires Java.",
+            "category": "pdf_tools",
+            "url": "https://tabula-py.readthedocs.io/"
+        },
+        "tabulate": {
+            "name": "tabulate",
+            "description": "Pretty-print tables. Plain, grid, pipe, HTML, LaTeX, and more formats. Alignment and formatting options.",
+            "category": "cli_tools",
+            "url": "https://github.com/astanin/python-tabulate"
+        },
+        "tensorboard": {
+            "name": "TensorBoard",
+            "description": "TensorFlow visualization toolkit. Track metrics, visualize model graphs, view embeddings in 3D, and compare experiments. Works with PyTorch via tensorboardX or native support.",
+            "category": "deep_learning",
+            "url": "https://www.tensorflow.org/tensorboard"
+        },
+        "tensorflow": {
+            "name": "TensorFlow",
+            "description": "Google's end-to-end ML platform. Keras high-level API, eager and graph execution, TensorBoard visualization, TF Serving deployment. Mobile (TFLite) and web (TF.js) support.",
+            "category": "deep_learning",
+            "url": "https://www.tensorflow.org/"
+        },
+        "tensorflow-metal": {
+            "name": "TensorFlow Metal",
+            "description": "TensorFlow GPU plugin for Mac. Accelerate training and inference on Apple Silicon using Metal Performance Shaders. Drop-in acceleration for existing TF code.",
+            "category": "apple_mlx",
+            "url": "https://developer.apple.com/metal/tensorflow-plugin/"
+        },
+        "textblob": {
+            "name": "TextBlob",
+            "description": "Simple NLP. Sentiment analysis, POS tagging, noun phrases, translation. Built on NLTK. Great for beginners.",
+            "category": "nlp",
+            "url": "https://textblob.readthedocs.io/"
+        },
+        "tiktoken": {
+            "name": "tiktoken",
+            "description": "OpenAI's fast BPE tokenizer. Count tokens before API calls, split text for context windows. Rust backend for speed. Supports GPT-4, GPT-3.5, and embedding models.",
+            "category": "llm_ai",
+            "url": "https://github.com/openai/tiktoken"
+        },
+        "timm": {
+            "name": "timm",
+            "description": "PyTorch Image Models. 700+ pre-trained models (EfficientNet, ViT, ConvNeXt, Swin). Training scripts, augmentation, and model surgery utilities. State-of-the-art accuracy.",
+            "category": "deep_learning",
+            "url": "https://huggingface.co/docs/timm/"
+        },
+        "tlslite-ng": {
+            "name": "tlslite-ng",
+            "description": "Pure Python TLS implementation. Custom protocol development, testing, and research. Supports TLS 1.0-1.3, various cipher suites.",
+            "category": "cybersecurity",
+            "url": "https://github.com/tlsfuzzer/tlslite-ng"
+        },
+        "toml": {
+            "name": "toml",
+            "description": "TOML configuration parser. TOML 0.5.0 specification. pyproject.toml and other config files.",
+            "category": "data_formats",
+            "url": "https://github.com/uiri/toml"
+        },
+        "tomli": {
+            "name": "tomli",
+            "description": "TOML parser (read-only). PEP 680 compliant. Now in Python 3.11+ stdlib as tomllib.",
+            "category": "data_formats",
+            "url": "https://github.com/hukkin/tomli"
+        },
+        "torch": {
+            "name": "PyTorch",
+            "description": "Meta's deep learning framework. Dynamic computation graphs, automatic differentiation, GPU acceleration via CUDA/MPS, and extensive ecosystem (torchvision, torchaudio). Preferred for research and production.",
+            "category": "deep_learning",
+            "url": "https://pytorch.org/"
+        },
+        "torchaudio": {
+            "name": "torchaudio",
+            "description": "Audio processing for PyTorch. I/O for multiple formats, transforms (spectrogram, MFCC), and pre-trained models for speech recognition and audio classification. GPU-accelerated processing.",
+            "category": "deep_learning",
+            "url": "https://pytorch.org/audio/"
+        },
+        "torchmetrics": {
+            "name": "TorchMetrics",
+            "description": "100+ PyTorch metrics with distributed support. Classification (accuracy, F1, AUROC), regression, NLP (BLEU, perplexity), and retrieval metrics. Automatic accumulation across batches.",
+            "category": "deep_learning",
+            "url": "https://torchmetrics.readthedocs.io/"
+        },
+        "torchvision": {
+            "name": "torchvision",
+            "description": "Computer vision for PyTorch. Pre-trained models (ResNet, EfficientNet, ViT), image transforms and augmentations, and standard datasets (ImageNet, COCO, MNIST). Video and detection utilities.",
+            "category": "deep_learning",
+            "url": "https://pytorch.org/vision/"
+        },
+        "tortoise-orm": {
+            "name": "Tortoise ORM",
+            "description": "Async ORM inspired by Django. Works with asyncio and FastAPI. Supports PostgreSQL, MySQL, SQLite. Schema generation.",
+            "category": "databases",
+            "url": "https://tortoise.github.io/"
+        },
+        "tox": {
+            "name": "Tox",
+            "description": "Test across Python versions. Virtual environment management, parallel execution, and CI integration.",
+            "category": "testing",
+            "url": "https://tox.wiki/"
+        },
+        "tqdm": {
+            "name": "tqdm",
+            "description": "Progress bar library. Wrap any iterable, pandas integration, nested bars. Overhead of nanoseconds per iteration.",
+            "category": "cli_tools",
+            "url": "https://tqdm.github.io/"
+        },
+        "trafilatura": {
+            "name": "Trafilatura",
+            "description": "Web text extraction. Optimized for news articles and web content. Metadata extraction, language detection. Faster and more accurate than newspaper3k.",
+            "category": "web_scraping",
+            "url": "https://trafilatura.readthedocs.io/"
+        },
+        "transformers": {
+            "name": "Transformers",
+            "description": "Hugging Face's NLP/ML library. 100,000+ pre-trained models for text, vision, and audio. Tokenizers, pipelines, and Trainer API. State-of-the-art with simple interfaces.",
+            "category": "llm_ai",
+            "url": "https://huggingface.co/docs/transformers/"
+        },
+        "typer": {
+            "name": "Typer",
+            "description": "Build CLIs with type hints. Automatic completion, documentation, and validation. Click-based with modern features.",
+            "category": "cli_tools",
+            "url": "https://typer.tiangolo.com/"
+        },
+        "ujson": {
+            "name": "UltraJSON",
+            "description": "Ultra fast JSON. C-based encoder/decoder. Drop-in json replacement with better performance.",
+            "category": "data_formats",
+            "url": "https://github.com/ultrajson/ultrajson"
+        },
+        "unidecode": {
+            "name": "Unidecode",
+            "description": "Unicode to ASCII. Transliterate international text. \u00e9\u2192e, \u5317\u4eac\u2192Bei Jing.",
+            "category": "text_processing",
+            "url": "https://github.com/avian2/unidecode"
+        },
+        "user-agents": {
+            "name": "user-agents",
+            "description": "Parse user agent strings. Extract browser name/version, OS, device type. Detect bots and crawlers. Useful for analytics.",
+            "category": "web_scraping",
+            "url": "https://github.com/selwin/python-user-agents"
+        },
+        "uvicorn": {
+            "name": "Uvicorn",
+            "description": "Lightning-fast ASGI server. HTTP/1.1, WebSocket, HTTP/2 support. Works with Starlette, FastAPI, and other ASGI apps.",
+            "category": "api_integration",
+            "url": "https://www.uvicorn.org/"
+        },
+        "uvloop": {
+            "name": "uvloop",
+            "description": "Fast asyncio event loop. Cython wrapper for libuv. 2-4x faster than default loop.",
+            "category": "performance",
+            "url": "https://uvloop.readthedocs.io/"
+        },
+        "wandb": {
+            "name": "Weights & Biases",
+            "description": "Weights & Biases experiment tracking. Real-time metrics, hyperparameter sweeps, model versioning, and team collaboration. Beautiful dashboards and artifact management.",
+            "category": "deep_learning",
+            "url": "https://wandb.ai/"
+        },
+        "watchdog": {
+            "name": "Watchdog",
+            "description": "Filesystem monitoring. Watch directories for changes. File system events and observer pattern.",
+            "category": "automation",
+            "url": "https://python-watchdog.readthedocs.io/"
+        },
+        "weasyprint": {
+            "name": "WeasyPrint",
+            "description": "HTML/CSS to PDF. Print CSS support, page layouts, headers/footers. Generate PDFs from web templates.",
+            "category": "pdf_tools",
+            "url": "https://weasyprint.org/"
+        },
+        "weaviate-client": {
+            "name": "Weaviate",
+            "description": "Vector search engine client. Hybrid BM25 + vector search, GraphQL API, and generative search (RAG). Multi-modal support for text and images.",
+            "category": "llm_ai",
+            "url": "https://weaviate.io/"
+        },
+        "websockets": {
+            "name": "websockets",
+            "description": "WebSocket client and server. Async implementation, connection management, and protocol handling. Build real-time applications.",
+            "category": "api_integration",
+            "url": "https://websockets.readthedocs.io/"
+        },
+        "whisper": {
+            "name": "Whisper",
+            "description": "OpenAI's speech recognition. Multilingual transcription and translation. Multiple model sizes. State-of-the-art accuracy.",
+            "category": "multimedia",
+            "url": "https://github.com/openai/whisper"
+        },
+        "wordcloud": {
+            "name": "wordcloud",
+            "description": "Word cloud generator. Create images from text with customizable shapes, colors, and fonts.",
+            "category": "nlp",
+            "url": "https://amueller.github.io/word_cloud/"
+        },
+        "xgboost": {
+            "name": "XGBoost",
+            "description": "Extreme Gradient Boosting. Regularized boosting with tree pruning, handling missing values, and parallel processing. Won many Kaggle competitions. Supports GPU training and distributed computing.",
+            "category": "data_science",
+            "url": "https://xgboost.readthedocs.io/"
+        },
+        "xhtml2pdf": {
+            "name": "xhtml2pdf",
+            "description": "HTML to PDF converter. ReportLab-based rendering. CSS support and page templates.",
+            "category": "pdf_tools",
+            "url": "https://xhtml2pdf.readthedocs.io/"
+        },
+        "xlrd": {
+            "name": "xlrd",
+            "description": "Read Excel .xls files. Legacy Excel 97-2003 format support. Read-only. Use openpyxl for .xlsx.",
+            "category": "office_docs",
+            "url": "https://xlrd.readthedocs.io/"
+        },
+        "xlsxwriter": {
+            "name": "XlsxWriter",
+            "description": "Excel file creation. Write-only with full formatting, charts, images, sparklines. Memory-optimized for large files.",
+            "category": "office_docs",
+            "url": "https://xlsxwriter.readthedocs.io/"
+        },
+        "xlwt": {
+            "name": "xlwt",
+            "description": "Write Excel .xls files. Legacy Excel 97-2003 format. Formatting, formulas, and merged cells.",
+            "category": "office_docs",
+            "url": "https://xlwt.readthedocs.io/"
+        },
+        "xmltodict": {
+            "name": "xmltodict",
+            "description": "XML to dict conversion. Parse XML as Python dictionaries. Makes XML feel like JSON.",
+            "category": "data_formats",
+            "url": "https://github.com/martinblech/xmltodict"
+        },
+        "yagmail": {
+            "name": "yagmail",
+            "description": "Easy email sending. Gmail/SMTP with attachments and HTML. OAuth2 and app passwords.",
+            "category": "email_processing",
+            "url": "https://github.com/kootenpv/yagmail"
+        },
+        "yara-python": {
+            "name": "yara-python",
+            "description": "YARA pattern matching. Create rules to identify malware families, detect indicators of compromise. Used by security researchers and AV vendors.",
+            "category": "cybersecurity",
+            "url": "https://yara.readthedocs.io/"
+        },
+        "yfinance": {
+            "name": "yfinance",
+            "description": "Yahoo Finance data. Historical prices, dividends, splits, and financials. Free market data.",
+            "category": "finance",
+            "url": "https://github.com/ranaroussi/yfinance"
+        },
+        "yt-dlp": {
+            "name": "yt-dlp",
+            "description": "Video downloader. YouTube and 1000+ sites. Format selection, playlists, subtitles, metadata extraction. youtube-dl fork.",
+            "category": "multimedia",
+            "url": "https://github.com/yt-dlp/yt-dlp"
+        },
+        "zipfile38": {
+            "name": "zipfile38",
+            "description": "Enhanced zipfile. Backport of Python 3.8+ improvements. Path-like objects and more.",
+            "category": "archive_handling",
+            "url": "https://github.com/cielavenir/zipfile38"
+        },
+        "zipline-reloaded": {
+            "name": "Zipline Reloaded",
+            "description": "Backtesting framework. Event-driven trading simulation. Quantopian open-source.",
+            "category": "finance",
+            "url": "https://zipline.ml4trading.io/"
+        },
+        "apache-avro": {
+            "name": "Apache Avro",
+            "description": "Avro serialization. Schema evolution, RPC, and compact binary encoding. Big data ecosystem standard.",
+            "category": "data_formats",
+            "url": "https://github.com/apache/avro"
+        },
+        "lz4": {
+            "name": "LZ4",
+            "description": "LZ4 compression. Extremely fast compression and decompression. Block and frame formats.",
+            "category": "archive_handling",
+            "url": "https://github.com/python-lz4/python-lz4"
+        }
+    }
+}

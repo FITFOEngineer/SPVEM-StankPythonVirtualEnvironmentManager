@@ -1,0 +1,1077 @@
+﻿{
+    "_metadata": {
+        "filename": "stank-venv-packages.json",
+        "description": "Package configurations for Stank Python Virtual Environment Manager",
+        "author": "Nick Stankiewicz",
+        "created": "2026.01.04",
+        "updated": "2026.01.04",
+        "version": "0.1-beta",
+        "license": "GPL-3.0-only",
+        "license_text": "Copyright (C) 2026 Nick Stankiewicz. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/.",
+        "notes": "All packages verified compatible with Python 3.11 on Windows 10/11. See windows_notes for platform-specific requirements.",
+        "python_version": "3.11",
+        "platform": "Windows 10/11",
+        "status": "Beta - Please report issues"
+    },
+    "package_sets": {
+        "jupyter": {
+            "name": "JupyterLab",
+            "description": "Interactive notebook environment for data exploration",
+            "category": "core",
+            "install_time": "2-5 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "jupyterlab",
+                "notebook",
+                "ipykernel",
+                "ipywidgets",
+                "jupyterlab-widgets",
+                "nbconvert",
+                "nbformat"
+            ]
+        },
+        "data_science": {
+            "name": "Data Science Core",
+            "description": "Data analysis, statistics, and visualization",
+            "category": "data",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "500 MB",
+            "packages": [
+                "numpy",
+                "pandas",
+                "polars",
+                "matplotlib",
+                "seaborn",
+                "plotly",
+                "scikit-learn",
+                "scipy",
+                "statsmodels",
+                "pingouin"
+            ]
+        },
+        "deep_learning": {
+            "name": "Deep Learning & Neural Networks",
+            "description": "CNN, RNN, autoencoders, transformers, gradient boosting",
+            "category": "ml",
+            "install_time": "15-30 minutes",
+            "disk_estimate": "3 GB",
+            "packages": [
+                "torch",
+                "torchvision",
+                "torchaudio",
+                "pytorch-lightning",
+                "torchmetrics",
+                "timm",
+                "tensorflow",
+                "keras",
+                "keras-tuner",
+                "xgboost",
+                "lightgbm",
+                "catboost",
+                "scikit-learn",
+                "imbalanced-learn",
+                "optuna",
+                "hyperopt",
+                "mlflow",
+                "wandb",
+                "tensorboard",
+                "einops",
+                "albumentations",
+                "opencv-python",
+                "scikit-image"
+            ],
+            "windows_notes": "PyTorch has full Windows GPU support via CUDA. TensorFlow GPU requires WSL2 on Windows (CPU only natively)."
+        },
+        "llm_ai": {
+            "name": "LLM & AI Integration",
+            "description": "Large language models, embeddings, vector stores",
+            "category": "ml",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "400 MB",
+            "packages": [
+                "openai",
+                "anthropic",
+                "langchain",
+                "langchain-community",
+                "langchain-openai",
+                "llama-index",
+                "transformers",
+                "sentence-transformers",
+                "tiktoken",
+                "chromadb",
+                "faiss-cpu",
+                "pinecone-client",
+                "weaviate-client",
+                "cohere",
+                "huggingface-hub",
+                "datasets",
+                "accelerate",
+                "peft",
+                "guidance",
+                "instructor"
+            ],
+            "windows_notes": "faiss-cpu may require Visual C++ Redistributable."
+        },
+        "math_scientific": {
+            "name": "Math & Scientific Computing",
+            "description": "Symbolic math, numerical computing, optimization",
+            "category": "data",
+            "install_time": "8-15 minutes",
+            "disk_estimate": "600 MB",
+            "packages": [
+                "sympy",
+                "mpmath",
+                "gmpy2",
+                "numba",
+                "cython",
+                "networkx",
+                "cvxpy",
+                "pulp",
+                "pyomo",
+                "gekko",
+                "autograd",
+                "jax",
+                "jaxlib",
+                "flax",
+                "optax",
+                "onnx",
+                "onnxruntime"
+            ]
+        },
+        "web_scraping": {
+            "name": "Web Scraping & Automation",
+            "description": "Extract data from websites, browser automation",
+            "category": "web",
+            "install_time": "5-12 minutes",
+            "disk_estimate": "300 MB",
+            "packages": [
+                "requests",
+                "httpx",
+                "aiohttp",
+                "beautifulsoup4",
+                "lxml",
+                "selenium",
+                "playwright",
+                "scrapy",
+                "parsel",
+                "fake-useragent",
+                "cloudscraper",
+                "mechanicalsoup",
+                "requests-html",
+                "newspaper3k",
+                "trafilatura",
+                "goose3",
+                "feedparser",
+                "extruct"
+            ],
+            "windows_notes": "playwright requires running 'playwright install' after pip install. selenium auto-downloads drivers since v4.6."
+        },
+        "cybersecurity": {
+            "name": "Cybersecurity & Penetration Testing",
+            "description": "Security testing, cryptography, forensics",
+            "category": "security",
+            "install_time": "8-15 minutes",
+            "disk_estimate": "400 MB",
+            "packages": [
+                "scapy",
+                "paramiko",
+                "fabric",
+                "cryptography",
+                "pycryptodome",
+                "python-nmap",
+                "shodan",
+                "dnspython",
+                "impacket",
+                "pyopenssl",
+                "bcrypt",
+                "passlib",
+                "hashid",
+                "yara-python",
+                "oletools",
+                "pefile",
+                "pyelftools",
+                "python-magic",
+                "sslyze",
+                "python-whois",
+                "censys"
+            ],
+            "windows_notes": "WARNING: Packages like impacket, yara-python, scapy, and oletools may trigger Windows Defender or other antivirus software. These are legitimate security research tools, but may be flagged as 'potentially unwanted' or 'hacking tools'. You may need to add an exclusion for your venv folder in Windows Security settings. Also requires Npcap driver for scapy and Nmap for python-nmap."
+        },
+        "network_analysis": {
+            "name": "Network & Packet Analysis",
+            "description": "Deep packet inspection, network forensics, proxies",
+            "category": "security",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "pyshark",
+                "scapy",
+                "dpkt",
+                "kamene",
+                "netaddr",
+                "netifaces",
+                "psutil",
+                "mitmproxy",
+                "PySocks",
+                "python-socks",
+                "aiodns",
+                "dnspython",
+                "dnslib",
+                "twisted"
+            ],
+            "windows_notes": "scapy requires Npcap driver. pyshark requires Wireshark/tshark installed."
+        },
+        "text_processing": {
+            "name": "Text Processing & NLP",
+            "description": "Text parsing, cleaning, NLP, entity extraction",
+            "category": "data",
+            "install_time": "8-15 minutes",
+            "disk_estimate": "800 MB",
+            "packages": [
+                "regex",
+                "chardet",
+                "charset-normalizer",
+                "ftfy",
+                "unidecode",
+                "textblob",
+                "nltk",
+                "spacy",
+                "stanza",
+                "gensim",
+                "rapidfuzz",
+                "thefuzz",
+                "python-Levenshtein",
+                "jellyfish",
+                "inflect",
+                "num2words",
+                "dateparser",
+                "python-dateutil",
+                "phonenumbers",
+                "email-validator",
+                "validators",
+                "price-parser",
+                "urlextract",
+                "tldextract",
+                "nameparser",
+                "usaddress"
+            ]
+        },
+        "log_parsing": {
+            "name": "Log Parsing & Analysis",
+            "description": "Parse Apache, nginx, syslog, Windows events, JSON logs",
+            "category": "devops",
+            "install_time": "3-6 minutes",
+            "disk_estimate": "100 MB",
+            "packages": [
+                "loguru",
+                "structlog",
+                "python-json-logger",
+                "apachelogs",
+                "pygrok",
+                "parse",
+                "python-dateutil",
+                "pytz",
+                "croniter"
+            ]
+        },
+        "pdf_tools": {
+            "name": "PDF Processing",
+            "description": "Read, create, merge, split, extract from PDFs",
+            "category": "files",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "250 MB",
+            "packages": [
+                "pypdf",
+                "PyPDF2",
+                "pdfplumber",
+                "pdfminer.six",
+                "pymupdf",
+                "pdf2image",
+                "img2pdf",
+                "tabula-py",
+                "camelot-py",
+                "pikepdf"
+            ],
+            "windows_notes": "tabula-py requires Java Runtime 8+ (adoptium.net). camelot-py optionally uses Ghostscript."
+        },
+        "document_creation": {
+            "name": "Document Creation",
+            "description": "Create PDFs, Word docs, PowerPoints, Excel files",
+            "category": "files",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "reportlab",
+                "fpdf2",
+                "weasyprint",
+                "xhtml2pdf",
+                "python-docx",
+                "docxtpl",
+                "python-pptx",
+                "openpyxl",
+                "xlsxwriter",
+                "xlwt"
+            ]
+        },
+        "office_docs": {
+            "name": "Office Document Extraction",
+            "description": "Read and extract from Word, Excel, PowerPoint, RTF, ODF",
+            "category": "files",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "150 MB",
+            "packages": [
+                "python-docx",
+                "docx2txt",
+                "openpyxl",
+                "xlrd",
+                "python-pptx",
+                "odfpy",
+                "striprtf",
+                "pyexcel",
+                "pyexcel-xlsx",
+                "pyexcel-xls",
+                "pyexcel-ods",
+                "python-calamine",
+                "msoffcrypto-tool",
+                "olefile"
+            ]
+        },
+        "image_processing": {
+            "name": "Image Processing & OCR",
+            "description": "Image manipulation, OCR, computer vision",
+            "category": "files",
+            "install_time": "5-12 minutes",
+            "disk_estimate": "400 MB",
+            "packages": [
+                "pillow",
+                "pillow-heif",
+                "opencv-python",
+                "scikit-image",
+                "imageio",
+                "pytesseract",
+                "easyocr",
+                "pdf2image",
+                "img2pdf",
+                "python-barcode",
+                "pyzbar",
+                "qrcode"
+            ],
+            "windows_notes": "pytesseract requires Tesseract-OCR installed separately."
+        },
+        "archive_handling": {
+            "name": "Archive & Compression",
+            "description": "Handle ZIP, TAR, 7Z, RAR, and other archives",
+            "category": "files",
+            "install_time": "2-4 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "py7zr",
+                "rarfile",
+                "patool",
+                "lz4",
+                "zstandard",
+                "python-snappy",
+                "brotli"
+            ]
+        },
+        "email_processing": {
+            "name": "Email Processing",
+            "description": "Parse EML, MSG, MBOX files and extract attachments",
+            "category": "files",
+            "install_time": "2-4 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "extract-msg",
+                "msg-parser",
+                "mail-parser",
+                "eml-parser",
+                "flanker",
+                "imapclient"
+            ]
+        },
+        "template_engines": {
+            "name": "Template Engines",
+            "description": "Jinja2, Mako, Markdown rendering, document templating",
+            "category": "dev",
+            "install_time": "2-4 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "jinja2",
+                "mako",
+                "docxtpl",
+                "markdown",
+                "markdown-it-py",
+                "mistune",
+                "commonmark",
+                "markdownify",
+                "html2text",
+                "bleach"
+            ]
+        },
+        "data_formats": {
+            "name": "Data Formats & Serialization",
+            "description": "JSON, XML, YAML, CSV, Parquet, Protocol Buffers",
+            "category": "data",
+            "install_time": "3-6 minutes",
+            "disk_estimate": "150 MB",
+            "packages": [
+                "orjson",
+                "ujson",
+                "simplejson",
+                "jsonlines",
+                "xmltodict",
+                "defusedxml",
+                "lxml",
+                "pyyaml",
+                "ruamel.yaml",
+                "toml",
+                "tomli",
+                "python-dotenv",
+                "csvkit",
+                "tabulate",
+                "prettytable",
+                "pyarrow",
+                "fastparquet",
+                "h5py",
+                "msgpack",
+                "protobuf"
+            ]
+        },
+        "databases": {
+            "name": "Database Connectivity",
+            "description": "SQL and NoSQL database drivers and ORMs",
+            "category": "dev",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "sqlalchemy",
+                "sqlmodel",
+                "alembic",
+                "psycopg2-binary",
+                "asyncpg",
+                "pymysql",
+                "aiomysql",
+                "pyodbc",
+                "sqlite-utils",
+                "aiosqlite",
+                "pymongo",
+                "motor",
+                "redis",
+                "aioredis",
+                "elasticsearch",
+                "neo4j",
+                "duckdb",
+                "tinydb",
+                "diskcache"
+            ]
+        },
+        "multithreading": {
+            "name": "Parallel & Async Processing",
+            "description": "Concurrent execution, job queues, async frameworks",
+            "category": "dev",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "300 MB",
+            "packages": [
+                "joblib",
+                "dask",
+                "dask-ml",
+                "distributed",
+                "ray",
+                "celery",
+                "rq",
+                "huey",
+                "dramatiq",
+                "multiprocess",
+                "pathos",
+                "loky",
+                "tqdm",
+                "alive-progress",
+                "trio",
+                "anyio",
+                "uvloop",
+                "aiofiles",
+                "aiomultiprocess"
+            ]
+        },
+        "api_integration": {
+            "name": "API & Web Services",
+            "description": "REST APIs, GraphQL, web frameworks, authentication",
+            "category": "web",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "250 MB",
+            "packages": [
+                "fastapi",
+                "uvicorn",
+                "gunicorn",
+                "flask",
+                "flask-restful",
+                "django",
+                "djangorestframework",
+                "starlette",
+                "httpx",
+                "requests",
+                "urllib3",
+                "requests-cache",
+                "tenacity",
+                "backoff",
+                "ratelimit",
+                "gql",
+                "strawberry-graphql",
+                "websockets",
+                "websocket-client",
+                "pydantic",
+                "pydantic-settings",
+                "python-jose",
+                "pyjwt",
+                "authlib",
+                "python-multipart"
+            ]
+        },
+        "logging_monitoring": {
+            "name": "Logging & Monitoring",
+            "description": "Application logging, metrics, profiling, error tracking",
+            "category": "devops",
+            "install_time": "3-6 minutes",
+            "disk_estimate": "100 MB",
+            "packages": [
+                "loguru",
+                "structlog",
+                "python-json-logger",
+                "colorlog",
+                "sentry-sdk",
+                "watchdog",
+                "watchfiles",
+                "psutil",
+                "py-cpuinfo",
+                "memory-profiler",
+                "line-profiler",
+                "prometheus-client",
+                "opentelemetry-api",
+                "opentelemetry-sdk"
+            ]
+        },
+        "testing": {
+            "name": "Testing & Code Quality",
+            "description": "Unit testing, mocking, linting, type checking",
+            "category": "devops",
+            "install_time": "4-8 minutes",
+            "disk_estimate": "150 MB",
+            "packages": [
+                "pytest",
+                "pytest-asyncio",
+                "pytest-cov",
+                "pytest-xdist",
+                "pytest-mock",
+                "pytest-benchmark",
+                "hypothesis",
+                "faker",
+                "factory-boy",
+                "responses",
+                "vcrpy",
+                "respx",
+                "coverage",
+                "tox",
+                "nox",
+                "pre-commit",
+                "black",
+                "ruff",
+                "flake8",
+                "pylint",
+                "mypy",
+                "bandit"
+            ]
+        },
+        "cli_tools": {
+            "name": "CLI & REPL Development",
+            "description": "Command-line interfaces, enhanced REPLs, debugging, progress bars",
+            "category": "dev",
+            "install_time": "3-5 minutes",
+            "disk_estimate": "100 MB",
+            "packages": [
+                "click",
+                "typer",
+                "fire",
+                "rich",
+                "colorama",
+                "termcolor",
+                "prompt-toolkit",
+                "questionary",
+                "inquirer",
+                "textual",
+                "tqdm",
+                "alive-progress",
+                "pyfiglet",
+                "yaspin",
+                "ipython",
+                "bpython",
+                "ptpython",
+                "ipdb",
+                "pdbpp",
+                "pudb",
+                "icecream"
+            ]
+        },
+        "cloud_sdks": {
+            "name": "Cloud Provider SDKs",
+            "description": "AWS, Azure, GCP, and other cloud integrations",
+            "category": "devops",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "300 MB",
+            "packages": [
+                "boto3",
+                "botocore",
+                "azure-identity",
+                "azure-storage-blob",
+                "azure-keyvault-secrets",
+                "google-cloud-storage",
+                "google-cloud-bigquery",
+                "google-auth",
+                "oci",
+                "python-digitalocean"
+            ],
+            "windows_notes": "Ansible cannot run as control node on Windows (use WSL2 or Docker). Docker SDK requires Docker Desktop running."
+        },
+        "automation_rpa": {
+            "name": "Desktop Automation & RPA",
+            "description": "GUI automation, screen capture, keyboard/mouse control",
+            "category": "dev",
+            "install_time": "3-6 minutes",
+            "disk_estimate": "100 MB",
+            "packages": [
+                "pyautogui",
+                "pywinauto",
+                "pynput",
+                "keyboard",
+                "mouse",
+                "mss",
+                "pygetwindow",
+                "pyperclip"
+            ]
+        },
+        "geospatial": {
+            "name": "Geospatial & Mapping",
+            "description": "Geographic data processing and visualization",
+            "category": "data",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "300 MB",
+            "packages": [
+                "geopandas",
+                "shapely",
+                "folium",
+                "pyproj",
+                "geopy",
+                "rasterio",
+                "fiona",
+                "rtree"
+            ]
+        },
+        "financial": {
+            "name": "Financial & Trading",
+            "description": "Market data, technical analysis, backtesting",
+            "category": "data",
+            "install_time": "3-6 minutes",
+            "disk_estimate": "100 MB",
+            "packages": [
+                "yfinance",
+                "pandas-ta",
+                "ta",
+                "backtrader",
+                "bt",
+                "empyrical",
+                "pyfolio",
+                "fredapi"
+            ]
+        },
+        "audio_video": {
+            "name": "Audio & Video Processing",
+            "description": "Media manipulation, transcription, analysis",
+            "category": "files",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "pydub",
+                "librosa",
+                "soundfile",
+                "moviepy",
+                "ffmpeg-python",
+                "av",
+                "yt-dlp",
+                "openai-whisper"
+            ]
+        }
+    },
+    "preset_bundles": {
+        "essential": {
+            "name": "Essential Toolkit",
+            "description": "Core packages for everyday Python work",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "data_formats",
+                "cli_tools"
+            ],
+            "install_time": "10-20 minutes",
+            "disk_estimate": "1 GB"
+        },
+        "web_data": {
+            "name": "Web Data Collection",
+            "description": "Web scraping, extraction, and text processing",
+            "sets": [
+                "jupyter",
+                "web_scraping",
+                "text_processing",
+                "pdf_tools",
+                "data_formats"
+            ],
+            "install_time": "20-35 minutes",
+            "disk_estimate": "1.5 GB"
+        },
+        "file_processing": {
+            "name": "File Processing Suite",
+            "description": "Handle all common file formats",
+            "sets": [
+                "jupyter",
+                "pdf_tools",
+                "document_creation",
+                "office_docs",
+                "image_processing",
+                "archive_handling",
+                "email_processing"
+            ],
+            "install_time": "25-40 minutes",
+            "disk_estimate": "1.2 GB"
+        },
+        "security_toolkit": {
+            "name": "Security Analyst Toolkit",
+            "description": "Cybersecurity, network analysis, forensics",
+            "sets": [
+                "jupyter",
+                "cybersecurity",
+                "network_analysis",
+                "log_parsing",
+                "archive_handling"
+            ],
+            "install_time": "20-35 minutes",
+            "disk_estimate": "900 MB"
+        },
+        "ai_ml": {
+            "name": "AI & Machine Learning",
+            "description": "Deep learning, LLMs, and ML tools",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "deep_learning",
+                "llm_ai",
+                "math_scientific"
+            ],
+            "install_time": "40-70 minutes",
+            "disk_estimate": "5 GB"
+        },
+        "backend_api": {
+            "name": "Backend Developer",
+            "description": "APIs, databases, testing, deployment",
+            "sets": [
+                "jupyter",
+                "api_integration",
+                "databases",
+                "testing",
+                "logging_monitoring",
+                "cli_tools"
+            ],
+            "install_time": "20-35 minutes",
+            "disk_estimate": "1 GB"
+        },
+        "devops": {
+            "name": "DevOps & SRE",
+            "description": "Cloud, monitoring, automation, CI/CD",
+            "sets": [
+                "jupyter",
+                "cloud_sdks",
+                "logging_monitoring",
+                "testing",
+                "cli_tools",
+                "automation_rpa"
+            ],
+            "install_time": "20-35 minutes",
+            "disk_estimate": "900 MB"
+        },
+        "full_stack": {
+            "name": "Full Stack (EVERYTHING)",
+            "description": "All packages - comprehensive toolkit",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "deep_learning",
+                "llm_ai",
+                "math_scientific",
+                "web_scraping",
+                "cybersecurity",
+                "network_analysis",
+                "text_processing",
+                "log_parsing",
+                "pdf_tools",
+                "document_creation",
+                "office_docs",
+                "image_processing",
+                "archive_handling",
+                "email_processing",
+                "template_engines",
+                "data_formats",
+                "databases",
+                "multithreading",
+                "api_integration",
+                "logging_monitoring",
+                "testing",
+                "cli_tools",
+                "cloud_sdks",
+                "automation_rpa",
+                "geospatial",
+                "financial",
+                "audio_video"
+            ],
+            "install_time": "120-180 minutes",
+            "disk_estimate": "12 GB"
+        }
+    },
+    "job_roles": {
+        "data_scientist": {
+            "name": "Data Scientist",
+            "description": "Analysis, visualization, ML, statistical modeling",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "deep_learning",
+                "llm_ai",
+                "math_scientific",
+                "data_formats",
+                "databases",
+                "cli_tools",
+                "testing"
+            ],
+            "install_time": "50-80 minutes",
+            "disk_estimate": "5 GB"
+        },
+        "data_analyst": {
+            "name": "Data Analyst",
+            "description": "Business intelligence, reporting, SQL, visualization",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "data_formats",
+                "databases",
+                "pdf_tools",
+                "office_docs",
+                "cli_tools",
+                "template_engines"
+            ],
+            "install_time": "25-40 minutes",
+            "disk_estimate": "1.5 GB"
+        },
+        "data_engineer": {
+            "name": "Data Engineer",
+            "description": "ETL pipelines, databases, data processing at scale",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "databases",
+                "multithreading",
+                "data_formats",
+                "log_parsing",
+                "cloud_sdks",
+                "pdf_tools",
+                "office_docs",
+                "web_scraping",
+                "api_integration",
+                "cli_tools",
+                "testing"
+            ],
+            "install_time": "45-70 minutes",
+            "disk_estimate": "3 GB"
+        },
+        "ml_engineer": {
+            "name": "Machine Learning Engineer",
+            "description": "Model development, training, deployment, MLOps",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "deep_learning",
+                "llm_ai",
+                "math_scientific",
+                "databases",
+                "multithreading",
+                "api_integration",
+                "logging_monitoring",
+                "cloud_sdks",
+                "testing",
+                "cli_tools"
+            ],
+            "install_time": "60-90 minutes",
+            "disk_estimate": "6 GB"
+        },
+        "security_analyst": {
+            "name": "Security Analyst",
+            "description": "Security testing, pen testing, forensics, network analysis, incident response",
+            "sets": [
+                "jupyter",
+                "cybersecurity",
+                "network_analysis",
+                "web_scraping",
+                "log_parsing",
+                "databases",
+                "archive_handling",
+                "pdf_tools",
+                "office_docs",
+                "email_processing",
+                "automation_rpa",
+                "cli_tools"
+            ],
+            "install_time": "35-55 minutes",
+            "disk_estimate": "2 GB"
+        },
+        "backend_developer": {
+            "name": "Backend Developer",
+            "description": "REST APIs, databases, authentication, server-side logic",
+            "sets": [
+                "jupyter",
+                "api_integration",
+                "databases",
+                "testing",
+                "logging_monitoring",
+                "cli_tools",
+                "data_formats",
+                "template_engines",
+                "multithreading"
+            ],
+            "install_time": "30-50 minutes",
+            "disk_estimate": "1.5 GB"
+        },
+        "devops_engineer": {
+            "name": "DevOps Engineer",
+            "description": "CI/CD, infrastructure automation, monitoring, deployment",
+            "sets": [
+                "jupyter",
+                "cloud_sdks",
+                "logging_monitoring",
+                "log_parsing",
+                "testing",
+                "cli_tools",
+                "automation_rpa",
+                "databases",
+                "api_integration",
+                "archive_handling"
+            ],
+            "install_time": "35-55 minutes",
+            "disk_estimate": "1.5 GB"
+        },
+        "document_automation_specialist": {
+            "name": "Document Automation Specialist",
+            "description": "Legal/business document generation, template systems, workflow automation",
+            "sets": [
+                "jupyter",
+                "document_creation",
+                "template_engines",
+                "pdf_tools",
+                "office_docs",
+                "image_processing",
+                "email_processing",
+                "data_formats",
+                "databases",
+                "cli_tools"
+            ],
+            "install_time": "30-50 minutes",
+            "disk_estimate": "1.2 GB"
+        },
+        "full_stack_developer": {
+            "name": "Full Stack Developer",
+            "description": "End-to-end web applications with Python backend",
+            "sets": [
+                "jupyter",
+                "api_integration",
+                "databases",
+                "web_scraping",
+                "template_engines",
+                "testing",
+                "logging_monitoring",
+                "cli_tools",
+                "data_formats",
+                "multithreading",
+                "cloud_sdks"
+            ],
+            "install_time": "40-65 minutes",
+            "disk_estimate": "2 GB"
+        }
+    },
+    "system_requirements": {
+        "notes": [
+            "Python 3.11+ recommended (3.12 preferred)",
+            "Some packages require Visual C++ Build Tools on Windows",
+            "GPU packages (torch, tensorflow) need CUDA toolkit for acceleration",
+            "Large models may require 16GB+ RAM"
+        ],
+        "package_dependencies": {
+            "pytesseract": {
+                "requires": "Tesseract-OCR",
+                "url": "https://github.com/UB-Mannheim/tesseract/wiki",
+                "notes": "Add to PATH after install"
+            },
+            "tabula-py": {
+                "requires": "Java Runtime Environment",
+                "url": "https://adoptium.net/",
+                "notes": "Java 8+ required"
+            },
+            "camelot-py": {
+                "requires": "Ghostscript",
+                "url": "https://ghostscript.com/releases/gsdnld.html",
+                "notes": "Required for PDF table extraction"
+            },
+            "playwright": {
+                "requires": "Browser binaries",
+                "url": null,
+                "notes": "Run: playwright install"
+            },
+            "pyshark": {
+                "requires": "Wireshark/tshark",
+                "url": "https://www.wireshark.org/download.html",
+                "notes": "tshark must be in PATH"
+            },
+            "torch": {
+                "requires": "CUDA Toolkit (optional)",
+                "url": "https://developer.nvidia.com/cuda-downloads",
+                "notes": "For GPU acceleration"
+            },
+            "spacy": {
+                "requires": "Language models",
+                "url": null,
+                "notes": "Run: python -m spacy download en_core_web_sm"
+            },
+            "nltk": {
+                "requires": "NLTK data",
+                "url": null,
+                "notes": "Run: python -c \"import nltk; nltk.download('popular')\""
+            },
+            "weasyprint": {
+                "requires": "GTK libraries (Windows)",
+                "url": "https://doc.courtbouillon.org/weasyprint/stable/first_steps.html",
+                "notes": "See WeasyPrint docs for Windows setup"
+            },
+            "rarfile": {
+                "requires": "UnRAR",
+                "url": "https://www.rarlab.com/rar_add.htm",
+                "notes": "unrar.exe must be in PATH"
+            }
+        },
+        "build_tools": {
+            "windows": {
+                "name": "Visual C++ Build Tools",
+                "url": "https://visualstudio.microsoft.com/visual-cpp-build-tools/",
+                "packages_requiring": [
+                    "cryptography",
+                    "lxml",
+                    "numpy",
+                    "pandas",
+                    "pillow"
+                ]
+            }
+        }
+    }
+}

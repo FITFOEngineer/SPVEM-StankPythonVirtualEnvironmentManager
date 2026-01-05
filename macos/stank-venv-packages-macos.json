@@ -1,0 +1,1000 @@
+{
+    "_metadata": {
+        "filename": "stank-venv-packages-macos.json",
+        "description": "Package configurations for Stank Python Virtual Environment Manager (macOS/Apple Silicon)",
+        "author": "Nick Stankiewicz",
+        "created": "2026.01.04",
+        "updated": "2026.01.04",
+        "version": "0.1-beta",
+        "platform": "macOS (Apple Silicon M1/M2/M3)",
+        "license": "GPL-3.0-only",
+        "license_text": "Copyright (C) 2026 Nick Stankiewicz. GNU General Public License v0.1."
+    },
+    "package_sets": {
+        "jupyter": {
+            "name": "JupyterLab",
+            "description": "Interactive notebook environment for data exploration",
+            "category": "core",
+            "install_time": "2-5 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "jupyterlab",
+                "notebook",
+                "ipykernel",
+                "ipywidgets",
+                "jupyterlab-widgets",
+                "nbconvert",
+                "nbformat"
+            ]
+        },
+        "data_science": {
+            "name": "Data Science Core",
+            "description": "Data analysis, statistics, and visualization",
+            "category": "data",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "500 MB",
+            "packages": [
+                "numpy",
+                "pandas",
+                "polars",
+                "matplotlib",
+                "seaborn",
+                "plotly",
+                "scikit-learn",
+                "scipy",
+                "statsmodels",
+                "pingouin"
+            ]
+        },
+        "deep_learning": {
+            "name": "Deep Learning & Neural Networks",
+            "description": "PyTorch with MPS (Metal) acceleration for Apple Silicon",
+            "category": "ml",
+            "install_time": "15-30 minutes",
+            "disk_estimate": "3 GB",
+            "macos_notes": "PyTorch uses MPS backend for GPU acceleration on Apple Silicon",
+            "packages": [
+                "torch",
+                "torchvision",
+                "torchaudio",
+                "pytorch-lightning",
+                "torchmetrics",
+                "timm",
+                "xgboost",
+                "lightgbm",
+                "catboost",
+                "scikit-learn",
+                "imbalanced-learn",
+                "optuna",
+                "hyperopt",
+                "mlflow",
+                "wandb",
+                "tensorboard",
+                "einops",
+                "albumentations",
+                "opencv-python",
+                "scikit-image"
+            ]
+        },
+        "tensorflow_apple": {
+            "name": "TensorFlow (Apple Silicon)",
+            "description": "TensorFlow with Metal GPU acceleration",
+            "category": "ml",
+            "install_time": "10-20 minutes",
+            "disk_estimate": "1.5 GB",
+            "macos_notes": "Uses tensorflow + tensorflow-metal for GPU acceleration",
+            "packages": [
+                "tensorflow",
+                "tensorflow-metal",
+                "keras",
+                "keras-tuner",
+                "tensorboard"
+            ]
+        },
+        "llm_ai": {
+            "name": "LLM & AI Integration",
+            "description": "Large language models, embeddings, vector stores",
+            "category": "ml",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "400 MB",
+            "packages": [
+                "openai",
+                "anthropic",
+                "langchain",
+                "langchain-community",
+                "langchain-openai",
+                "llama-index",
+                "transformers",
+                "sentence-transformers",
+                "tiktoken",
+                "chromadb",
+                "faiss-cpu",
+                "pinecone-client",
+                "weaviate-client",
+                "cohere",
+                "huggingface-hub",
+                "datasets",
+                "accelerate",
+                "peft",
+                "guidance",
+                "instructor"
+            ]
+        },
+        "apple_mlx": {
+            "name": "Apple MLX Framework",
+            "description": "Apple's native ML framework optimized for Apple Silicon",
+            "category": "ml",
+            "install_time": "3-5 minutes",
+            "disk_estimate": "200 MB",
+            "macos_notes": "MLX is Apple's native ML framework, highly optimized for M1/M2/M3",
+            "packages": [
+                "mlx",
+                "mlx-lm"
+            ]
+        },
+        "math_scientific": {
+            "name": "Math & Scientific Computing",
+            "description": "Symbolic math, numerical computing, optimization",
+            "category": "data",
+            "install_time": "8-15 minutes",
+            "disk_estimate": "600 MB",
+            "packages": [
+                "sympy",
+                "mpmath",
+                "numba",
+                "cython",
+                "networkx",
+                "cvxpy",
+                "pulp",
+                "pyomo",
+                "gekko",
+                "autograd",
+                "jax",
+                "jaxlib",
+                "flax",
+                "optax",
+                "onnx",
+                "onnxruntime"
+            ]
+        },
+        "web_scraping": {
+            "name": "Web Scraping & Automation",
+            "description": "Extract data from websites, browser automation",
+            "category": "web",
+            "install_time": "5-12 minutes",
+            "disk_estimate": "300 MB",
+            "packages": [
+                "requests",
+                "httpx",
+                "aiohttp",
+                "beautifulsoup4",
+                "lxml",
+                "selenium",
+                "playwright",
+                "scrapy",
+                "parsel",
+                "fake-useragent",
+                "cloudscraper",
+                "mechanicalsoup",
+                "requests-html",
+                "newspaper3k",
+                "trafilatura",
+                "goose3",
+                "feedparser",
+                "extruct"
+            ]
+        },
+        "cybersecurity": {
+            "name": "Cybersecurity & Penetration Testing",
+            "description": "Security testing, cryptography, forensics",
+            "category": "security",
+            "install_time": "8-15 minutes",
+            "disk_estimate": "400 MB",
+            "packages": [
+                "scapy",
+                "paramiko",
+                "fabric",
+                "cryptography",
+                "pycryptodome",
+                "python-nmap",
+                "shodan",
+                "dnspython",
+                "impacket",
+                "pyopenssl",
+                "bcrypt",
+                "passlib",
+                "hashid",
+                "yara-python",
+                "oletools",
+                "pefile",
+                "python-magic",
+                "sslyze",
+                "tlslite-ng"
+            ]
+        },
+        "network_analysis": {
+            "name": "Network Analysis",
+            "description": "Packet capture, protocol analysis, network monitoring",
+            "category": "security",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "200 MB",
+            "macos_notes": "pyshark requires Wireshark/tshark installed via brew",
+            "packages": [
+                "pyshark",
+                "dpkt",
+                "pcapy-ng",
+                "netaddr",
+                "netifaces",
+                "python-whois",
+                "ipaddress",
+                "mac-vendor-lookup"
+            ]
+        },
+        "text_processing": {
+            "name": "NLP & Text Processing",
+            "description": "Natural language processing, text analysis",
+            "category": "data",
+            "install_time": "10-20 minutes",
+            "disk_estimate": "800 MB",
+            "packages": [
+                "nltk",
+                "spacy",
+                "textblob",
+                "gensim",
+                "flair",
+                "pattern",
+                "wordcloud",
+                "sumy",
+                "pytextrank",
+                "rake-nltk",
+                "language-tool-python",
+                "ftfy",
+                "unidecode",
+                "chardet",
+                "emoji"
+            ]
+        },
+        "log_parsing": {
+            "name": "Log Parsing & Analysis",
+            "description": "Parse and analyze log files from various systems",
+            "category": "devops",
+            "install_time": "3-5 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "parse",
+                "pyparsing",
+                "python-dateutil",
+                "pythonjsonlogger",
+                "apache-log-parser",
+                "user-agents",
+                "geoip2",
+                "maxminddb"
+            ]
+        },
+        "pdf_tools": {
+            "name": "PDF Processing",
+            "description": "Extract text, tables, create and modify PDFs",
+            "category": "files",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "300 MB",
+            "macos_notes": "tabula-py requires Java; camelot-py requires Ghostscript",
+            "packages": [
+                "pypdf",
+                "pdfplumber",
+                "pymupdf",
+                "reportlab",
+                "pdfrw",
+                "pikepdf",
+                "tabula-py",
+                "camelot-py",
+                "pdf2image",
+                "pdfminer.six"
+            ]
+        },
+        "document_creation": {
+            "name": "Document Generation",
+            "description": "Create documents from templates and data",
+            "category": "files",
+            "install_time": "5-8 minutes",
+            "disk_estimate": "150 MB",
+            "packages": [
+                "python-docx",
+                "docxtpl",
+                "docx2pdf",
+                "python-pptx",
+                "markdown",
+                "markdown2",
+                "weasyprint",
+                "xhtml2pdf",
+                "fpdf2",
+                "rst2pdf"
+            ]
+        },
+        "office_docs": {
+            "name": "Office Document Processing",
+            "description": "Read and write Excel, Word, PowerPoint files",
+            "category": "files",
+            "install_time": "5-8 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "openpyxl",
+                "xlsxwriter",
+                "xlrd",
+                "xlwt",
+                "pyexcel",
+                "pyexcel-xlsx",
+                "pyexcel-ods",
+                "odfpy",
+                "python-docx",
+                "python-pptx"
+            ]
+        },
+        "image_processing": {
+            "name": "Image Processing & OCR",
+            "description": "Image manipulation, computer vision, text extraction",
+            "category": "files",
+            "install_time": "8-15 minutes",
+            "disk_estimate": "500 MB",
+            "macos_notes": "pytesseract requires Tesseract: brew install tesseract",
+            "packages": [
+                "pillow",
+                "opencv-python",
+                "scikit-image",
+                "imageio",
+                "pytesseract",
+                "easyocr",
+                "pdf2image",
+                "python-barcode",
+                "qrcode",
+                "pyzbar"
+            ]
+        },
+        "archive_handling": {
+            "name": "Archive & Compression",
+            "description": "Handle zip, tar, rar, 7z and other archive formats",
+            "category": "files",
+            "install_time": "2-3 minutes",
+            "disk_estimate": "30 MB",
+            "macos_notes": "rarfile requires unrar: brew install unrar",
+            "packages": [
+                "zipfile38",
+                "rarfile",
+                "py7zr",
+                "patool",
+                "lz4"
+            ]
+        },
+        "email_processing": {
+            "name": "Email Handling",
+            "description": "Send, receive, and parse emails",
+            "category": "files",
+            "install_time": "3-5 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "imapclient",
+                "email-validator",
+                "flanker",
+                "mailparser",
+                "yagmail",
+                "redmail",
+                "extract-msg"
+            ]
+        },
+        "template_engines": {
+            "name": "Template Engines",
+            "description": "Generate documents and code from templates",
+            "category": "dev",
+            "install_time": "2-3 minutes",
+            "disk_estimate": "20 MB",
+            "packages": [
+                "jinja2",
+                "mako",
+                "chevron",
+                "pystache"
+            ]
+        },
+        "data_formats": {
+            "name": "Data Formats & Serialization",
+            "description": "Parse and generate JSON, YAML, XML, CSV, etc.",
+            "category": "core",
+            "install_time": "2-4 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "pyyaml",
+                "toml",
+                "tomli",
+                "xmltodict",
+                "dicttoxml",
+                "orjson",
+                "ujson",
+                "msgpack",
+                "cbor2",
+                "protobuf",
+                "flatbuffers",
+                "apache-avro",
+                "fastavro",
+                "pyarrow"
+            ]
+        },
+        "databases": {
+            "name": "Database Connectors",
+            "description": "Connect to SQL and NoSQL databases",
+            "category": "dev",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "sqlalchemy",
+                "psycopg2-binary",
+                "pymysql",
+                "pymongo",
+                "redis",
+                "elasticsearch",
+                "cassandra-driver",
+                "neo4j",
+                "influxdb-client",
+                "clickhouse-driver",
+                "duckdb",
+                "sqlite-utils",
+                "dataset",
+                "peewee",
+                "tortoise-orm"
+            ]
+        },
+        "multithreading": {
+            "name": "Concurrency & Parallelism",
+            "description": "Async programming, thread pools, multiprocessing",
+            "category": "dev",
+            "install_time": "3-5 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "aiofiles",
+                "aiomultiprocess",
+                "uvloop",
+                "concurrent-log-handler",
+                "joblib",
+                "dask",
+                "ray"
+            ]
+        },
+        "api_integration": {
+            "name": "API & Web Services",
+            "description": "Build and consume REST APIs, web frameworks",
+            "category": "web",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "fastapi",
+                "uvicorn",
+                "flask",
+                "django",
+                "starlette",
+                "httpx",
+                "requests",
+                "aiohttp",
+                "websockets",
+                "pydantic",
+                "marshmallow",
+                "python-multipart",
+                "python-jose",
+                "passlib"
+            ]
+        },
+        "logging_monitoring": {
+            "name": "Logging & Monitoring",
+            "description": "Application logging, metrics, error tracking",
+            "category": "devops",
+            "install_time": "3-5 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "loguru",
+                "structlog",
+                "python-json-logger",
+                "rich",
+                "prometheus-client",
+                "statsd",
+                "sentry-sdk",
+                "opentelemetry-api",
+                "opentelemetry-sdk"
+            ]
+        },
+        "testing": {
+            "name": "Testing & Quality",
+            "description": "Unit testing, mocking, code coverage",
+            "category": "devops",
+            "install_time": "3-5 minutes",
+            "disk_estimate": "50 MB",
+            "packages": [
+                "pytest",
+                "pytest-cov",
+                "pytest-asyncio",
+                "pytest-mock",
+                "hypothesis",
+                "faker",
+                "factory-boy",
+                "responses",
+                "httpretty",
+                "coverage",
+                "tox",
+                "nox"
+            ]
+        },
+        "cli_tools": {
+            "name": "CLI & REPL Tools",
+            "description": "Build command-line interfaces, interactive shells",
+            "category": "dev",
+            "install_time": "2-4 minutes",
+            "disk_estimate": "30 MB",
+            "packages": [
+                "click",
+                "typer",
+                "fire",
+                "rich",
+                "questionary",
+                "prompt-toolkit",
+                "colorama",
+                "tqdm",
+                "alive-progress",
+                "tabulate",
+                "prettytable"
+            ]
+        },
+        "cloud_sdks": {
+            "name": "Cloud Provider SDKs",
+            "description": "AWS, GCP, Azure integration",
+            "category": "devops",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "300 MB",
+            "packages": [
+                "boto3",
+                "botocore",
+                "google-cloud-storage",
+                "google-cloud-bigquery",
+                "google-api-python-client",
+                "azure-storage-blob",
+                "azure-identity",
+                "azure-mgmt-resource"
+            ]
+        },
+        "automation_rpa": {
+            "name": "Automation & RPA",
+            "description": "Desktop automation, GUI scripting, task scheduling",
+            "category": "dev",
+            "install_time": "5-8 minutes",
+            "disk_estimate": "150 MB",
+            "macos_notes": "pyautogui requires accessibility permissions on macOS",
+            "packages": [
+                "pyautogui",
+                "pynput",
+                "schedule",
+                "apscheduler",
+                "watchdog",
+                "invoke",
+                "fabric",
+                "paramiko"
+            ]
+        },
+        "geospatial": {
+            "name": "Geospatial & Mapping",
+            "description": "Geographic data processing, maps, coordinates",
+            "category": "data",
+            "install_time": "8-15 minutes",
+            "disk_estimate": "400 MB",
+            "macos_notes": "Some packages may need GDAL: brew install gdal",
+            "packages": [
+                "geopandas",
+                "shapely",
+                "fiona",
+                "pyproj",
+                "folium",
+                "geopy",
+                "rasterio",
+                "contextily"
+            ]
+        },
+        "financial": {
+            "name": "Financial & Trading",
+            "description": "Stock data, quantitative finance, trading",
+            "category": "data",
+            "install_time": "5-10 minutes",
+            "disk_estimate": "200 MB",
+            "packages": [
+                "yfinance",
+                "pandas-datareader",
+                "quantlib",
+                "pyfolio",
+                "zipline-reloaded",
+                "ta",
+                "mplfinance",
+                "ccxt",
+                "fredapi"
+            ]
+        },
+        "audio_video": {
+            "name": "Audio & Video Processing",
+            "description": "Media manipulation, transcription, streaming",
+            "category": "files",
+            "install_time": "8-15 minutes",
+            "disk_estimate": "400 MB",
+            "macos_notes": "ffmpeg required: brew install ffmpeg",
+            "packages": [
+                "moviepy",
+                "pydub",
+                "librosa",
+                "soundfile",
+                "pyaudio",
+                "speech-recognition",
+                "whisper",
+                "yt-dlp",
+                "ffmpeg-python",
+                "av"
+            ]
+        }
+    },
+    "preset_bundles": {
+        "data_analysis": {
+            "name": "Data Analysis Starter",
+            "description": "Basic data analysis and visualization",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "data_formats"
+            ],
+            "install_time": "10-15 minutes",
+            "disk_estimate": "800 MB"
+        },
+        "ml_pytorch": {
+            "name": "ML with PyTorch (Apple Silicon)",
+            "description": "Machine learning with PyTorch MPS acceleration",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "deep_learning",
+                "math_scientific"
+            ],
+            "install_time": "30-50 minutes",
+            "disk_estimate": "4 GB"
+        },
+        "ml_tensorflow": {
+            "name": "ML with TensorFlow (Apple Silicon)",
+            "description": "Machine learning with TensorFlow Metal acceleration",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "tensorflow_apple",
+                "math_scientific"
+            ],
+            "install_time": "25-40 minutes",
+            "disk_estimate": "3 GB"
+        },
+        "file_processing": {
+            "name": "File Processing Suite",
+            "description": "Handle all common file formats",
+            "sets": [
+                "jupyter",
+                "pdf_tools",
+                "document_creation",
+                "office_docs",
+                "image_processing",
+                "archive_handling",
+                "email_processing"
+            ],
+            "install_time": "25-40 minutes",
+            "disk_estimate": "1.2 GB"
+        },
+        "security_toolkit": {
+            "name": "Security Analyst Toolkit",
+            "description": "Cybersecurity, network analysis, forensics",
+            "sets": [
+                "jupyter",
+                "cybersecurity",
+                "network_analysis",
+                "log_parsing",
+                "archive_handling"
+            ],
+            "install_time": "20-35 minutes",
+            "disk_estimate": "900 MB"
+        },
+        "full_stack": {
+            "name": "Full Stack (EVERYTHING)",
+            "description": "All packages - comprehensive toolkit",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "deep_learning",
+                "tensorflow_apple",
+                "apple_mlx",
+                "llm_ai",
+                "math_scientific",
+                "web_scraping",
+                "cybersecurity",
+                "network_analysis",
+                "text_processing",
+                "log_parsing",
+                "pdf_tools",
+                "document_creation",
+                "office_docs",
+                "image_processing",
+                "archive_handling",
+                "email_processing",
+                "template_engines",
+                "data_formats",
+                "databases",
+                "multithreading",
+                "api_integration",
+                "logging_monitoring",
+                "testing",
+                "cli_tools",
+                "cloud_sdks",
+                "automation_rpa",
+                "geospatial",
+                "financial",
+                "audio_video"
+            ],
+            "install_time": "120-180 minutes",
+            "disk_estimate": "12 GB"
+        }
+    },
+    "job_roles": {
+        "data_scientist": {
+            "name": "Data Scientist",
+            "description": "Analysis, visualization, ML, statistical modeling",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "deep_learning",
+                "llm_ai",
+                "math_scientific",
+                "data_formats",
+                "databases",
+                "cli_tools",
+                "testing"
+            ],
+            "install_time": "50-80 minutes",
+            "disk_estimate": "5 GB"
+        },
+        "data_analyst": {
+            "name": "Data Analyst",
+            "description": "Business intelligence, reporting, SQL, visualization",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "data_formats",
+                "databases",
+                "pdf_tools",
+                "office_docs",
+                "cli_tools",
+                "template_engines"
+            ],
+            "install_time": "25-40 minutes",
+            "disk_estimate": "1.5 GB"
+        },
+        "data_engineer": {
+            "name": "Data Engineer",
+            "description": "ETL pipelines, databases, data processing at scale",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "databases",
+                "multithreading",
+                "data_formats",
+                "log_parsing",
+                "cloud_sdks",
+                "pdf_tools",
+                "office_docs",
+                "web_scraping",
+                "api_integration",
+                "cli_tools",
+                "testing"
+            ],
+            "install_time": "45-70 minutes",
+            "disk_estimate": "3 GB"
+        },
+        "ml_engineer": {
+            "name": "Machine Learning Engineer",
+            "description": "Model development, training, deployment, MLOps",
+            "sets": [
+                "jupyter",
+                "data_science",
+                "deep_learning",
+                "apple_mlx",
+                "llm_ai",
+                "math_scientific",
+                "databases",
+                "multithreading",
+                "api_integration",
+                "logging_monitoring",
+                "cloud_sdks",
+                "testing",
+                "cli_tools"
+            ],
+            "install_time": "60-90 minutes",
+            "disk_estimate": "6 GB"
+        },
+        "security_analyst": {
+            "name": "Security Analyst",
+            "description": "Security testing, pen testing, forensics, network analysis",
+            "sets": [
+                "jupyter",
+                "cybersecurity",
+                "network_analysis",
+                "web_scraping",
+                "log_parsing",
+                "databases",
+                "archive_handling",
+                "pdf_tools",
+                "office_docs",
+                "email_processing",
+                "automation_rpa",
+                "cli_tools"
+            ],
+            "install_time": "35-55 minutes",
+            "disk_estimate": "2 GB"
+        },
+        "backend_developer": {
+            "name": "Backend Developer",
+            "description": "REST APIs, databases, authentication, server-side logic",
+            "sets": [
+                "jupyter",
+                "api_integration",
+                "databases",
+                "testing",
+                "logging_monitoring",
+                "cli_tools",
+                "data_formats",
+                "template_engines",
+                "multithreading"
+            ],
+            "install_time": "30-50 minutes",
+            "disk_estimate": "1.5 GB"
+        },
+        "devops_engineer": {
+            "name": "DevOps Engineer",
+            "description": "CI/CD, infrastructure automation, monitoring, deployment",
+            "sets": [
+                "jupyter",
+                "cloud_sdks",
+                "logging_monitoring",
+                "log_parsing",
+                "testing",
+                "cli_tools",
+                "automation_rpa",
+                "databases",
+                "api_integration",
+                "archive_handling"
+            ],
+            "install_time": "35-55 minutes",
+            "disk_estimate": "1.5 GB"
+        },
+        "document_automation_specialist": {
+            "name": "Document Automation Specialist",
+            "description": "Legal/business document generation, template systems",
+            "sets": [
+                "jupyter",
+                "document_creation",
+                "template_engines",
+                "pdf_tools",
+                "office_docs",
+                "image_processing",
+                "email_processing",
+                "data_formats",
+                "databases",
+                "cli_tools"
+            ],
+            "install_time": "30-50 minutes",
+            "disk_estimate": "1.2 GB"
+        },
+        "full_stack_developer": {
+            "name": "Full Stack Developer",
+            "description": "End-to-end web applications with Python backend",
+            "sets": [
+                "jupyter",
+                "api_integration",
+                "databases",
+                "web_scraping",
+                "template_engines",
+                "testing",
+                "logging_monitoring",
+                "cli_tools",
+                "data_formats",
+                "multithreading",
+                "cloud_sdks"
+            ],
+            "install_time": "40-65 minutes",
+            "disk_estimate": "2 GB"
+        }
+    },
+    "system_requirements": {
+        "macos": {
+            "minimum_version": "macOS 13 (Ventura)",
+            "recommended_version": "macOS 15 (Sequoia)",
+            "architectures": [
+                "arm64 (Apple Silicon)",
+                "x86_64 (Intel)"
+            ],
+            "notes": [
+                "Python 3.11 recommended for maximum compatibility",
+                "Xcode Command Line Tools required for compilation",
+                "Homebrew recommended for system dependencies",
+                "ARM64 native Python strongly recommended on Apple Silicon"
+            ]
+        },
+        "python": {
+            "minimum": "3.11",
+            "recommended": "3.11",
+            "installation_methods": {
+                "homebrew": "brew install python@3.11",
+                "python_org": "https://www.python.org/downloads/macos/",
+                "pyenv": "brew install pyenv && pyenv install 3.11"
+            }
+        },
+        "package_dependencies": {
+            "jq": {
+                "required": true,
+                "install": "brew install jq",
+                "notes": "Required for JSON parsing in the script"
+            },
+            "pytesseract": {
+                "requires": "Tesseract-OCR",
+                "install": "brew install tesseract",
+                "notes": "Also install language data: brew install tesseract-lang"
+            },
+            "tabula-py": {
+                "requires": "Java Runtime Environment",
+                "install": "brew install openjdk",
+                "notes": "Java 8+ required"
+            },
+            "camelot-py": {
+                "requires": "Ghostscript",
+                "install": "brew install ghostscript",
+                "notes": "Required for PDF table extraction"
+            },
+            "playwright": {
+                "requires": "Browser binaries",
+                "install": "playwright install",
+                "notes": "Run after pip install playwright"
+            },
+            "pyshark": {
+                "requires": "Wireshark/tshark",
+                "install": "brew install wireshark",
+                "notes": "May require security permissions"
+            },
+            "pyaudio": {
+                "requires": "PortAudio",
+                "install": "brew install portaudio",
+                "notes": "Install before pip install pyaudio"
+            },
+            "ffmpeg-python": {
+                "requires": "FFmpeg",
+                "install": "brew install ffmpeg",
+                "notes": "Required for audio/video processing"
+            },
+            "geopandas": {
+                "requires": "GDAL",
+                "install": "brew install gdal",
+                "notes": "May need: export GDAL_CONFIG=$(brew --prefix gdal)/bin/gdal-config"
+            },
+            "pyautogui": {
+                "requires": "Accessibility permissions",
+                "install": "System Preferences > Security & Privacy > Accessibility",
+                "notes": "Grant Terminal/iTerm2 accessibility access"
+            },
+            "spacy": {
+                "requires": "Language models",
+                "install": "python -m spacy download en_core_web_sm",
+                "notes": "Run after pip install spacy"
+            },
+            "nltk": {
+                "requires": "NLTK data",
+                "install": "python -c \"import nltk; nltk.download('popular')\"",
+                "notes": "Run after pip install nltk"
+            }
+        },
+        "apple_silicon_notes": {
+            "pytorch": "Uses MPS (Metal Performance Shaders) backend automatically",
+            "tensorflow": "Use 'tensorflow' + 'tensorflow-metal' for GPU acceleration",
+            "mlx": "Apple's native ML framework, highly optimized for M1/M2/M3",
+            "rosetta": "Avoid running Python under Rosetta 2 - use native ARM64 builds",
+            "unified_memory": "Apple Silicon benefits from unified memory architecture"
+        }
+    }
+}

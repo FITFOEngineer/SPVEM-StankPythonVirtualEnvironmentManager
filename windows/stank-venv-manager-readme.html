@@ -1,0 +1,1044 @@
+﻿﻿<!DOCTYPE html>
+<!--
+    Filename: stank-venv-manager-readme.html
+    Stank Python Virtual Environment Manager - README
+    Created by Nick Stankiewicz on 2026.01.04
+    Updated: 2026.01.04 - Version 0.1 (Beta)
+    Status: Beta - Please report issues
+    
+    Copyright (C) 2026 Nick Stankiewicz
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nick Stankiewicz">
+    <meta name="created" content="2026-01-04">
+    <meta name="version" content="0.1">
+    <title>STANK PYTHON VENV MANAGER v0.1</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --bg2: #161b22;
+            --bg3: #21262d;
+            --text: #c9d1d9;
+            --text2: #8b949e;
+            --blue: #58a6ff;
+            --green: #3fb950;
+            --yellow: #d29922;
+            --red: #f85149;
+            --purple: #a371f7;
+            --orange: #db6d28;
+            --cyan: #39c5cf;
+            --border: #30363d;
+            --cat-core: #58a6ff;
+            --cat-data: #3fb950;
+            --cat-ml: #a371f7;
+            --cat-web: #db6d28;
+            --cat-security: #f85149;
+            --cat-files: #d29922;
+            --cat-dev: #39c5cf;
+            --cat-devops: #8b949e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 2rem;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-weight: 600;
+            color: var(--blue);
+            font-size: 1.1rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: var(--text2);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--blue); }
+        
+        /* Main container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+        }
+        .header .version {
+            color: var(--text2);
+            font-size: 0.95rem;
+        }
+        .header .author {
+            color: var(--text2);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Quick Start */
+        .quickstart {
+            background: linear-gradient(135deg, rgba(63,185,80,0.1) 0%, rgba(88,166,255,0.1) 100%);
+            border: 1px solid var(--green);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .quickstart h2 {
+            color: var(--green);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .quickstart ol {
+            margin-left: 1.5rem;
+            color: var(--text);
+        }
+        .quickstart li {
+            margin-bottom: 0.5rem;
+        }
+        .quickstart code {
+            background: var(--bg3);
+            padding: 0.2em 0.5em;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: var(--cyan);
+        }
+        
+        /* Sections */
+        h2 {
+            font-size: 1.4rem;
+            color: var(--blue);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        h3 {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin: 1.5rem 0 0.75rem;
+        }
+        p { color: var(--text2); margin-bottom: 0.75rem; }
+        
+        /* Files table */
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .file-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .file-card code {
+            color: var(--green);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .file-card span {
+            color: var(--text2);
+            font-size: 0.9rem;
+        }
+        
+        /* Job Roles */
+        .job-roles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .job-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .job-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-2px);
+        }
+        .job-card h4 {
+            color: var(--blue);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        .job-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        .job-card .meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--text2);
+        }
+        .job-card .meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        /* Package Sets */
+        .category-badge {
+            display: inline-block;
+            padding: 0.15em 0.5em;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .cat-core { background: rgba(88,166,255,0.2); color: var(--cat-core); }
+        .cat-data { background: rgba(63,185,80,0.2); color: var(--cat-data); }
+        .cat-ml { background: rgba(163,113,247,0.2); color: var(--cat-ml); }
+        .cat-web { background: rgba(219,109,40,0.2); color: var(--cat-web); }
+        .cat-security { background: rgba(248,81,73,0.2); color: var(--cat-security); }
+        .cat-files { background: rgba(210,153,34,0.2); color: var(--cat-files); }
+        .cat-dev { background: rgba(57,197,207,0.2); color: var(--cat-dev); }
+        .cat-devops { background: rgba(139,148,158,0.2); color: var(--cat-devops); }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 0.65rem 0.85rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+        th {
+            background: var(--bg2);
+            color: var(--text);
+            font-weight: 600;
+        }
+        tr:hover { background: rgba(88,166,255,0.05); }
+        
+        /* Collapsible */
+        .collapsible {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin: 0.75rem 0;
+            overflow: hidden;
+        }
+        .collapsible-header {
+            padding: 0.85rem 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .collapsible-header:hover { background: var(--bg3); }
+        .collapsible-header h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+        .collapsible-header .arrow {
+            color: var(--text2);
+            transition: transform 0.2s;
+        }
+        .collapsible.open .arrow { transform: rotate(90deg); }
+        .collapsible-content {
+            display: none;
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg);
+        }
+        .collapsible.open .collapsible-content { display: block; }
+        .pkg-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .pkg-list span {
+            background: var(--bg3);
+            padding: 0.2em 0.6em;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--cyan);
+        }
+        
+        /* Alerts */
+        .alert {
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid;
+        }
+        .alert-warn {
+            background: rgba(210,153,34,0.1);
+            border-color: var(--yellow);
+        }
+        .alert-warn strong { color: var(--yellow); }
+        .alert-danger {
+            background: rgba(248,81,73,0.1);
+            border-color: var(--red);
+        }
+        .alert-danger strong { color: var(--red); }
+        .alert-info {
+            background: rgba(88,166,255,0.1);
+            border-color: var(--blue);
+        }
+        .alert-info strong { color: var(--blue); }
+        .alert-success {
+            background: rgba(63,185,80,0.1);
+            border-color: var(--green);
+        }
+        .alert-success strong { color: var(--green); }
+        
+        /* Code blocks */
+        pre {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 0.75rem 0;
+            position: relative;
+        }
+        pre code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            color: var(--text2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background: var(--blue);
+            color: white;
+            border-color: var(--blue);
+        }
+        
+        /* Inline code */
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: var(--bg3);
+            padding: 0.15em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--cyan);
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text2);
+            font-size: 0.85rem;
+        }
+        
+        /* Print styles */
+        @media print {
+            .nav, .copy-btn { display: none; }
+            body { background: white; color: black; }
+            .collapsible-content { display: block !important; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .container { padding: 1rem; }
+            .job-roles { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <span class="nav-brand">STANK PYTHON VENV MANAGER <span style="background:var(--yellow); color:#000; padding:0.1em 0.4em; border-radius:3px; font-size:0.7em; margin-left:0.3em;">BETA</span></span>
+    <div class="nav-links">
+        <a href="#quickstart">Quick Start</a>
+        <a href="#menu">Menu Guide</a>
+        <a href="#jobroles">Job Roles</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+        <a href="#packages">All Packages</a>
+    </div>
+</nav>
+
+<div class="container">
+
+<header class="header">
+    <h1>STANK PYTHON VIRTUAL ENVIRONMENT MANAGER <span style="background:var(--yellow); color:#000; padding:0.2em 0.6em; border-radius:4px; font-size:0.5em; vertical-align:middle; margin-left:0.5em;">BETA</span></h1>
+    <p class="version">Version 0.1 (Beta) | Windows 10/11</p>
+    <p class="author">Created by Nick Stankiewicz | 2026.01.04</p>
+</header>
+
+<!-- WHAT IS THIS -->
+<section id="overview" style="margin-bottom:2rem;">
+    <h2>&#128640; What Is This?</h2>
+    <p style="font-size:1.1rem; margin-bottom:1rem;">A beginner-friendly tool that sets up Python environments for data science, machine learning, web development, and more - without breaking your existing Python setup.</p>
+    
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin:1.5rem 0;">
+        <div class="alert alert-info" style="margin:0;">
+            <strong>&#127919; Pick a Job Role</strong><br>
+            Data Scientist? Backend Dev? Get all the packages you need in one click.
+        </div>
+        <div class="alert alert-success" style="margin:0;">
+            <strong>&#128274; Safe by Design</strong><br>
+            Zero delete operations. Your existing Python stays untouched.
+        </div>
+        <div class="alert alert-warn" style="margin:0;">
+            <strong>&#128218; Learn as You Go</strong><br>
+            Every command is explained. See what's happening and why.
+        </div>
+    </div>
+</section>
+
+<!-- QUICK START -->
+<section class="quickstart" id="quickstart">
+    <h2>&#9889; Quick Start</h2>
+    
+    <h3>Step 1: Install Python 3.11</h3>
+    <p>Download from <a href="https://python.org/downloads/release/python-3119/" style="color:var(--blue)">python.org/downloads/release/python-3119</a></p>
+    
+    <div class="alert alert-warn" style="margin:1rem 0;">
+        <strong>IMPORTANT - Installer Options:</strong>
+        <ul style="margin:0.5rem 0 0 1.5rem;">
+            <li><code>[ ] Add python.exe to PATH</code> - <strong>LEAVE UNCHECKED</strong></li>
+            <li><code>[x] Install py launcher for all users</code> - <strong>CHECK THIS</strong></li>
+        </ul>
+        <p style="margin-top:0.5rem; color:var(--text2);">This installs Python 3.11 safely alongside existing versions. Your system defaults are NOT changed.</p>
+    </div>
+    
+    <p style="color:var(--text2);"><strong>Microsoft Store Python?</strong> Disable it: Settings &rarr; Apps &rarr; Advanced app settings &rarr; App execution aliases. Turn OFF <code>python.exe</code> and <code>python3.exe</code>.</p>
+    
+    <h3>Step 2: Download Files</h3>
+    <p>Place all 5 files in the <strong>same folder</strong>:</p>
+    <ul style="margin-left:1.5rem;">
+        <li><code>stank-venv-manager.bat</code> - launcher</li>
+        <li><code>stank-venv-manager.ps1</code> - main script</li>
+        <li><code>stank-venv-packages.json</code> - package definitions</li>
+        <li><code>stank-venv-manager-readme.html</code> - this documentation</li>
+        <li><code>README.md</code> - text documentation</li>
+    </ul>
+    
+    <h3>Step 3: Run</h3>
+    <div class="alert alert-info" style="text-align:center; font-size:1.2rem; padding:1.5rem;">
+        <strong>Double-click:</strong> <code style="font-size:1.3rem; background:var(--bg3); padding:0.3em 0.6em;">stank-venv-manager.bat</code>
+    </div>
+    
+    <p style="color:var(--text2); margin-top:1rem;"><strong>Why use the .bat file?</strong> It bypasses PowerShell execution policy restrictions without requiring admin rights or permanent system changes. Just double-click and go.</p>
+    
+    <h3>Verify Installation</h3>
+    <p>Open Command Prompt and run:</p>
+    <pre style="background:var(--bg3); padding:1rem; border-radius:6px;"><code>py --list
+py -3.11 --version</code></pre>
+</section>
+
+<!-- MENU OPTIONS - What You'll See -->
+<h2 id="menu">&#128203; What You'll See: The Menu</h2>
+<p style="margin-bottom:1rem;">When you run the script, you'll see this menu. Here's what each option does:</p>
+
+<table>
+    <tr><th style="width:50px;">#</th><th style="width:180px;">Action</th><th>What It Does</th></tr>
+    <tr><td><strong>0</strong></td><td>Resume last session</td><td>Picks up where you left off - same environment, launches JupyterLab</td></tr>
+    <tr><td><strong>1</strong></td><td>Empty environment</td><td>Just Python, no packages - for when you want full control</td></tr>
+    <tr><td><strong>2</strong></td><td>With JupyterLab</td><td>Python + JupyterLab only - lightweight notebook setup</td></tr>
+    <tr><td><strong>3</strong></td><td>Data Science starter</td><td>numpy, pandas, matplotlib, seaborn - the essentials</td></tr>
+    <tr><td><strong>4</strong></td><td>By Job Role</td><td><strong>RECOMMENDED</strong> - Pick your profession, get all relevant packages</td></tr>
+    <tr><td><strong>5</strong></td><td>Full install</td><td>Everything (416 packages) - takes 2-3 hours, needs 10+ GB</td></tr>
+    <tr><td><strong>6</strong></td><td>View / Launch</td><td>See what's installed, launch JupyterLab for existing environments</td></tr>
+    <tr><td><strong>7</strong></td><td>Add packages</td><td>Install additional package sets to an existing environment</td></tr>
+    <tr><td><strong>S</strong></td><td>Running sessions</td><td>Show URLs for any JupyterLab instances currently running</td></tr>
+    <tr><td><strong>8</strong></td><td>Help</td><td>How to activate manually, find files, delete environments</td></tr>
+    <tr><td><strong>Q</strong></td><td>Quit</td><td>Exit the script</td></tr>
+</table>
+
+<div class="alert alert-info" style="margin-top:1.5rem;">
+    <strong>&#128161; First Time?</strong> Press <strong>4</strong> to pick your job role - it's the easiest way to get started with the right packages.
+</div>
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-top:1rem;">
+    <div class="alert alert-warn" style="margin:0;">
+        <strong>&#9888; Option 5 (Full Install)</strong><br>
+        Installs 400+ packages. Expect 2-3 hours and 10-12 GB disk usage. Most users should pick a Job Role instead.
+    </div>
+    <div class="alert alert-success" style="margin:0;">
+        <strong>&#128274; Safe by Design</strong><br>
+        This script contains <strong>zero delete operations</strong>. It never removes your files or environments.
+    </div>
+</div>
+
+<!-- JOB ROLES -->
+<h2 id="jobroles">&#128188; Install by Job Role</h2>
+<p>Pre-configured package bundles for your profession. Each includes all necessary dependencies.</p>
+
+<div class="job-roles">
+    <div class="job-card">
+        <h4>Data Scientist</h4>
+        <p>Analysis, visualization, ML, statistical modeling</p>
+        <div class="meta">
+            <span>&#128337; 50-80 min</span>
+            <span>&#128190; 5 GB</span>
+            <span>&#128230; 9 sets</span>
+        </div>
+    </div>
+    <div class="job-card">
+        <h4>Data Analyst</h4>
+        <p>Business intelligence, reporting, SQL, visualization</p>
+        <div class="meta">
+            <span>&#128337; 25-40 min</span>
+            <span>&#128190; 1.5 GB</span>
+            <span>&#128230; 8 sets</span>
+        </div>
+    </div>
+    <div class="job-card">
+        <h4>Data Engineer</h4>
+        <p>ETL pipelines, databases, data processing at scale</p>
+        <div class="meta">
+            <span>&#128337; 45-70 min</span>
+            <span>&#128190; 3 GB</span>
+            <span>&#128230; 13 sets</span>
+        </div>
+    </div>
+    <div class="job-card">
+        <h4>Machine Learning Engineer</h4>
+        <p>Model development, training, deployment, MLOps</p>
+        <div class="meta">
+            <span>&#128337; 60-90 min</span>
+            <span>&#128190; 6 GB</span>
+            <span>&#128230; 12 sets</span>
+        </div>
+    </div>
+    <div class="job-card">
+        <h4>Security Analyst</h4>
+        <p>Security testing, pen testing, forensics, incident response</p>
+        <div class="meta">
+            <span>&#128337; 35-55 min</span>
+            <span>&#128190; 2 GB</span>
+            <span>&#128230; 12 sets</span>
+        </div>
+    </div>
+    <div class="job-card">
+        <h4>Backend Developer</h4>
+        <p>REST APIs, databases, server-side logic</p>
+        <div class="meta">
+            <span>&#128337; 30-50 min</span>
+            <span>&#128190; 1.5 GB</span>
+            <span>&#128230; 9 sets</span>
+        </div>
+    </div>
+    <div class="job-card">
+        <h4>DevOps Engineer</h4>
+        <p>CI/CD, infrastructure automation, monitoring</p>
+        <div class="meta">
+            <span>&#128337; 35-55 min</span>
+            <span>&#128190; 1.5 GB</span>
+            <span>&#128230; 10 sets</span>
+        </div>
+    </div>
+    <div class="job-card">
+        <h4>Document Automation Specialist</h4>
+        <p>Legal/business document generation, templates</p>
+        <div class="meta">
+            <span>&#128337; 30-50 min</span>
+            <span>&#128190; 1.2 GB</span>
+            <span>&#128230; 10 sets</span>
+        </div>
+    </div>
+    <div class="job-card">
+        <h4>Full Stack Developer</h4>
+        <p>End-to-end web applications with Python</p>
+        <div class="meta">
+            <span>&#128337; 40-65 min</span>
+            <span>&#128190; 2 GB</span>
+            <span>&#128230; 11 sets</span>
+        </div>
+    </div>
+</div>
+
+<!-- TROUBLESHOOTING -->
+<h2 id="troubleshooting">&#128295; Troubleshooting</h2>
+<p style="margin-bottom:1rem;">Most issues have quick fixes. Here are the common ones:</p>
+
+<h3>"Running scripts is disabled"</h3>
+<p>This is a Windows PowerShell security setting. The .bat file should bypass this, but if you run the .ps1 directly:</p>
+<pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+<h3>"Python not found" or "py not recognized"</h3>
+<p>The py launcher isn't installed. Reinstall Python 3.11 from python.org and make sure to check <strong>"Install py launcher for all users"</strong>. Then restart your terminal.</p>
+
+<h3>Package install failed</h3>
+<ul>
+    <li>Check internet connection</li>
+    <li>Install <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" style="color:var(--blue);">Visual C++ Redistributable</a> for packages that compile</li>
+    <li>Some packages need system dependencies (see <a href="#requirements" style="color:var(--blue);">Requirements</a>)</li>
+    <li>Try individual install: <code>pip install package-name</code></li>
+</ul>
+
+<h3>JSON config not loading</h3>
+<p>Ensure <code>stank-venv-packages.json</code> is in same folder as .ps1 file. Check for JSON syntax errors (trailing commas, missing quotes).</p>
+
+<!-- REQUIREMENTS -->
+<h2 id="requirements">&#9881; Requirements</h2>
+
+<table>
+    <tr><th>Requirement</th><th>Details</th></tr>
+    <tr><td>Windows</td><td>10 or 11</td></tr>
+    <tr><td>Python</td><td><strong>3.11 only</strong> from python.org (NOT 3.12+, NOT Microsoft Store)</td></tr>
+    <tr><td>Internet</td><td>Required for package downloads</td></tr>
+    <tr><td>Disk Space</td><td>500 MB - 12 GB depending on selection</td></tr>
+</table>
+
+<div class="alert alert-warn" style="margin-top:1rem;">
+    <strong>&#9888; Python 3.11 is REQUIRED</strong><br>
+    <ul style="margin-top:0.5rem; margin-left:1.5rem;">
+        <li><strong>Python 3.12+</strong> - breaks packages (distutils removed)</li>
+        <li><strong>Python 3.10-</strong> - missing compatibility and performance</li>
+        <li><strong>Python 3.11</strong> - the sweet spot, widely tested</li>
+    </ul>
+</div>
+
+<h3>Installing Python 3.11 (Safe)</h3>
+<div class="alert alert-info">
+    <strong>Python 3.11 coexists with other versions - your defaults are NOT changed.</strong>
+</div>
+<ol style="margin-left:1.5rem;">
+    <li>Download: <a href="https://www.python.org/downloads/release/python-3119/" style="color:var(--blue)">python.org/downloads/release/python-3119</a></li>
+    <li><strong>UNCHECK</strong> "Add python.exe to PATH"</li>
+    <li><strong>CHECK</strong> "Install py launcher for all users"</li>
+    <li>Restart this script</li>
+</ol>
+<p style="color:var(--text2);">This tool uses <code>py -3.11</code> to target Python 3.11 specifically.</p>
+
+<h3>External Dependencies</h3>
+<table>
+    <tr><th>Package</th><th>Requires</th><th>Download</th></tr>
+    <tr><td><code>pytesseract</code></td><td>Tesseract-OCR</td><td><a href="https://github.com/UB-Mannheim/tesseract/wiki" style="color:var(--blue)">UB-Mannheim/tesseract</a></td></tr>
+    <tr><td><code>tabula-py</code></td><td>Java Runtime 8+</td><td><a href="https://adoptium.net/" style="color:var(--blue)">adoptium.net</a></td></tr>
+    <tr><td><code>pyshark</code></td><td>Wireshark</td><td><a href="https://www.wireshark.org/download.html" style="color:var(--blue)">wireshark.org</a></td></tr>
+    <tr><td><code>playwright</code></td><td>Browser binaries</td><td>Run: <code>playwright install</code></td></tr>
+    <tr><td><code>scapy</code></td><td>Npcap driver</td><td><a href="https://npcap.com/#download" style="color:var(--blue)">npcap.com</a></td></tr>
+    <tr><td><code>python-nmap</code></td><td>Nmap</td><td><a href="https://nmap.org/download.html" style="color:var(--blue)">nmap.org</a></td></tr>
+</table>
+
+<h3>Windows-Specific Limitations</h3>
+<div class="alert alert-warn">
+    <strong>Some packages have Windows limitations:</strong>
+    <ul style="margin-top:0.5rem; margin-left:1.5rem;">
+        <li><strong>TensorFlow GPU</strong> - CPU only on native Windows. Use WSL2 for GPU, or use PyTorch instead.</li>
+        <li><strong>LightGBM GPU</strong> - No Windows GPU wheels. CPU only, or use WSL2.</li>
+        <li><strong>Ansible</strong> - Cannot run as control node on Windows. Use WSL2 or Docker.</li>
+    </ul>
+</div>
+
+<div class="alert alert-danger" style="margin-top:1rem;">
+    <strong>&#9888; Cybersecurity Packages - Antivirus Warning:</strong><br>
+    Security tools like <code>impacket</code>, <code>yara-python</code>, <code>scapy</code>, and <code>oletools</code> may trigger Windows Defender or other antivirus software as "potentially unwanted" or "hacking tools." These are legitimate security research packages used by professionals, but their capabilities can be flagged as malicious. If you install the Security Analyst role or cybersecurity package set, you may need to add an exclusion for your <code>~/.venvs</code> folder in Windows Security settings.
+</div>
+
+<h3>Prerequisites</h3>
+<p><strong>Visual C++ Redistributable</strong> - Required for XGBoost, LightGBM, faiss-cpu:</p>
+<p><a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" style="color:var(--blue)">Download vc_redist.x64.exe</a></p>
+
+<h3>Why pip (not uv)</h3>
+<p>This tool uses <strong>pip</strong> instead of the newer <strong>uv</strong> package manager:</p>
+<ul style="margin-left:1.5rem;">
+    <li><strong>Pre-installed</strong> - pip comes with Python, no extra setup</li>
+    <li><strong>Familiar</strong> - most tutorials and docs use pip</li>
+    <li><strong>Stable</strong> - mature tooling, predictable behavior</li>
+    <li><strong>Beginner-friendly</strong> - one less thing to install/learn</li>
+</ul>
+<p style="color:var(--text2); margin-top:0.5rem;">uv is 10-100x faster but requires separate installation. May add as optional mode in future versions.</p>
+
+<!-- PACKAGE SETS -->
+<h2 id="packages">&#128230; Package Sets Reference (29 Total)</h2>
+<p style="margin-bottom:1rem; color:var(--text2);">This section lists all available package sets for advanced users. Most users should just <a href="#jobroles" style="color:var(--blue);">pick a Job Role</a> instead.</p>
+<p>Atomic, single-purpose package groups. Mix and match as needed.</p>
+
+<h3>Core & Data</h3>
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-core">core</span> JupyterLab</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Interactive notebook environment | 7 packages | ~200 MB</p>
+        <div class="pkg-list">
+            <span>jupyterlab</span><span>notebook</span><span>ipykernel</span><span>ipywidgets</span><span>jupyterlab-widgets</span><span>nbconvert</span><span>nbformat</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-data">data</span> Data Science Core</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Analysis, statistics, visualization | 10 packages | ~500 MB</p>
+        <div class="pkg-list">
+            <span>numpy</span><span>pandas</span><span>polars</span><span>matplotlib</span><span>seaborn</span><span>plotly</span><span>scikit-learn</span><span>scipy</span><span>statsmodels</span><span>pingouin</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-data">data</span> Data Formats & Serialization</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>JSON, XML, YAML, CSV, Parquet | 20 packages | ~150 MB</p>
+        <div class="pkg-list">
+            <span>orjson</span><span>ujson</span><span>simplejson</span><span>jsonlines</span><span>xmltodict</span><span>defusedxml</span><span>lxml</span><span>pyyaml</span><span>ruamel.yaml</span><span>toml</span><span>tomli</span><span>python-dotenv</span><span>csvkit</span><span>tabulate</span><span>prettytable</span><span>pyarrow</span><span>fastparquet</span><span>h5py</span><span>msgpack</span><span>protobuf</span>
+        </div>
+    </div>
+</div>
+
+<h3>Machine Learning</h3>
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-ml">ml</span> Deep Learning & Neural Networks</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>CNN, RNN, autoencoders, gradient boosting | 23 packages | ~3 GB</p>
+        <div class="pkg-list">
+            <span>torch</span><span>torchvision</span><span>torchaudio</span><span>pytorch-lightning</span><span>torchmetrics</span><span>timm</span><span>tensorflow</span><span>keras</span><span>keras-tuner</span><span>xgboost</span><span>lightgbm</span><span>catboost</span><span>scikit-learn</span><span>imbalanced-learn</span><span>optuna</span><span>hyperopt</span><span>mlflow</span><span>wandb</span><span>tensorboard</span><span>einops</span><span>albumentations</span><span>opencv-python</span><span>scikit-image</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-ml">ml</span> LLM & AI Integration</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Large language models, embeddings, vector stores | 20 packages | ~400 MB</p>
+        <div class="pkg-list">
+            <span>openai</span><span>anthropic</span><span>langchain</span><span>langchain-community</span><span>langchain-openai</span><span>llama-index</span><span>transformers</span><span>sentence-transformers</span><span>tiktoken</span><span>chromadb</span><span>faiss-cpu</span><span>pinecone-client</span><span>weaviate-client</span><span>cohere</span><span>huggingface-hub</span><span>datasets</span><span>accelerate</span><span>peft</span><span>guidance</span><span>instructor</span>
+        </div>
+    </div>
+</div>
+
+<h3>Web & Security</h3>
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-web">web</span> Web Scraping & Automation</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Extract data from websites | 18 packages | ~300 MB</p>
+        <div class="pkg-list">
+            <span>requests</span><span>httpx</span><span>aiohttp</span><span>beautifulsoup4</span><span>lxml</span><span>selenium</span><span>playwright</span><span>scrapy</span><span>parsel</span><span>fake-useragent</span><span>cloudscraper</span><span>mechanicalsoup</span><span>requests-html</span><span>newspaper3k</span><span>trafilatura</span><span>goose3</span><span>feedparser</span><span>extruct</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-security">security</span> Cybersecurity & Pen Testing</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Security testing, cryptography, forensics | 21 packages | ~400 MB</p>
+        <div class="alert alert-warn" style="margin:0.5rem 0; padding:0.75rem;">
+            <strong>&#9888; Antivirus Warning:</strong> Packages like <code>impacket</code>, <code>yara-python</code>, and <code>scapy</code> may trigger Windows Defender or other antivirus software. These are legitimate security research tools, but their capabilities can be flagged as potentially malicious. You may need to add exclusions for your venv folder.
+        </div>
+        <div class="pkg-list">
+            <span>scapy</span><span>paramiko</span><span>fabric</span><span>cryptography</span><span>pycryptodome</span><span>python-nmap</span><span>shodan</span><span>dnspython</span><span>impacket</span><span>pyopenssl</span><span>bcrypt</span><span>passlib</span><span>hashid</span><span>yara-python</span><span>oletools</span><span>pefile</span><span>pyelftools</span><span>python-magic</span><span>sslyze</span><span>python-whois</span><span>censys</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-security">security</span> Network & Packet Analysis</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Deep packet inspection, forensics | 14 packages | ~200 MB</p>
+        <div class="pkg-list">
+            <span>pyshark</span><span>scapy</span><span>dpkt</span><span>kamene</span><span>netaddr</span><span>netifaces</span><span>psutil</span><span>mitmproxy</span><span>PySocks</span><span>python-socks</span><span>aiodns</span><span>dnspython</span><span>dnslib</span><span>twisted</span>
+        </div>
+    </div>
+</div>
+
+<h3>File Processing</h3>
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-files">files</span> PDF Processing</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Read, create, merge, split, extract | 10 packages | ~250 MB</p>
+        <div class="pkg-list">
+            <span>pypdf</span><span>PyPDF2</span><span>pdfplumber</span><span>pdfminer.six</span><span>pymupdf</span><span>pdf2image</span><span>img2pdf</span><span>tabula-py</span><span>camelot-py</span><span>pikepdf</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-files">files</span> Document Creation</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Create PDFs, Word, PowerPoint, Excel | 10 packages | ~200 MB</p>
+        <div class="pkg-list">
+            <span>reportlab</span><span>fpdf2</span><span>weasyprint</span><span>xhtml2pdf</span><span>python-docx</span><span>docxtpl</span><span>python-pptx</span><span>openpyxl</span><span>xlsxwriter</span><span>xlwt</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-files">files</span> Office Document Extraction</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Read Word, Excel, PowerPoint, RTF, ODF | 14 packages | ~150 MB</p>
+        <div class="pkg-list">
+            <span>python-docx</span><span>docx2txt</span><span>openpyxl</span><span>xlrd</span><span>python-pptx</span><span>odfpy</span><span>striprtf</span><span>pyexcel</span><span>pyexcel-xlsx</span><span>pyexcel-xls</span><span>pyexcel-ods</span><span>python-calamine</span><span>msoffcrypto-tool</span><span>olefile</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-files">files</span> Image Processing & OCR</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Image manipulation, OCR, computer vision | 12 packages | ~400 MB</p>
+        <div class="pkg-list">
+            <span>pillow</span><span>pillow-heif</span><span>opencv-python</span><span>scikit-image</span><span>imageio</span><span>pytesseract</span><span>easyocr</span><span>pdf2image</span><span>img2pdf</span><span>python-barcode</span><span>pyzbar</span><span>qrcode</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-files">files</span> Archive & Compression</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>ZIP, TAR, 7Z, RAR handling | 7 packages | ~50 MB</p>
+        <div class="pkg-list">
+            <span>py7zr</span><span>rarfile</span><span>patool</span><span>lz4</span><span>zstandard</span><span>python-snappy</span><span>brotli</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-files">files</span> Email Processing</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Parse EML, MSG, MBOX | 6 packages | ~50 MB</p>
+        <div class="pkg-list">
+            <span>extract-msg</span><span>msg-parser</span><span>mail-parser</span><span>eml-parser</span><span>flanker</span><span>imapclient</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-files">files</span> Audio & Video Processing</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Media manipulation, transcription | 8 packages | ~200 MB</p>
+        <div class="pkg-list">
+            <span>pydub</span><span>librosa</span><span>soundfile</span><span>moviepy</span><span>ffmpeg-python</span><span>av</span><span>yt-dlp</span><span>openai-whisper</span>
+        </div>
+    </div>
+</div>
+
+<h3>Development & DevOps</h3>
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-dev">dev</span> API & Web Services</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>REST APIs, GraphQL, web frameworks | 25 packages | ~250 MB</p>
+        <div class="pkg-list">
+            <span>fastapi</span><span>uvicorn</span><span>gunicorn</span><span>flask</span><span>flask-restful</span><span>django</span><span>djangorestframework</span><span>starlette</span><span>httpx</span><span>requests</span><span>urllib3</span><span>requests-cache</span><span>tenacity</span><span>backoff</span><span>ratelimit</span><span>gql</span><span>strawberry-graphql</span><span>websockets</span><span>websocket-client</span><span>pydantic</span><span>pydantic-settings</span><span>python-jose</span><span>pyjwt</span><span>authlib</span><span>python-multipart</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-dev">dev</span> Databases</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>SQL and NoSQL drivers, ORMs | 19 packages | ~200 MB</p>
+        <div class="pkg-list">
+            <span>sqlalchemy</span><span>sqlmodel</span><span>alembic</span><span>psycopg2-binary</span><span>asyncpg</span><span>pymysql</span><span>aiomysql</span><span>pyodbc</span><span>sqlite-utils</span><span>aiosqlite</span><span>pymongo</span><span>motor</span><span>redis</span><span>aioredis</span><span>elasticsearch</span><span>neo4j</span><span>duckdb</span><span>tinydb</span><span>diskcache</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-devops">devops</span> Testing & Code Quality</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Unit testing, linting, type checking | 22 packages | ~150 MB</p>
+        <div class="pkg-list">
+            <span>pytest</span><span>pytest-asyncio</span><span>pytest-cov</span><span>pytest-xdist</span><span>pytest-mock</span><span>pytest-benchmark</span><span>hypothesis</span><span>faker</span><span>factory-boy</span><span>responses</span><span>vcrpy</span><span>respx</span><span>coverage</span><span>tox</span><span>nox</span><span>pre-commit</span><span>black</span><span>ruff</span><span>flake8</span><span>pylint</span><span>mypy</span><span>bandit</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-devops">devops</span> Log Parsing & Analysis</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Apache, nginx, syslog, JSON logs | 9 packages | ~100 MB</p>
+        <div class="pkg-list">
+            <span>loguru</span><span>structlog</span><span>python-json-logger</span><span>apachelogs</span><span>pygrok</span><span>parse</span><span>python-dateutil</span><span>pytz</span><span>croniter</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-devops">devops</span> Cloud Provider SDKs</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>AWS, Azure, GCP integrations | 10 packages | ~300 MB</p>
+        <div class="pkg-list">
+            <span>boto3</span><span>botocore</span><span>azure-identity</span><span>azure-storage-blob</span><span>azure-keyvault-secrets</span><span>google-cloud-storage</span><span>google-cloud-bigquery</span><span>google-auth</span><span>oci</span><span>python-digitalocean</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-dev">dev</span> CLI & REPL Development</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>CLIs, enhanced REPLs, debugging | 21 packages | ~100 MB</p>
+        <div class="pkg-list">
+            <span>click</span><span>typer</span><span>fire</span><span>rich</span><span>colorama</span><span>termcolor</span><span>prompt-toolkit</span><span>questionary</span><span>inquirer</span><span>textual</span><span>tqdm</span><span>alive-progress</span><span>pyfiglet</span><span>yaspin</span><span>ipython</span><span>bpython</span><span>ptpython</span><span>ipdb</span><span>pdbpp</span><span>pudb</span><span>icecream</span>
+        </div>
+    </div>
+</div>
+
+<!-- FILES -->
+<h2 id="files">&#128194; Files Reference</h2>
+<p style="margin-bottom:1rem; color:var(--text2);">Technical details about the files included with this tool.</p>
+<div class="files-grid">
+    <div class="file-card" style="border: 2px solid var(--green);">
+        <code style="color:var(--green);">stank-venv-manager.bat</code>
+        <span><strong>START HERE</strong> - Double-click to launch</span>
+    </div>
+    <div class="file-card">
+        <code>stank-venv-manager.ps1</code>
+        <span>Main PowerShell script (~1,780 lines)</span>
+    </div>
+    <div class="file-card">
+        <code>stank-venv-packages.json</code>
+        <span>Package configurations (editable)</span>
+    </div>
+    <div class="file-card">
+        <code>stank-venv-manager-readme.html</code>
+        <span>This documentation (open in browser)</span>
+    </div>
+    <div class="file-card">
+        <code>README.md</code>
+        <span>Text documentation</span>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Filename: stank-venv-manager-readme.html | Version 0.1 (Beta)</p>
+    <p>Created by Nick Stankiewicz | 2026.01.04</p>
+</footer>
+
+</div>
+
+<script>
+function copyCode(btn) {
+    const code = btn.previousElementSibling.textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
+}
+</script>
+
+</body>
+</html>
