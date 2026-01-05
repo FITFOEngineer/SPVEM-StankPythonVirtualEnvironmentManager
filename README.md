@@ -30,7 +30,7 @@ Setting up Python environments is confusing for beginners: too many tools (venv,
 
 - PowerShell script with .bat launcher (bypasses execution policy)
 - Uses `py -3.11` launcher for version management
-- 29 package sets, 416 packages, 9 job roles
+- 29 package sets, 413 packages, 9 job roles
 
 ### macOS
 
@@ -203,8 +203,8 @@ SPVEM-StankPythonVirtualEnvironmentManager/
     windows/
         README.md                      # Windows-specific docs
         stank-venv-manager.bat         # Entry point - double-click
-        stank-venv-manager.ps1         # Main script (1,793 lines)
-        stank-venv-packages.json       # Package definitions (416 packages)
+        stank-venv-manager.ps1         # Main script (1,957 lines)
+        stank-venv-packages.json       # Package definitions (413 packages)
         stank-venv-manager-readme.html # Visual HTML documentation
 
     macos/
