@@ -115,6 +115,7 @@ brew install jq
 
 Place all files in the same folder:
 
+- `stank-venv-manager.command` - Finder launcher (double-click)
 - `stank-venv-manager.sh` - main script
 - `stank-venv-packages-macos.json` - package definitions
 - `stank-venv-glossary.json` - package descriptions
@@ -125,11 +126,13 @@ Place all files in the same folder:
 
 ```bash
 # First time only - make executable and bypass Gatekeeper
-chmod +x stank-venv-manager.sh
-xattr -d com.apple.quarantine stank-venv-manager.sh
+chmod +x stank-venv-manager.sh stank-venv-manager.command
+xattr -d com.apple.quarantine stank-venv-manager.sh stank-venv-manager.command
 
-# Run
+# Run via Terminal
 ./stank-venv-manager.sh
+
+# OR double-click stank-venv-manager.command in Finder
 ```
 
 **Verify Installation**
@@ -206,7 +209,8 @@ SPVEM-StankPythonVirtualEnvironmentManager/
 
     macos/
         README.md                      # macOS-specific docs
-        stank-venv-manager.sh          # Main script (2,017 lines)
+        stank-venv-manager.command     # Entry point - double-click in Finder
+        stank-venv-manager.sh          # Main script (2,016 lines)
         stank-venv-packages-macos.json # Package definitions (329 packages)
         stank-venv-glossary.json       # Package descriptions
         stank-venv-manager-readme-macos.html # Visual HTML documentation
