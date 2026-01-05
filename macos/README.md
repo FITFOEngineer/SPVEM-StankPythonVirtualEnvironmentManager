@@ -1,4 +1,4 @@
-# STANK PYTHON VIRTUAL ENVIRONMENT MANAGER (macOS)
+# SPVEM - STANK PYTHON VIRTUAL ENVIRONMENT MANAGER (macOS)
 
 A verbose, beginner-friendly **Python 3.11** virtual environment manager for macOS and Apple Silicon.
 
@@ -11,18 +11,23 @@ A verbose, beginner-friendly **Python 3.11** virtual environment manager for mac
 This tool eliminates those frustrations by providing:
 
 ### 🎯 One-Command Setup
+
 Instead of researching which packages you need, hunting down compatibility issues, and debugging cryptic errors, just pick your job role. A Data Scientist gets pandas, scikit-learn, matplotlib, and 120+ validated packages installed automatically.
 
 ### 🍎 Apple Silicon Done Right
+
 M1/M2/M3 Macs have incredible ML capabilities, but unlocking GPU acceleration requires specific packages and configurations. This tool installs PyTorch with MPS backend, TensorFlow with Metal plugin, and Apple's MLX framework, all pre-validated to work together.
 
 ### 📦 Curated, Not Chaotic
-The 315 packages aren't random. They're organized into 31 logical sets (databases, web scraping, PDF tools, etc.) that you can mix and match. Each package is tested for Python 3.11 compatibility, avoiding the dependency conflicts that plague pip installs.
+
+The 329 packages aren't random. They're organized into 31 logical sets (databases, web scraping, PDF tools, etc.) that you can mix and match. Each package is tested for Python 3.11 compatibility, avoiding the dependency conflicts that plague pip installs.
 
 ### 🔰 Beginner-Friendly by Design
+
 Every action shows exactly what's happening and why. Progress bars, colored output, package descriptions during install, and plain-English explanations replace silent failures and stack traces. If something goes wrong, you'll know what and how to fix it.
 
 ### 💾 Your Work Stays Safe
+
 The script never deletes environments, never overwrites files, and maintains a manifest of everything installed. Experiment freely. Your notebooks and data remain untouched in `~/JupyterProjects`.
 
 ---
@@ -31,7 +36,7 @@ The script never deletes environments, never overwrites files, and maintains a m
 
 - **Python 3.11** - Explicitly requires Python 3.11 for maximum package compatibility
 - **9 Job Roles** - Pre-configured package sets for Data Scientists, ML Engineers, etc.
-- **31 Package Sets** - 315 curated packages validated for Python 3.11 on macOS
+- **31 Package Sets** - 329 curated packages validated for Python 3.11 on macOS
 - **Apple Silicon GPU** - PyTorch MPS, TensorFlow Metal, MLX frameworks
 - **JupyterLab** - Auto-launch with proper environment activation
 - **Session Resume** - Press Enter to continue where you left off (default)
@@ -46,7 +51,7 @@ The script never deletes environments, never overwrites files, and maintains a m
 This script is designed to **never delete or overwrite** your data:
 
 | Protection | Description |
-|------------|-------------|
+| --- | --- |
 | **Existing environments** | Refuses to create if name already exists |
 | **Project directories** | Preserves existing files, only adds missing subdirs |
 | **Package tracking** | Manifest tracks all installed sets and packages |
@@ -54,6 +59,7 @@ This script is designed to **never delete or overwrite** your data:
 | **No delete function** | Script cannot delete environments (manual only) |
 
 Each environment contains a `stank-manifest.json` tracking:
+
 - Python version
 - All installed package sets
 - All individual packages
@@ -90,25 +96,24 @@ xattr -d com.apple.quarantine stank-venv-manager.command stank-venv-manager.sh; 
 ## Files
 
 | File | Purpose |
-|------|---------|
-| `stank-venv-manager.command` | Double-click launcher for Finder |
-| `stank-venv-manager.sh` | Main bash script (~2,000 lines) |
-| `stank-venv-packages-macos.json` | Package configurations (editable) |
-| `stank-venv-glossary.json` | Package descriptions (315 packages) |
+| --- | --- |
+| `stank-venv-manager.sh` | Main bash script (2,017 lines) |
+| `stank-venv-packages-macos.json` | Package configurations (329 packages, 31 sets) |
+| `stank-venv-glossary.json` | Package descriptions (315 entries) |
 | `stank-venv-manager-readme-macos.html` | Visual documentation (open in browser) |
-| `README-macos.md` | This documentation |
+| `README.md` | This documentation |
 
 ---
 
 ## Requirements
 
 | Requirement | Details | Auto-Install |
-|-------------|---------|--------------|
-| OS | macOS 13+ (Ventura, Sonoma, Sequoia) | - |
-| Hardware | Apple Silicon (M1/M2/M3) or Intel | - |
+| --- | --- | --- |
+| OS  | macOS 13+ (Ventura, Sonoma, Sequoia) | -   |
+| Hardware | Apple Silicon (M1/M2/M3) or Intel | -   |
 | Python | 3.11+ (3.11 recommended) | ✓ via Homebrew |
-| jq | JSON parser | ✓ via Homebrew |
-| Disk | 500 MB - 12 GB depending on selection | - |
+| jq  | JSON parser | ✓ via Homebrew |
+| Disk | 500 MB - 12 GB depending on selection | -   |
 
 > **Note:** If Python 3.11+ or jq is missing, the script will detect this and offer to install via Homebrew automatically.
 
@@ -121,10 +126,10 @@ brew install jq python@3.11
 ```
 
 | Tool | Install | Purpose |
-|------|---------|---------|
+| --- | --- | --- |
 | Xcode CLI | `xcode-select --install` | Compilers, git, Unix tools |
 | Homebrew | See brew.sh | Package manager for macOS |
-| jq | `brew install jq` | JSON parsing (required by script) |
+| jq  | `brew install jq` | JSON parsing (required by script) |
 | Python 3.11 | `brew install python@3.11` | Python runtime (recommended) |
 
 ---
@@ -134,7 +139,7 @@ brew install jq python@3.11
 ### GPU Acceleration
 
 | Framework | Package | Notes |
-|-----------|---------|-------|
+| --- | --- | --- |
 | PyTorch | `torch` | MPS backend automatic |
 | TensorFlow | `tensorflow` + `tensorflow-metal` | Metal acceleration |
 | MLX | `mlx` | Apple's native ML framework |
@@ -155,6 +160,7 @@ arch -arm64 brew install python@3.11
 ### Unified Memory Advantage
 
 Apple Silicon's unified memory architecture means:
+
 - No PCIe bottleneck between CPU and GPU
 - Larger models can fit in "GPU memory" (it's all the same RAM)
 - Fast data transfer for ML training
@@ -201,7 +207,7 @@ Apple Silicon's unified memory architecture means:
   [1]  Empty environment
   [2]  With JupyterLab
   [3]  By Job Role              9 professional roles
-  [4]  Full install             315 packages
+  [4]  Full install             329 packages
 
   USE
   [5]  View / Launch environments
@@ -223,15 +229,15 @@ Apple Silicon's unified memory architecture means:
 ## Job Roles
 
 | Role | Packages | Install Time | Disk |
-|------|----------|--------------|------|
+| --- | --- | --- | --- |
 | Data Scientist | 124 | 50-80 min | 5 GB |
-| Data Analyst | 81 | 25-40 min | 1.5 GB |
+| Data Analyst | 81  | 25-40 min | 1.5 GB |
 | Data Engineer | 141 | 45-70 min | 3 GB |
 | Machine Learning Engineer | 149 | 60-90 min | 6 GB |
 | Security Analyst | 124 | 35-55 min | 2 GB |
-| Backend Developer | 92 | 30-50 min | 1.5 GB |
-| DevOps Engineer | 96 | 35-55 min | 1.5 GB |
-| Document Automation Specialist | 95 | 30-50 min | 1.2 GB |
+| Backend Developer | 92  | 30-50 min | 1.5 GB |
+| DevOps Engineer | 96  | 35-55 min | 1.5 GB |
+| Document Automation Specialist | 95  | 30-50 min | 1.2 GB |
 | Full Stack Developer | 115 | 40-65 min | 2 GB |
 
 > ⚠️ **Antivirus Warning (Security Analyst Role):** Some packages in the Security Analyst role and Cybersecurity/Network Analysis package sets may trigger antivirus or endpoint protection alerts. Tools like `scapy`, `impacket`, `python-nmap`, `yara-python`, and `pefile` are legitimate security research tools, but they use techniques that security software may flag as potentially malicious. You may need to whitelist your `~/.venvs/` folder or add exceptions for specific packages. This is normal for penetration testing and security analysis tools.
@@ -243,7 +249,7 @@ Apple Silicon's unified memory architecture means:
 Some packages require additional system tools:
 
 | Package | Requires | Install |
-|---------|----------|---------|
+| --- | --- | --- |
 | pytesseract | Tesseract-OCR | `brew install tesseract` |
 | tabula-py | Java Runtime | `brew install openjdk` |
 | camelot-py | Ghostscript | `brew install ghostscript` |
@@ -365,7 +371,7 @@ brew install python@3.11 python@3.12
 ### 8. Keyboard Shortcuts in Terminal
 
 | Shortcut | Action |
-|----------|--------|
+| --- | --- |
 | Ctrl+C | Stop current process (e.g., Jupyter) |
 | Ctrl+D | Exit Python REPL / deactivate |
 | Ctrl+Z | Suspend process (use `fg` to resume) |
@@ -401,6 +407,7 @@ rm -rf ~/.venvs/<unused-env>
 ## Manual Commands
 
 ### Activate Environment
+
 ```bash
 source ~/.venvs/<env-name>/bin/activate
 
@@ -409,11 +416,13 @@ source ~/.venvs/<env-name>/bin/activate
 ```
 
 ### Deactivate
+
 ```bash
 deactivate
 ```
 
 ### Check Active Environment
+
 ```bash
 # Shows path if in venv, empty if not
 echo $VIRTUAL_ENV
@@ -423,6 +432,7 @@ which python
 ```
 
 ### Install Single Package
+
 ```bash
 # Activate first, then:
 pip install package-name
@@ -435,17 +445,20 @@ pip install --upgrade pandas
 ```
 
 ### Uninstall Package
+
 ```bash
 pip uninstall package-name
 ```
 
 ### Export Requirements
+
 ```bash
 source ~/.venvs/<env>/bin/activate
 pip freeze > requirements.txt
 ```
 
 ### Install from Requirements
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -480,11 +493,13 @@ rm -rf ~/JupyterProjects/<env-name>
 ### Script Won't Run
 
 **"zsh: permission denied"**
+
 ```bash
 chmod +x stank-venv-manager.sh stank-venv-manager.command
 ```
 
 **Gatekeeper blocks script (macOS security)**
+
 ```bash
 # Option 1: Right-click → Open in Finder
 
@@ -494,6 +509,7 @@ xattr -d com.apple.quarantine stank-venv-manager.sh
 ```
 
 **"Operation not permitted" errors**
+
 ```bash
 # Grant Terminal full disk access:
 # System Settings → Privacy & Security → Full Disk Access → Add Terminal
@@ -504,6 +520,7 @@ xattr -d com.apple.quarantine stank-venv-manager.sh
 ### Python Issues
 
 **"command not found: python"**
+
 ```bash
 # Option 1: Use python3 explicitly
 python3 --version
@@ -517,6 +534,7 @@ brew install python@3.12
 ```
 
 **"Python not found" in script**
+
 ```bash
 # Check if Python is in PATH
 which python3
@@ -527,6 +545,7 @@ source ~/.zprofile
 ```
 
 **Wrong Python version**
+
 ```bash
 # Check version
 python3 --version
@@ -539,6 +558,7 @@ brew install python@3.12
 ```
 
 **Python running under Rosetta 2 (x86_64 on Apple Silicon)**
+
 ```bash
 # Check architecture
 python3 -c "import platform; print(platform.machine())"
@@ -556,6 +576,7 @@ brew install python@3.12
 ### Homebrew Issues
 
 **"brew: command not found"**
+
 ```bash
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -566,11 +587,13 @@ source ~/.zprofile
 ```
 
 **"jq: command not found"**
+
 ```bash
 brew install jq
 ```
 
 **Homebrew packages not found after install**
+
 ```bash
 # Reload shell configuration
 source ~/.zprofile
@@ -584,6 +607,7 @@ source ~/.zshrc
 ### Package Installation Issues
 
 **"ERROR: Could not build wheels"**
+
 ```bash
 # Install/update Xcode Command Line Tools
 xcode-select --install
@@ -594,6 +618,7 @@ xcode-select --install
 ```
 
 **Package needs specific system dependency**
+
 ```bash
 # Check error message for hints, common fixes:
 brew install openssl readline sqlite3 xz zlib  # Common build deps
@@ -601,6 +626,7 @@ brew install pkg-config  # For packages that use pkg-config
 ```
 
 **SSL/TLS errors during pip install**
+
 ```bash
 # Update certificates
 pip install --upgrade certifi
@@ -610,6 +636,7 @@ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org packag
 ```
 
 **pip install hangs or times out**
+
 ```bash
 # Check network
 curl -I https://pypi.org
@@ -626,6 +653,7 @@ pip install --timeout 100 package-name
 ### JupyterLab Issues
 
 **"jupyter: command not found"**
+
 ```bash
 # Make sure environment is activated
 source ~/.venvs/<env-name>/bin/activate
@@ -635,6 +663,7 @@ pip install jupyterlab
 ```
 
 **Port already in use**
+
 ```bash
 # Find what's using port 8888
 lsof -i :8888
@@ -647,6 +676,7 @@ kill -9 <PID>
 ```
 
 **Kernel not found / wrong kernel**
+
 ```bash
 # List kernels
 jupyter kernelspec list
@@ -660,6 +690,7 @@ jupyter kernelspec uninstall <kernel-name>
 ```
 
 **Browser doesn't open**
+
 ```bash
 # Start with URL displayed
 jupyter lab --no-browser
@@ -671,6 +702,7 @@ jupyter lab --no-browser
 ### GPU/ML Issues
 
 **PyTorch MPS not available**
+
 ```python
 import torch
 print(torch.backends.mps.is_available())  # Should be True
@@ -682,6 +714,7 @@ print(torch.backends.mps.is_built())      # Should be True
 ```
 
 **TensorFlow not seeing GPU**
+
 ```python
 import tensorflow as tf
 print(tf.config.list_physical_devices('GPU'))
@@ -691,6 +724,7 @@ print(tf.config.list_physical_devices('GPU'))
 ```
 
 **"MPS backend out of memory"**
+
 ```python
 # Reduce batch size
 # Or set environment variable to use less memory
@@ -703,7 +737,7 @@ os.environ['PYTORCH_MPS_HIGH_WATERMARK_RATIO'] = '0.0'
 ### Common Error Messages
 
 | Error | Cause | Fix |
-|-------|-------|-----|
+| --- | --- | --- |
 | `ModuleNotFoundError` | Package not installed | `pip install <package>` |
 | `Permission denied` | Need chmod or sudo | `chmod +x file.sh` |
 | `command not found` | Not in PATH | Check PATH or install tool |
@@ -741,6 +775,7 @@ os.environ['PYTORCH_MPS_HIGH_WATERMARK_RATIO'] = '0.0'
 Python 3.11 is not in your PATH.
 
 **Fix:**
+
 ```bash
 # Add to ~/.zshrc or ~/.bash_profile:
 export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH"
@@ -754,6 +789,7 @@ source ~/.zshrc
 jq is required for parsing JSON configuration.
 
 **Fix:**
+
 ```bash
 brew install jq
 ```
@@ -767,6 +803,7 @@ This happens if you try to pip install globally on macOS.
 ### Script won't run / "Permission denied"
 
 **Fix:**
+
 ```bash
 chmod +x stank-venv-manager.sh
 ```
@@ -774,6 +811,7 @@ chmod +x stank-venv-manager.sh
 ### "Operation not permitted" or Gatekeeper block
 
 **Fix:**
+
 ```bash
 xattr -d com.apple.quarantine stank-venv-manager.sh
 ```
@@ -783,6 +821,7 @@ xattr -d com.apple.quarantine stank-venv-manager.sh
 If you see a warning about Rosetta emulation:
 
 **Fix:**
+
 ```bash
 # Install native ARM64 Python
 brew uninstall python@3.11
@@ -827,6 +866,7 @@ This program is free software: you can redistribute it and/or modify it under th
 ## Author
 
 Created by Nick Stankiewicz
+
 - Version: 0.1 (Beta)
 - Created: 2026.01.04
 - Updated: 2026.01.04
