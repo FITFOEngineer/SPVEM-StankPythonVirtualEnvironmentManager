@@ -505,7 +505,7 @@ py -3.11 --version</code></pre>
     <tr><td><strong>2</strong></td><td>With JupyterLab</td><td>Python + JupyterLab only - lightweight notebook setup</td></tr>
     <tr><td><strong>3</strong></td><td>Data Science starter</td><td>numpy, pandas, matplotlib, seaborn - the essentials</td></tr>
     <tr><td><strong>4</strong></td><td>By Job Role</td><td><strong>RECOMMENDED</strong> - Pick your profession, get all relevant packages</td></tr>
-    <tr><td><strong>5</strong></td><td>Full install</td><td>Everything (416 packages) - takes 2-3 hours, needs 10+ GB</td></tr>
+    <tr><td><strong>5</strong></td><td>Full install</td><td>Everything (413 packages) - takes 2-3 hours, needs 10+ GB</td></tr>
     <tr><td><strong>6</strong></td><td>View / Launch</td><td>See what's installed, launch JupyterLab for existing environments</td></tr>
     <tr><td><strong>7</strong></td><td>Add packages</td><td>Install additional package sets to an existing environment</td></tr>
     <tr><td><strong>S</strong></td><td>Running sessions</td><td>Show URLs for any JupyterLab instances currently running</td></tr>
@@ -693,7 +693,7 @@ py -3.11 --version</code></pre>
 
 <div class="alert alert-danger" style="margin-top:1rem;">
     <strong>&#9888; Cybersecurity Packages - Antivirus Warning:</strong><br>
-    Security tools like <code>impacket</code>, <code>yara-python</code>, <code>scapy</code>, and <code>oletools</code> may trigger Windows Defender or other antivirus software as "potentially unwanted" or "hacking tools." These are legitimate security research packages used by professionals, but their capabilities can be flagged as malicious. If you install the Security Analyst role or cybersecurity package set, you may need to add an exclusion for your <code>~/.venvs</code> folder in Windows Security settings.
+    Security tools like <code>yara-python</code>, <code>scapy</code>, and <code>oletools</code> may trigger Windows Defender or other antivirus software as "potentially unwanted" or "hacking tools." These are legitimate security research packages used by professionals, but their capabilities can be flagged as malicious. If you install the Security Analyst role or cybersecurity package set, you may need to add an exclusion for your <code>~/.venvs</code> folder in Windows Security settings.
 </div>
 
 <h3>Prerequisites</h3>
@@ -755,6 +755,58 @@ py -3.11 --version</code></pre>
     </div>
 </div>
 
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-data">data</span> Math & Scientific Computing</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Symbolic math, numerical computing, optimization | 17 packages | 600 MB</p>
+        <div class="pkg-list">
+            <span>sympy</span><span>mpmath</span><span>gmpy2</span><span>numba</span><span>cython</span><span>networkx</span><span>cvxpy</span><span>pulp</span><span>pyomo</span><span>gekko</span><span>autograd</span><span>jax</span><span>jaxlib</span><span>flax</span><span>optax</span><span>onnx</span><span>onnxruntime</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-data">data</span> Text Processing & NLP</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Text parsing, cleaning, NLP, entity extraction | 26 packages | 800 MB</p>
+        <div class="pkg-list">
+            <span>regex</span><span>chardet</span><span>charset-normalizer</span><span>ftfy</span><span>unidecode</span><span>textblob</span><span>nltk</span><span>spacy</span><span>stanza</span><span>gensim</span><span>rapidfuzz</span><span>thefuzz</span><span>python-Levenshtein</span><span>jellyfish</span><span>inflect</span><span>num2words</span><span>dateparser</span><span>python-dateutil</span><span>phonenumbers</span><span>email-validator</span><span>validators</span><span>price-parser</span><span>urlextract</span><span>tldextract</span><span>nameparser</span><span>usaddress</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-data">data</span> Geospatial & Mapping</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Geographic data processing and visualization | 8 packages | 300 MB</p>
+        <div class="pkg-list">
+            <span>geopandas</span><span>shapely</span><span>folium</span><span>pyproj</span><span>geopy</span><span>rasterio</span><span>fiona</span><span>rtree</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-data">data</span> Financial & Trading</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Market data, technical analysis, backtesting | 8 packages | 100 MB</p>
+        <div class="pkg-list">
+            <span>yfinance</span><span>pandas-ta</span><span>ta</span><span>backtrader</span><span>bt</span><span>empyrical</span><span>pyfolio</span><span>fredapi</span>
+        </div>
+    </div>
+</div>
+
 <h3>Machine Learning</h3>
 <div class="collapsible">
     <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
@@ -798,16 +850,16 @@ py -3.11 --version</code></pre>
 
 <div class="collapsible">
     <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
-        <h4><span class="category-badge cat-security">security</span> Cybersecurity & Pen Testing</h4>
+        <h4><span class="category-badge cat-security">security</span> Cybersecurity & Penetration Testing</h4>
         <span class="arrow">&#9654;</span>
     </div>
     <div class="collapsible-content">
-        <p>Security testing, cryptography, forensics | 21 packages | ~400 MB</p>
+        <p>Security testing, cryptography, forensics | 20 packages | ~400 MB</p>
         <div class="alert alert-warn" style="margin:0.5rem 0; padding:0.75rem;">
-            <strong>&#9888; Antivirus Warning:</strong> Packages like <code>impacket</code>, <code>yara-python</code>, and <code>scapy</code> may trigger Windows Defender or other antivirus software. These are legitimate security research tools, but their capabilities can be flagged as potentially malicious. You may need to add exclusions for your venv folder.
+            <strong>&#9888; Antivirus Warning:</strong> Packages like <code>yara-python</code>, <code>scapy</code>, and <code>oletools</code> may trigger Windows Defender or other antivirus software. These are legitimate security research tools, but their capabilities can be flagged as potentially malicious. You may need to add exclusions for your venv folder.
         </div>
         <div class="pkg-list">
-            <span>scapy</span><span>paramiko</span><span>fabric</span><span>cryptography</span><span>pycryptodome</span><span>python-nmap</span><span>shodan</span><span>dnspython</span><span>impacket</span><span>pyopenssl</span><span>bcrypt</span><span>passlib</span><span>hashid</span><span>yara-python</span><span>oletools</span><span>pefile</span><span>pyelftools</span><span>python-magic</span><span>sslyze</span><span>python-whois</span><span>censys</span>
+            <span>scapy</span><span>paramiko</span><span>fabric</span><span>cryptography</span><span>pycryptodome</span><span>python-nmap</span><span>shodan</span><span>dnspython</span><span>pyopenssl</span><span>bcrypt</span><span>passlib</span><span>hashid</span><span>yara-python</span><span>oletools</span><span>pefile</span><span>pyelftools</span><span>python-magic</span><span>sslyze</span><span>python-whois</span><span>censys</span>
         </div>
     </div>
 </div>
@@ -818,9 +870,9 @@ py -3.11 --version</code></pre>
         <span class="arrow">&#9654;</span>
     </div>
     <div class="collapsible-content">
-        <p>Deep packet inspection, forensics | 14 packages | ~200 MB</p>
+        <p>Deep packet inspection, forensics | 13 packages | ~200 MB</p>
         <div class="pkg-list">
-            <span>pyshark</span><span>scapy</span><span>dpkt</span><span>kamene</span><span>netaddr</span><span>netifaces</span><span>psutil</span><span>mitmproxy</span><span>PySocks</span><span>python-socks</span><span>aiodns</span><span>dnspython</span><span>dnslib</span><span>twisted</span>
+            <span>pyshark</span><span>scapy</span><span>dpkt</span><span>kamene</span><span>netaddr</span><span>psutil</span><span>mitmproxy</span><span>PySocks</span><span>python-socks</span><span>aiodns</span><span>dnspython</span><span>dnslib</span><span>twisted</span>
         </div>
     </div>
 </div>
@@ -933,7 +985,7 @@ py -3.11 --version</code></pre>
 
 <div class="collapsible">
     <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
-        <h4><span class="category-badge cat-dev">dev</span> Databases</h4>
+        <h4><span class="category-badge cat-dev">dev</span> Database Connectivity</h4>
         <span class="arrow">&#9654;</span>
     </div>
     <div class="collapsible-content">
@@ -996,6 +1048,58 @@ py -3.11 --version</code></pre>
     </div>
 </div>
 
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-dev">dev</span> Template Engines</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Jinja2, Mako, Markdown rendering, document templating | 10 packages | 50 MB</p>
+        <div class="pkg-list">
+            <span>jinja2</span><span>mako</span><span>docxtpl</span><span>markdown</span><span>markdown-it-py</span><span>mistune</span><span>commonmark</span><span>markdownify</span><span>html2text</span><span>bleach</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-dev">dev</span> Parallel & Async Processing</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Concurrent execution, job queues, async frameworks | 18 packages | 300 MB</p>
+        <div class="pkg-list">
+            <span>joblib</span><span>dask</span><span>dask-ml</span><span>distributed</span><span>ray</span><span>celery</span><span>rq</span><span>huey</span><span>dramatiq</span><span>multiprocess</span><span>pathos</span><span>loky</span><span>tqdm</span><span>alive-progress</span><span>trio</span><span>anyio</span><span>aiofiles</span><span>aiomultiprocess</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-devops">devops</span> Logging & Monitoring</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>Application logging, metrics, profiling, error tracking | 14 packages | 100 MB</p>
+        <div class="pkg-list">
+            <span>loguru</span><span>structlog</span><span>python-json-logger</span><span>colorlog</span><span>sentry-sdk</span><span>watchdog</span><span>watchfiles</span><span>psutil</span><span>py-cpuinfo</span><span>memory-profiler</span><span>line-profiler</span><span>prometheus-client</span><span>opentelemetry-api</span><span>opentelemetry-sdk</span>
+        </div>
+    </div>
+</div>
+
+<div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+        <h4><span class="category-badge cat-dev">dev</span> Desktop Automation & RPA</h4>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="collapsible-content">
+        <p>GUI automation, screen capture, keyboard/mouse control | 8 packages | 100 MB</p>
+        <div class="pkg-list">
+            <span>pyautogui</span><span>pywinauto</span><span>pynput</span><span>keyboard</span><span>mouse</span><span>mss</span><span>pygetwindow</span><span>pyperclip</span>
+        </div>
+    </div>
+</div>
+
 <!-- FILES -->
 <h2 id="files">&#128194; Files Reference</h2>
 <p style="margin-bottom:1rem; color:var(--text2);">Technical details about the files included with this tool.</p>
@@ -1006,7 +1110,7 @@ py -3.11 --version</code></pre>
     </div>
     <div class="file-card">
         <code>stank-venv-manager.ps1</code>
-        <span>Main PowerShell script (~1,780 lines)</span>
+        <span>Main PowerShell script (~1,957 lines)</span>
     </div>
     <div class="file-card">
         <code>stank-venv-packages.json</code>
@@ -1039,6 +1143,19 @@ function copyCode(btn) {
     });
 }
 </script>
+
+
+<h2 id="appendix">&#128203; Appendix: Excluded Packages</h2>
+
+<div class="info-box" style="border-left: 4px solid var(--yellow); background: rgba(210, 153, 34, 0.1); padding: 1rem; margin: 1rem 0;">
+    <h3 style="margin-top:0;">impacket (Not Included)</h3>
+    <p><strong>What it is:</strong> A collection of Python classes for working with network protocols. Used by security professionals for penetration testing, network protocol analysis, and security research.</p>
+    <p><strong>Why excluded:</strong> This package frequently triggers antivirus/EDR software as "hacking tools" or "potentially unwanted software." While legitimate for security research, the false positive rate causes installation failures and user confusion.</p>
+    <p><strong>To install separately:</strong></p>
+    <pre style="background:var(--bg3); padding:0.5rem;"><code># In an activated environment
+pip install impacket</code></pre>
+    <p><strong>Note:</strong> You may need to add your <code>.venvs</code> folder to Windows Defender exclusions if installation fails or files are quarantined.</p>
+</div>
 
 </body>
 </html>

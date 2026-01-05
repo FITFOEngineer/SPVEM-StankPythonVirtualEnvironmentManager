@@ -1,4 +1,4 @@
-# SPVEM - STANK PYTHON VIRTUAL ENVIRONMENT MANAGER (Windows)
+﻿# SPVEM - STANK PYTHON VIRTUAL ENVIRONMENT MANAGER (Windows)
 
 A verbose, beginner-friendly Python virtual environment manager for Windows 10/11.
 
@@ -13,15 +13,14 @@ A verbose, beginner-friendly Python virtual environment manager for Windows 10/1
 Python environment management is a mess for beginners:
 
 1. **Too many tools** - venv, virtualenv, conda, pyenv, poetry, pipenv, pdm, hatch, uv. Which one? Nobody agrees.
-  
+
 2. **Silent failures** - Commands succeed with exit code 0 but nothing works. Hours wasted.
-  
+
 3. **No explanations** - Tutorials say "run this command" but never explain *why*. Users copy-paste without understanding.
-  
+
 4. **Package chaos** - "I need pandas for data science" turns into researching 50 packages and their compatibility.
-  
+
 5. **Reproducibility theater** - requirements.txt files that don't actually reproduce environments.
-  
 
 ### The Solution
 
@@ -36,7 +35,7 @@ One script that:
 ### Design Philosophy
 
 | Principle | Implementation |
-| --- | --- |
+|-----------|----------------|
 | Transparency | Every command shown with WHY explanation |
 | Safety | Never auto-delete; explicit opt-in for destructive actions |
 | Education | Verbose output teaches environment management |
@@ -48,10 +47,11 @@ One script that:
 ## Features
 
 - **9 job roles** with pre-configured package bundles
-- **29 package sets** (416 packages) organized by purpose
+- **29 package sets** (413 packages) organized by purpose
 - **Verbose output** explaining every step
 - **Network/disk validation** before installs
 - **Retry logic** for failed packages
+- **Package tracking** - tracks successful and failed installs per environment
 - **JSON configuration** - customize without editing code
 - **JupyterLab integration** - launch directly from menu
 - **Session resume** - pick up where you left off
@@ -67,12 +67,10 @@ Download from: https://www.python.org/downloads/release/python-3119/
 **IMPORTANT - Installer Options:**
 
 On the first screen:
-
 - `[ ] Add python.exe to PATH` - **LEAVE UNCHECKED** (prevents conflicts)
 - `[x] Install py launcher for all users` - **CHECK THIS**
 
 Click "Customize installation", then on Advanced Options:
-
 - `[ ] Add Python to environment variables` - **LEAVE UNCHECKED**
 
 This installs Python 3.11 safely alongside any existing Python versions. Your system defaults are NOT changed.
@@ -82,7 +80,6 @@ This installs Python 3.11 safely alongside any existing Python versions. Your sy
 ### Step 2: Download Files
 
 Download all 5 files to the **same folder**:
-
 - `stank-venv-manager.bat` (launcher)
 - `stank-venv-manager.ps1` (main script)
 - `stank-venv-packages.json` (package definitions)
@@ -102,7 +99,6 @@ That's it! The .bat file handles PowerShell execution policy automatically.
 ### Verify Installation
 
 Open Command Prompt and run:
-
 ```
 py --list
 py -3.11 --version
@@ -115,10 +111,10 @@ You should see Python 3.11.x listed.
 ## Files
 
 | File | Purpose |
-| --- | --- |
+|------|---------|
 | `stank-venv-manager.bat` | **START HERE** - Double-click to launch |
-| `stank-venv-manager.ps1` | Main PowerShell script (1,793 lines) |
-| `stank-venv-packages.json` | Package configurations (416 packages, 29 sets) |
+| `stank-venv-manager.ps1` | Main PowerShell script (1,957 lines) |
+| `stank-venv-packages.json` | Package configurations (413 packages, 29 sets) |
 | `stank-venv-manager-readme.html` | Visual documentation (open in browser) |
 | `README.md` | This documentation |
 
@@ -129,7 +125,7 @@ You should see Python 3.11.x listed.
 Pre-configured for real job titles:
 
 | Role | Packages | Install Time | Disk |
-| --- | --- | --- | --- |
+|------|----------|--------------|------|
 | Data Scientist | 158 | 50-80 min | 5 GB |
 | Data Analyst | 111 | 25-40 min | 1.5 GB |
 | Data Engineer | 199 | 45-70 min | 3 GB |
@@ -160,6 +156,8 @@ Pre-configured for real job titles:
 
 **DevOps:** Testing, Logging, Log Parsing, Cloud SDKs
 
+**Data:** Text Processing & NLP, Geospatial & Mapping, Financial & Trading
+
 ---
 
 ## Menu
@@ -172,7 +170,7 @@ Pre-configured for real job titles:
     2  With JupyterLab
     3  Data Science starter
     4  By Job Role
-    5  Full install (all 416 packages)
+    5  Full install (all 413 packages)
 
   USE
     6  View / Launch environments
@@ -208,8 +206,8 @@ Pre-configured for real job titles:
 ## Requirements
 
 | Requirement | Details |
-| --- | --- |
-| OS  | Windows 10/11 |
+|-------------|---------|
+| OS | Windows 10/11 |
 | Python | **3.11 only** from python.org (NOT 3.12+, NOT Microsoft Store) |
 | Disk | 500 MB - 12 GB |
 
@@ -238,7 +236,7 @@ This tool **requires Python 3.11** - not 3.12, not 3.13, not 3.10. Here's why:
 Some packages require external software to be installed separately:
 
 | Package | Requires | Install |
-| --- | --- | --- |
+|---------|----------|---------|
 | pytesseract | Tesseract-OCR | https://github.com/UB-Mannheim/tesseract/wiki |
 | tabula-py | Java Runtime 8+ | https://adoptium.net/ (set JAVA_HOME) |
 | pyshark | Wireshark/tshark | https://www.wireshark.org/download.html |
@@ -249,19 +247,18 @@ Some packages require external software to be installed separately:
 ### Windows-Specific Limitations
 
 | Package | Limitation | Workaround |
-| --- | --- | --- |
+|---------|------------|------------|
 | **TensorFlow GPU** | CPU only on native Windows | Use WSL2 for GPU, or use PyTorch instead |
 | **LightGBM GPU** | No Windows GPU wheels | CPU only, or use Linux/WSL2 |
 | **Ansible** | Cannot run as control node | Use WSL2 or Docker |
 
 ### Cybersecurity Packages - Antivirus Warning
 
-> **WARNING:** Security research tools like `impacket`, `yara-python`, `scapy`, and `oletools` may trigger Windows Defender or other antivirus software as "potentially unwanted" or "hacking tools." These are legitimate packages used by security professionals, but their capabilities can be flagged as malicious. If you install the Security Analyst role or cybersecurity package set, you may need to add an exclusion for your `~/.venvs` folder in Windows Security settings.
+> **WARNING:** Security research tools like `yara-python`, `scapy`, and `oletools` may trigger Windows Defender or other antivirus software as "potentially unwanted" or "hacking tools." These are legitimate packages used by security professionals, but their capabilities can be flagged as malicious. If you install the Security Analyst role or cybersecurity package set, you may need to add an exclusion for your `~/.venvs` folder in Windows Security settings.
 
 ### Prerequisites for Some Packages
 
 **Visual C++ Redistributable** - Required for XGBoost, LightGBM, faiss-cpu:
-
 - Download: https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 ---
@@ -309,21 +306,37 @@ Your work in `JupyterProjects` is separate from environments - back it up before
 ## Troubleshooting
 
 **"Running scripts is disabled"**
-
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 **"Python not found"**
-
 - Reinstall from python.org with "Add to PATH"
 - Restart terminal
 
 **Package failed**
-
 - Check internet
 - Install Visual C++ Build Tools
 - Check system requirements section
+
+
+---
+
+## Appendix: Excluded Packages
+
+### impacket (Not Included)
+
+**What it is:** A collection of Python classes for working with network protocols. Used by security professionals for penetration testing, network protocol analysis, and security research.
+
+**Why excluded:** This package frequently triggers antivirus/EDR software as "hacking tools" or "potentially unwanted software." While legitimate for security research, the false positive rate causes installation failures and user confusion.
+
+**To install separately:**
+```powershell
+# In an activated environment
+pip install impacket
+```
+
+**Note:** You may need to add your `.venvs` folder to Windows Defender exclusions if installation fails or files are quarantined.
 
 ---
 

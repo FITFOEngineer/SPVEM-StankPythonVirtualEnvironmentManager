@@ -181,7 +181,6 @@
                 "python-nmap",
                 "shodan",
                 "dnspython",
-                "impacket",
                 "pyopenssl",
                 "bcrypt",
                 "passlib",
@@ -209,7 +208,6 @@
                 "dpkt",
                 "kamene",
                 "netaddr",
-                "netifaces",
                 "psutil",
                 "mitmproxy",
                 "PySocks",
@@ -488,7 +486,6 @@
                 "alive-progress",
                 "trio",
                 "anyio",
-                "uvloop",
                 "aiofiles",
                 "aiomultiprocess"
             ]

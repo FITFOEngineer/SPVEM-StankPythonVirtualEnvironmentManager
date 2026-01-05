@@ -482,7 +482,9 @@ function Install-PackageSet {
     
     # Track in manifest
     if ($results -and $EnvPath) {
-        Add-ManifestEntry -EnvPath $EnvPath -SetName $SetName -PackageCount $packages.Count -SuccessCount $results.Success.Count -FailedCount $results.Failed.Count
+        # Extract failed package names from results (Failed contains hashtables with Package key)
+        $failedNames = @($results.Failed | ForEach-Object { $_.Package })
+        Add-ManifestEntry -EnvPath $EnvPath -SetName $SetName -PackageCount $packages.Count -SuccessCount $results.Success.Count -FailedCount $results.Failed.Count -SuccessfulPackages $results.Success -FailedPackages $failedNames
     }
     
     return $results
@@ -546,8 +548,9 @@ function Install-JobRole {
         }
     }
     
-    # Track role in manifest
-    Add-ManifestEntry -EnvPath $EnvPath -RoleName $RoleName -PackageCount $totalPkgs -SuccessCount $allResults.Success.Count -FailedCount $allResults.Failed.Count
+    # Track role in manifest - extract failed package names from hashtables
+    $allFailedNames = @($allResults.Failed | ForEach-Object { if ($_ -is [hashtable]) { $_.Package } else { $_ } })
+    Add-ManifestEntry -EnvPath $EnvPath -RoleName $RoleName -PackageCount $totalPkgs -SuccessCount $allResults.Success.Count -FailedCount $allResults.Failed.Count -SuccessfulPackages $allResults.Success -FailedPackages $allFailedNames
     
     # Final summary
     Write-Host ""
@@ -662,6 +665,8 @@ function Get-EnvironmentManifest {
         installed_sets = @()
         installed_roles = @()
         install_history = @()
+        successful_packages = @()
+        failed_packages = @()
     }
 }
 
@@ -682,7 +687,9 @@ function Add-ManifestEntry {
         [string]$RoleName = "",
         [int]$PackageCount = 0,
         [int]$SuccessCount = 0,
-        [int]$FailedCount = 0
+        [int]$FailedCount = 0,
+        [string[]]$SuccessfulPackages = @(),
+        [string[]]$FailedPackages = @()
     )
     $manifest = Get-EnvironmentManifest -EnvPath $EnvPath
     
@@ -694,8 +701,14 @@ function Add-ManifestEntry {
             installed_sets = @($manifest.installed_sets)
             installed_roles = @($manifest.installed_roles)
             install_history = @($manifest.install_history)
+            successful_packages = @($manifest.successful_packages)
+            failed_packages = @($manifest.failed_packages)
         }
     }
+    
+    # Initialize arrays if not present
+    if (-not $manifest.successful_packages) { $manifest.successful_packages = @() }
+    if (-not $manifest.failed_packages) { $manifest.failed_packages = @() }
     
     $entry = @{
         date = (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
@@ -704,6 +717,8 @@ function Add-ManifestEntry {
         packages = $PackageCount
         success = $SuccessCount
         failed = $FailedCount
+        successful_list = $SuccessfulPackages
+        failed_list = $FailedPackages
     }
     
     if ($SetName -and $SetName -notin $manifest.installed_sets) {
@@ -713,6 +728,20 @@ function Add-ManifestEntry {
         $manifest.installed_roles += $RoleName
     }
     $manifest.install_history += $entry
+    
+    # Add to cumulative package lists (avoid duplicates)
+    foreach ($pkg in $SuccessfulPackages) {
+        if ($pkg -and $pkg -notin $manifest.successful_packages) {
+            $manifest.successful_packages += $pkg
+        }
+        # Remove from failed if it succeeded on retry
+        $manifest.failed_packages = @($manifest.failed_packages | Where-Object { $_ -ne $pkg })
+    }
+    foreach ($pkg in $FailedPackages) {
+        if ($pkg -and $pkg -notin $manifest.failed_packages -and $pkg -notin $manifest.successful_packages) {
+            $manifest.failed_packages += $pkg
+        }
+    }
     
     Save-EnvironmentManifest -EnvPath $EnvPath -Manifest ([PSCustomObject]$manifest)
 }
@@ -753,6 +782,32 @@ function Show-EnvironmentManifest {
         (-not $manifest.installed_roles -or $manifest.installed_roles.Count -eq 0)) {
         Write-Host "    No package sets tracked yet." -ForegroundColor DarkGray
         Write-Host "    (Packages installed manually via pip are not tracked)" -ForegroundColor DarkGray
+        Write-Host ""
+    }
+    
+    # Show package statistics
+    $successCount = if ($manifest.successful_packages) { @($manifest.successful_packages).Count } else { 0 }
+    $failedCount = if ($manifest.failed_packages) { @($manifest.failed_packages).Count } else { 0 }
+    
+    if ($successCount -gt 0 -or $failedCount -gt 0) {
+        Write-Host "    Package Statistics:" -ForegroundColor Yellow
+        Write-Host "      Successful: $successCount" -ForegroundColor Green
+        if ($failedCount -gt 0) {
+            Write-Host "      Failed:     $failedCount" -ForegroundColor Red
+        }
+        Write-Host ""
+    }
+    
+    # Show failed packages if any
+    if ($manifest.failed_packages -and @($manifest.failed_packages).Count -gt 0) {
+        Write-Host "    Failed Packages:" -ForegroundColor Red
+        foreach ($pkg in $manifest.failed_packages) {
+            Write-Host "      - $pkg" -ForegroundColor DarkGray
+        }
+        Write-Host ""
+        Write-Host "    To retry failed packages:" -ForegroundColor DarkGray
+        Write-Host "      1. Activate environment: & `"$($Env.Path)\Scripts\Activate.ps1`"" -ForegroundColor DarkGray
+        Write-Host "      2. pip install <package_name>" -ForegroundColor DarkGray
         Write-Host ""
     }
     
@@ -841,7 +896,9 @@ function Get-AllEnvironments {
             }
         }
     }
-    return $envs
+    # IMPORTANT: Use comma operator to force array return even with single item
+    # Without this, PowerShell unwraps single-item arrays causing .Count to fail
+    return ,@($envs)
 }
 
 function Show-EnvironmentTable {
@@ -908,7 +965,8 @@ function Show-EnvironmentTable {
 
 function Select-Environment {
     param([string]$Prompt = "Select environment")
-    $envs = Get-AllEnvironments
+    # Wrap in @() to ensure array even with single environment
+    $envs = @(Get-AllEnvironments)
     if ($envs.Count -eq 0) { 
         Write-Host ""
         Write-Warn "No environments available. Create one first."
@@ -1359,6 +1417,98 @@ function Show-JobRoleMenu {
 # PACKAGE SET MENU
 # ============================================================================
 
+
+function Retry-FailedPackages {
+    param([PSCustomObject]$Env)
+    
+    $manifest = Get-EnvironmentManifest -EnvPath $Env.Path
+    $failedPkgs = @($manifest.failed_packages | Where-Object { $_ })
+    
+    if ($failedPkgs.Count -eq 0) {
+        Write-Host ""
+        Write-OK "No failed packages to retry!"
+        return
+    }
+    
+    Write-Host ""
+    Write-Host "  ╔══════════════════════════════════════════════════════════════════════════╗" -ForegroundColor Yellow
+    Write-Host "  ║                        RETRY FAILED PACKAGES                             ║" -ForegroundColor Yellow
+    Write-Host "  ╚══════════════════════════════════════════════════════════════════════════╝" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "    Environment: $($Env.Name)" -ForegroundColor Cyan
+    Write-Host "    Failed packages: $($failedPkgs.Count)" -ForegroundColor Red
+    Write-Host ""
+    Write-Host "    Packages to retry:" -ForegroundColor Yellow
+    foreach ($pkg in $failedPkgs) {
+        Write-Host "      - $pkg" -ForegroundColor DarkGray
+    }
+    Write-Host ""
+    
+    if (-not (Confirm-Action "Retry installing these $($failedPkgs.Count) packages?")) {
+        return
+    }
+    
+    # Install with progress
+    $results = Install-PackagesWithProgress -PythonExe $Env.Python -Packages $failedPkgs -SetName "Failed Package Retry" -EnvPath $Env.Path
+    
+    # Update manifest
+    if ($results) {
+        # Get fresh manifest
+        $manifest = Get-EnvironmentManifest -EnvPath $Env.Path
+        
+        # Convert to hashtable if needed
+        if ($manifest -is [PSCustomObject]) {
+            $manifest = @{
+                created = $manifest.created
+                updated = $manifest.updated
+                installed_sets = @($manifest.installed_sets)
+                installed_roles = @($manifest.installed_roles)
+                install_history = @($manifest.install_history)
+                successful_packages = @($manifest.successful_packages)
+                failed_packages = @($manifest.failed_packages)
+            }
+        }
+        
+        # Move successful retries from failed to successful
+        foreach ($pkg in $results.Success) {
+            if ($pkg -and $pkg -notin $manifest.successful_packages) {
+                $manifest.successful_packages += $pkg
+            }
+            # Remove from failed
+            $manifest.failed_packages = @($manifest.failed_packages | Where-Object { $_ -ne $pkg })
+        }
+        
+        # Add retry entry to history
+        $failedNames = @($results.Failed | ForEach-Object { if ($_ -is [hashtable]) { $_.Package } else { $_ } })
+        $entry = @{
+            date = (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+            set = "retry_failed"
+            role = ""
+            packages = $failedPkgs.Count
+            success = $results.Success.Count
+            failed = $results.Failed.Count
+            successful_list = $results.Success
+            failed_list = $failedNames
+        }
+        $manifest.install_history += $entry
+        
+        Save-EnvironmentManifest -EnvPath $Env.Path -Manifest ([PSCustomObject]$manifest)
+        
+        # Summary
+        Write-Host ""
+        if ($results.Success.Count -eq $failedPkgs.Count) {
+            Write-OK "All $($failedPkgs.Count) packages installed successfully!"
+        }
+        elseif ($results.Success.Count -gt 0) {
+            Write-Host "    Recovered: $($results.Success.Count)/$($failedPkgs.Count)" -ForegroundColor Green
+            Write-Host "    Still failing: $($results.Failed.Count)" -ForegroundColor Red
+        }
+        else {
+            Write-Warn "All packages still failing. Check prerequisites."
+        }
+    }
+}
+
 function Show-PackageSetsMenu {
     param([PSCustomObject]$Env)
     
@@ -1448,8 +1598,14 @@ function Show-PackageSetsMenu {
         Write-Host ""
     }
     
+    # Check for failed packages
+    $failedPkgs = @($manifest.failed_packages | Where-Object { $_ })
+    
     Write-Host "    [0]  Cancel" -ForegroundColor DarkGray
     Write-Host "    [V]  View installed details" -ForegroundColor DarkGray
+    if ($failedPkgs.Count -gt 0) {
+        Write-Host "    [R]  Retry failed packages ($($failedPkgs.Count) failed)" -ForegroundColor Yellow
+    }
     Write-Host ""
     Write-Host "  ──────────────────────────────────────────────────────────────────────────" -ForegroundColor DarkGray
     
@@ -1459,6 +1615,13 @@ function Show-PackageSetsMenu {
     
     if ($choice -eq 'V' -or $choice -eq 'v') {
         Show-EnvironmentManifest -Env $Env
+        Pause
+        Show-PackageSetsMenu -Env $Env
+        return
+    }
+    
+    if (($choice -eq 'R' -or $choice -eq 'r') -and $failedPkgs.Count -gt 0) {
+        Retry-FailedPackages -Env $Env
         Pause
         Show-PackageSetsMenu -Env $Env
         return
